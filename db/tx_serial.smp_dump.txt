@@ -1,8 +1,0 @@
-
-State Machine - |tx_serial|tx_serial_uc:U1|Sreg
-Name Sreg.final Sreg.transmissao Sreg.espera Sreg.preparacao Sreg.inicial 
-Sreg.inicial 0 0 0 0 0 
-Sreg.preparacao 0 0 0 1 1 
-Sreg.espera 0 0 1 0 1 
-Sreg.transmissao 0 1 0 0 1 
-Sreg.final 1 0 0 0 1 
