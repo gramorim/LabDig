@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 
 entity rx_serial_uc is 
   port ( clock, reset, tick, fim: in STD_LOGIC;
-         zerar, contar, carregar, deslocar, pronto: out STD_LOGIC );
+         zerar, contar, carregar, deslocar, pronto: out STD_LOGIC);
 end;
 
 architecture rx_serial_uc of rx_serial_uc is
@@ -36,7 +36,7 @@ begin
       when recepcao =>         if fim='0' then Snext <= espera;
                                else            Snext <= final;
                                end if;
-      when final =>            Snext <= inicial;
+      when final =>            Snext <= final;
       when others =>           Snext <= inicial;
     end case;
   end process;

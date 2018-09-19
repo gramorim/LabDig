@@ -45,10 +45,10 @@ architecture rx_serial_fd of rx_serial_fd is
    end component; 
 	
 	component ticker
-	generic(Constant Clk_BRate_m : integer := 100;
-			  Constant Clk_BRate_n : integer := 7;
-			  Constant Total_m     : integer := 11;
-			  Constant Total_n     : integer := 4);
+	generic(Constant Clk_BRate_m : integer;
+			  Constant Clk_BRate_n : integer;
+			  Constant Total_m     : integer;
+			  Constant Total_n     : integer);
 	port(serial, CLK, Reset : in  std_logic;
 	     tick               : out std_logic);
 	end component;
@@ -76,6 +76,7 @@ begin
 	port map (S(6 downto 0), paridade_ok, open);
 	
 	U4: ticker
+	generic map (5000000,23,10,4)
 	port map (entrada_serial, clock, reset, tick);
 	
 	s_hex1(3) <= '0';

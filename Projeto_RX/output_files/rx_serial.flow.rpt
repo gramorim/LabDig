@@ -1,5 +1,5 @@
 Flow report for rx_serial
-Wed Sep 19 06:56:49 2018
+Wed Sep 19 10:38:12 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Sep 19 06:56:42 2018       ;
+; Flow Status                     ; Successful - Wed Sep 19 10:38:05 2018       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; rx_serial                                   ;
 ; Top-level Entity Name           ; rx_serial                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 19 / 18,480 ( < 1 % )                       ;
-; Total registers                 ; 23                                          ;
-; Total pins                      ; 19 / 224 ( 8 % )                            ;
+; Logic utilization (in ALMs)     ; 44 / 18,480 ( < 1 % )                       ;
+; Total registers                 ; 65                                          ;
+; Total pins                      ; 21 / 224 ( 9 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 66 ( 0 % )                              ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/19/2018 06:56:05 ;
+; Start date & time ; 09/19/2018 10:37:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; rx_serial           ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 128437435715795.153735096507624        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 233360577867549.153736424608180        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -96,11 +96,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 4868 MB             ; 00:00:27                           ;
-; Fitter                    ; 00:00:20     ; 1.0                     ; 6299 MB             ; 00:00:34                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 4829 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.1                     ; 5080 MB             ; 00:00:05                           ;
-; Total                     ; 00:00:42     ; --                      ; --                  ; 00:01:10                           ;
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 4872 MB             ; 00:00:25                           ;
+; Fitter                    ; 00:00:20     ; 1.0                     ; 6294 MB             ; 00:00:33                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 4831 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.1                     ; 5081 MB             ; 00:00:05                           ;
+; Total                     ; 00:00:42     ; --                      ; --                  ; 00:01:07                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -109,10 +109,10 @@ agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; NBROCHA          ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; NBROCHA          ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; NBROCHA          ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; NBROCHA          ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-JV66H2N  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; DESKTOP-JV66H2N  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; DESKTOP-JV66H2N  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-JV66H2N  ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 
