@@ -1,5 +1,5 @@
 Flow report for Tick
-Wed Sep 19 06:03:55 2018
+Wed Sep 19 09:29:42 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,24 +41,24 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Sep 19 06:03:55 2018       ;
+; Flow Status                     ; Successful - Wed Sep 19 09:29:42 2018       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; Tick                                        ;
 ; Top-level Entity Name           ; ticker                                      ;
 ; Family                          ; Cyclone V                                   ;
-; Device                          ; 5CGXFC7C7F23C8                              ;
+; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 13 / 56,480 ( < 1 % )                       ;
+; Logic utilization (in ALMs)     ; 10 / 18,480 ( < 1 % )                       ;
 ; Total registers                 ; 19                                          ;
-; Total pins                      ; 4 / 268 ( 1 % )                             ;
+; Total pins                      ; 6 / 224 ( 3 % )                             ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
-; Total DSP Blocks                ; 0 / 156 ( 0 % )                             ;
-; Total HSSI RX PCSs              ; 0 / 6 ( 0 % )                               ;
-; Total HSSI PMA RX Deserializers ; 0 / 6 ( 0 % )                               ;
-; Total HSSI TX PCSs              ; 0 / 6 ( 0 % )                               ;
-; Total HSSI PMA TX Serializers   ; 0 / 6 ( 0 % )                               ;
-; Total PLLs                      ; 0 / 13 ( 0 % )                              ;
+; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 66 ( 0 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0 / 4 ( 0 % )                               ;
 ; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
 +---------------------------------+---------------------------------------------+
 
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/19/2018 06:02:39 ;
+; Start date & time ; 09/19/2018 09:28:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Tick                ;
 +-------------------+---------------------+
@@ -79,9 +79,9 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 128437435715795.153734775902916        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 233360577867549.153736013804584        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim (Verilog)                     ; <None>        ; --          ; --             ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
@@ -100,12 +100,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 4868 MB             ; 00:00:29                           ;
-; Fitter                    ; 00:00:40     ; 1.0                     ; 6774 MB             ; 00:01:09                           ;
-; Assembler                 ; 00:00:11     ; 1.0                     ; 4848 MB             ; 00:00:09                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 5159 MB             ; 00:00:06                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4750 MB             ; 00:00:01                           ;
-; Total                     ; 00:01:12     ; --                      ; --                  ; 00:01:54                           ;
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 4869 MB             ; 00:00:26                           ;
+; Fitter                    ; 00:00:17     ; 1.0                     ; 6243 MB             ; 00:00:29                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 4824 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 5071 MB             ; 00:00:05                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4744 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:39     ; --                      ; --                  ; 00:01:05                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -114,11 +114,11 @@ agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; NBROCHA          ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; NBROCHA          ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; NBROCHA          ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; NBROCHA          ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer        ; NBROCHA          ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-JV66H2N  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; DESKTOP-JV66H2N  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; DESKTOP-JV66H2N  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-JV66H2N  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-JV66H2N  ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

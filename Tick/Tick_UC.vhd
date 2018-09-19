@@ -24,7 +24,7 @@ Begin
 	process(Fim_h, Fim_t, total, serial)
 	begin
 		case Sreg is
-			when Espera   => if serial = '1' then Snext <= conta_h;
+			when Espera   => if serial = '0' then Snext <= conta_h;
 								  else                 Snext <= Espera;
 								  end if;
 				
@@ -46,7 +46,7 @@ Begin
 	
 	with Sreg select tick <= '1' when ativa, '0' when others;
 	
-	with Sreg select enable_c <= '1' when conta_h|conta_t, '0' when others;
+	with Sreg select enable_c <= '1' when conta_h|conta_t|ativa, '0' when others;
 	
 	with Sreg select reset_c <= '1' when ativa|Espera, '0' when others;
 	
