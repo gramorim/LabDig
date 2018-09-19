@@ -1,0 +1,18 @@
+Entity Tick_FD is
+	generic(Constant Clock_BaudRate : integer := 166;
+			  Constant Total          : integer := 11 );
+	port(Fim_h, Fim_t, Total, serial, Reset: in  std_logic;
+		  tick, Enable_c, Reset_c, Reset_r  : out std_logic);
+end Entity;
+
+Architecture Tick_FD_ark of Tick_FD is
+	Component Contador_m
+	generic (constant M: integer := 50;
+				constant N: integer := 6);
+   port (CLK, zera, conta : in STD_LOGIC;
+         Q                : out STD_LOGIC_VECTOR (N-1 downto 0);
+         fim              : out STD_LOGIC);
+	end component;
+begin
+	
+end Tick_FD_ark;

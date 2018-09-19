@@ -1,0 +1,8 @@
+Entity Tick is
+	generic(Constant BaudRate : integer := 300
+			  Constant Clock    : integer := 50000)
+	port(serial, clock : in  std_logic;
+	     tick          : out std_logic;)
+end Entity
+
+Architeture Tick_Ark of Tick is

@@ -1,0 +1,7 @@
+Entity Tick_UC is
+	port(Fim_h, Fim_t, Total, serial: in  std_logic
+		  tick                       : out std_logic)
+End Entity
+
+Architecture Tick_FD_arc of Tick_UC is
+ type State_type is (Espera, conta_h, ativa, desativa, conta_t);
