@@ -5,11 +5,12 @@ use IEEE.std_logic_arith.all;
 
 
 entity rx_serial_fd is
-    port (clock, reset                      :  in std_logic;
-          zerar, contar, carregar, deslocar :  in std_logic;
-          entrada_serial                    :  in std_logic;
-			 fim, paridade_ok, tick            :  out std_logic;
-		    hex1, hex0                        :  out std_logic_vector(6 downto 0));
+    port (clock, reset                      : in std_logic;
+          zerar, contar, carregar, deslocar : in std_logic;
+          entrada_serial                    : in std_logic;
+			 estado                            : in std_logic_vector(3 downto 0);
+			 fim, paridade_ok, tick            : out std_logic;
+		    hex1, hex0, hex_est               : out std_logic_vector(6 downto 0));
 end rx_serial_fd;
 
 architecture rx_serial_fd of rx_serial_fd is
@@ -87,6 +88,9 @@ begin
 	
 	H0: hex7seg 
 	port map(S(3 downto 0),'1',hex0);
+	
+	Hest: hex7seg
+	port map(estado,'1',hex_est);
    
 end rx_serial_fd;
 

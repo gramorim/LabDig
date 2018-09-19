@@ -6,25 +6,29 @@ use IEEE.std_logic_arith.all;
 entity rx_serial is
     port (
         clock, reset: in std_logic;
-        entrada_serial: in std_logic;
-		  hex1, hex0: out std_logic_vector (6 downto 0);
+        entrada_serial, partida: in std_logic;
+		  hex1, hex0, hex_est: out std_logic_vector (6 downto 0);
         pronto, paridade_ok, o_tick, o_serial : out std_logic
     );
 end rx_serial;
 
 architecture rx_serial_arch of rx_serial is
     signal s_zera, s_conta, s_carrega, s_desloca, s_tick, s_fim, s_reset: std_logic;
-    component rx_serial_uc port ( 
-			clock, reset, tick, fim: in STD_LOGIC;
-         zerar, contar, carregar, deslocar, pronto: out STD_LOGIC );
+	 signal s_estado                                                     : std_logic_vector(3 downto 0);
+	 
+    component rx_serial_uc 
+		port ( clock, reset, tick, fim, partida: in STD_LOGIC;
+             zerar, contar, carregar, deslocar, pronto: out STD_LOGIC;
+			    Estado : out std_logic_vector(3 downto 0));
     end component;
 
     component rx_serial_fd
-    port (clock, reset                      :  in std_logic;
-          zerar, contar, carregar, deslocar :  in std_logic;
-          entrada_serial                    :  in std_logic;
-			 fim, paridade_ok, tick            :  out std_logic;
-		    hex1, hex0                        :  out std_logic_vector(6 downto 0));
+    port (clock, reset                      : in std_logic;
+          zerar, contar, carregar, deslocar : in std_logic;
+          entrada_serial                    : in std_logic;
+			 estado                            : in std_logic_vector(3 downto 0);
+			 fim, paridade_ok, tick            : out std_logic;
+		    hex1, hex0, hex_est               : out std_logic_vector(6 downto 0));
 	 end component;
 	 
     
@@ -35,10 +39,10 @@ begin
 	s_reset <= reset;
 
     -- sinais reset e partida mapeados em botoes ativos em alto
-    U1: rx_serial_uc port map (clock, s_reset, s_tick, s_fim,
-                               s_zera, s_conta, s_carrega, s_desloca, pronto);
+    U1: rx_serial_uc port map (clock, s_reset, s_tick, s_fim, not partida,
+                               s_zera, s_conta, s_carrega, s_desloca, pronto, s_estado);
     U2: rx_serial_fd port map (clock, s_reset, s_zera, s_conta, s_carrega, s_desloca, entrada_serial, 
-                               s_fim, paridade_ok, s_tick, hex1, hex0);
+                               s_estado, s_fim, paridade_ok, s_tick, hex1, hex0, hex_est);
     o_tick   <= s_tick;
 	 o_serial <= entrada_serial;
 	 
