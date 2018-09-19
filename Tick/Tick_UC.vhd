@@ -5,8 +5,9 @@ use IEEE.std_logic_arith.all;
 use ieee.std_logic_unsigned.alL;
 
 Entity Tick_UC is
-	port(Fim_h, Fim_t, Total, serial, Reset, CLK: in  std_logic;
-		  tick, Enable_c, Reset_c, Reset_r       : out std_logic);
+	port(Fim_h, Fim_t, Total, serial, Reset, CLK : in  std_logic;
+		  tick, Enable_c, Reset_c, Reset_r        : out std_logic;
+		  estado                                  : out std_logic_vector(3 downto 0));
 End Entity;
 
 Architecture Tick_UC_arc of Tick_UC is
@@ -16,7 +17,7 @@ Architecture Tick_UC_arc of Tick_UC is
 Begin
 	process(CLK, Reset)
 	begin
-		if Reset = '1'                      then Sreg <= Espera;
+		if Reset = '1'                then Sreg <= Espera;
 		elsif CLK'event and CLK = '1' then Sreg <= Snext;
 		end if;
 	end process;
@@ -41,6 +42,9 @@ Begin
 			when conta_t  => if Fim_t = '1' then Snext <= ativa;
 			                 else                Snext <= conta_t;
 								  end if;
+			
+			when others   => Snext <= espera;
+			
 		end case;
 	end process;
 	
@@ -51,4 +55,12 @@ Begin
 	with Sreg select reset_c <= '1' when ativa|Espera, '0' when others;
 	
 	with Sreg select reset_r <= '1' when Espera, '0' when others;
+	
+	with Sreg select estado <= "0000" when espera,
+										"0001" when conta_h,
+										"0010" when ativa,
+										"0011" when saida,
+										"0100" when conta_t,
+										"1110" when others;
+	
 end Tick_UC_arc;

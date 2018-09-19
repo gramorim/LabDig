@@ -53,6 +53,7 @@ begin
       deslocar <= '1' when recepcao, '0' when others;
   with Sreg select
       contar <= '1' when recepcao, '0' when others;
+  
   with Sreg select
       pronto <= '1' when final, '0' when others;
 		
