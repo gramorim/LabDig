@@ -78,7 +78,7 @@ begin
 	port map (S(9 downto 3), paridade_ok, open);
 	
 	U4: ticker
-	generic map (5000000,23,11,4)
+	generic map (7,3,11,4)
 	port map (entrada_serial, clock, reset, tick, OPEN, OPEN, hex_ticker);
 	
 	s_hex1(3) <= '0';

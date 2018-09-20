@@ -23,23 +23,28 @@ begin
   end process;
 
   -- next-state logic
-  process (tick, fim, Sreg) 
+  process (tick, fim, partida, Sreg) 
   begin
     case Sreg is
       when inicial =>          if tick='1' then Snext <= preparacao;
-                               else                Snext <= inicial;
+                               else             Snext <= inicial;
                                end if;
+										 
       when preparacao =>       Snext <= espera;
+		
       when espera =>           if tick='1' then   Snext <= recepcao;
                                elsif fim='0' then Snext <= espera;
                                else               Snext <= final;
                                end if;
+										 
       when recepcao =>         if fim='0' then Snext <= espera;
                                else            Snext <= final;
                                end if;
-      when final =>            if partida = '1' then Snext <= Inicial;
-										 else                  Snext <= Final;
+										 
+      when final =>            if partida = '0' then Snext <= Final;
+										 else                  Snext <= Inicial;
 										 end if;
+										 
       when others =>           Snext <= inicial;
     end case;
   end process;
