@@ -5,13 +5,14 @@ use IEEE.std_logic_arith.all;
 use ieee.std_logic_unsigned.alL;
 
 Entity ticker is
-	generic(Constant Clk_BRate_m : integer := 10;
-			  Constant Clk_BRate_n : integer := 4;
+	generic(Constant Clk_BRate_m : integer := 7;
+			  Constant Clk_BRate_n : integer := 3;
 			  Constant Total_m     : integer := 11;
 			  Constant Total_n     : integer := 4);
 	port(serial, CLK, Reset    : in  std_logic;
 	     tick, o_CLK, o_Serial : out std_logic;
-		  hex_estado            : out std_logic_vector(6 downto 0));
+		  hex_estado            : out std_logic_vector(6 downto 0);
+		  o_estado              : out std_logic_vector(3 downto 0));
 end ticker;
 
 ArchiteCture Tick_Ark of ticker is
@@ -44,12 +45,13 @@ begin
 	FD: Tick_FD
 	generic map(Clk_BRate_m, Clk_BRate_n,
 		     Total_m, Total_n)
-	port map(s_tick, s_Enable_c, s_Reset_c, s_Reset_r, CLK, s_estado,
+	port map(s_tick, s_Enable_c, s_Reset_c, s_Reset_r, CLK, 
+				s_estado,
 				s_Fim_h, s_Fim_t, s_Total, hex_estado);
 		  
 	Tick <= s_Tick;
 	
-	o_CLK <= CLK;
+	o_CLK    <= CLK;
 	o_Serial <= serial;
-	
+	o_estado <= s_estado;
 end Tick_Ark;

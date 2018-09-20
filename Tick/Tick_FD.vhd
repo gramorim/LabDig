@@ -35,7 +35,7 @@ Architecture Tick_FD_ark of Tick_FD is
 	
 begin
 	Contador_tempo: Contador_m
-	generic map(Clk_BRate_m - 2, Clk_BRate_n)
+	generic map(Clk_BRate_m - 1, Clk_BRate_n)
    port map(CLK, reset_c, enable_c,
 				s_Tempo, fim_t);
 				

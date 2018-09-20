@@ -11,7 +11,7 @@ Entity Tick_UC is
 End Entity;
 
 Architecture Tick_UC_arc of Tick_UC is
-	type State_type is (Espera, conta_h, ativa, saida, conta_t);
+	type State_type is (Espera, conta_h, ativa, saida, conta_t, Espera_Saida);
 	Signal Sreg, Snext: State_type;
 
 Begin
@@ -35,7 +35,7 @@ Begin
 								  
 			when ativa    => Snext <= saida;
 			
-			when saida    => if Total = '1' then Snext <= Espera;
+			when saida    => if Total = '1' then Snext <= Espera_Saida;
 								  else                Snext <= conta_t;
 								  end if;
 								  
@@ -43,13 +43,17 @@ Begin
 			                 else                Snext <= conta_t;
 								  end if;
 			
+			when Espera_Saida => if serial = '0' then Snext <= Espera_Saida;
+										else                 Snext <= Espera;
+										end if;
+			
 			when others   => Snext <= espera;
 		end case;
 	end process;
 	
 	with Sreg select tick <= '1' when ativa, '0' when others;
 	
-	with Sreg select enable_c <= '1' when conta_h|conta_t|ativa, '0' when others;
+	with Sreg select enable_c <='0' when espera, '1' when others;
 	
 	with Sreg select reset_c <= '1' when ativa|Espera, '0' when others;
 	
@@ -60,5 +64,6 @@ Begin
 										"0010" when ativa,
 										"0011" when saida,
 										"0100" when conta_t,
+										"0101" when Espera_Saida,
 										"1110" when others;
 end Tick_UC_arc;
