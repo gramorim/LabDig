@@ -10,7 +10,8 @@ entity rx_serial_fd is
           entrada_serial                            : in std_logic;
 			 estado                                    : in std_logic_vector(3 downto 0);
 			 fim, paridade_ok, tick                    : out std_logic;
-		    hex1, hex0, hex_est, hex_cont, hex_ticker : out std_logic_vector(6 downto 0));
+		    hex1, hex0, hex_est, hex_cont, hex_ticker : out std_logic_vector(6 downto 0);
+			 o_dados                                   : out std_logic_vector(9 downto 0));
 end rx_serial_fd;
 
 architecture rx_serial_fd of rx_serial_fd is
@@ -67,7 +68,7 @@ begin
 				 entrada_serial,D,S);
 				 
    U2: contador_m 
-	generic map (M => 10, 
+	generic map (M => 11, 
 	             N => 4) 
 	port map (clock, 
 	          zerar, 
@@ -81,27 +82,23 @@ begin
 	generic map (7,3,11,4)
 	port map (entrada_serial, clock, reset, tick, OPEN, OPEN, hex_ticker);
 	
-	s_hex1(3) <= '0';
-	s_hex1(2) <= s(3);
-	s_hex1(1) <= s(4);
-	s_hex1(0) <= s(5);
-	 
-	H1: hex7seg 
-	port map(s_hex1,'1',hex1);
+	s_hex0 <= S(3 downto 0);
 	
-	s_hex0(3) <= s(6);
-	s_hex0(2) <= s(7);
-	s_hex0(1) <= s(8);
-	s_hex0(0) <= s(9);
+	s_hex1(3) <= '0';
+	s_hex1(2 downto 0) <= S(6 downto 4);
 	
 	H0: hex7seg 
 	port map(s_hex0,'1',hex0);
+	
+	H1: hex7seg 
+	port map(s_hex1,'1',hex1);
 	
 	Hest: hex7seg
 	port map(estado,'1',hex_est);
 	
 	Hcont: hex7seg
 	port map(s_cont,'1',hex_cont);
-   
+	
+	o_dados <= S;
 end rx_serial_fd;
 

@@ -37,7 +37,7 @@ begin
                                else               Snext <= final;
                                end if;
 										 
-      when recepcao =>         if fim='0' then Snext <= espera;
+      when recepcao =>         if fim = '0' then Snext <= espera;
                                else            Snext <= final;
                                end if;
 										 
