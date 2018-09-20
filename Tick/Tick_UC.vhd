@@ -44,7 +44,6 @@ Begin
 								  end if;
 			
 			when others   => Snext <= espera;
-			
 		end case;
 	end process;
 	
@@ -62,5 +61,4 @@ Begin
 										"0011" when saida,
 										"0100" when conta_t,
 										"1110" when others;
-	
 end Tick_UC_arc;

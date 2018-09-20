@@ -10,7 +10,7 @@ Entity Tick_FD is
 			  Constant Total_m     : integer := 11;
 			  Constant Total_n     : integer := 4);
 	port(tick, Enable_c, Reset_c, Reset_r, CLK : in  std_logic;
-		  estado                                : in std_logic_vector(3 downto 0);
+		  estado, counter                       : in std_logic_vector(3 downto 0);
 		  Fim_h, Fim_t, Total                   : out std_logic;
 		  hex_estado                            : out std_logic_vector(6 downto 0));
 end Entity;
@@ -32,14 +32,14 @@ Architecture Tick_FD_ark of Tick_FD is
          enable     : in std_logic;
          hex_output : out std_logic_vector(6 downto 0));
 	end component;
+	
 begin
-
 	Contador_tempo: Contador_m
-	generic map(Clk_BRate_m, Clk_BRate_n)
+	generic map(Clk_BRate_m - 2, Clk_BRate_n)
    port map(CLK, reset_c, enable_c,
 				s_Tempo, fim_t);
 				
-	s_Half <= conv_std_logic_vector(Clk_BRate_m/2,Clk_BRate_n);
+	s_Half <= conv_std_logic_vector(Clk_BRate_m/2 - 1,Clk_BRate_n);
 	
 	process(s_Half,s_tempo)
 	begin
@@ -49,11 +49,10 @@ begin
 	end process;
 	
 	Contador_tick: Contador_m
-	generic map(Total_m,Total_n)
+	generic map(Total_m+1,Total_n)
    port map(CLK, reset_r, tick,
 				s_Tick_counter, Total);
 	
 	HexEstado: hex7seg
 	port map(estado,'1',hex_estado);
-	
 end Tick_FD_ark;
