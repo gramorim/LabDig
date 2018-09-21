@@ -7,16 +7,18 @@ use IEEE.std_logic_arith.all;
 entity rx_serial_fd is
     port (clock, reset                              : in std_logic;
           zerar, contar, carregar, deslocar         : in std_logic;
-          entrada_serial                            : in std_logic;
+          entrada_serial, registra                  : in std_logic;
 			 estado                                    : in std_logic_vector(3 downto 0);
 			 fim, paridade_ok, tick                    : out std_logic;
 		    hex1, hex0, hex_est, hex_cont, hex_ticker : out std_logic_vector(6 downto 0);
-			 o_dados                                   : out std_logic_vector(9 downto 0));
+			 o_dados                                   : out std_logic_vector(9 downto 0);
+			 o_reg1, o_reg2                            : out std_logic_vector(6 downto 0));
 end rx_serial_fd;
 
 architecture rx_serial_fd of rx_serial_fd is
-   signal D, S   : std_logic_vector (9 downto 0);
+   signal D, S                   : std_logic_vector (9 downto 0);
 	signal s_hex1, s_hex0, s_cont : std_logic_vector (3 downto 0);
+	signal s_reg1, s_reg2         : std_logic_vector (6 downto 0);
      
 	component deslocador_n
 	generic (constant N: integer); -- numero de bits
@@ -55,7 +57,16 @@ architecture rx_serial_fd of rx_serial_fd is
 	     tick, o_CLK, o_Serial : out std_logic;
 		  hex_estado            : out std_logic_vector(6 downto 0));
 	end component;
+	
+	component registrador_n
+
+   generic (constant N : integer := 8);
+   port (clock, clear, enable : in  STD_LOGIC;
+         D                    : in  STD_LOGIC_VECTOR(N-1 downto 0);
+         Q                    : out STD_LOGIC_VECTOR (N-1 downto 0));
+	 end component;
 	 
+
 begin
 	D <= (others=>'1');
 	
@@ -99,6 +110,18 @@ begin
 	Hcont: hex7seg
 	port map(s_cont,'1',hex_cont);
 	
+	Reg1: registrador_n
+   generic map(7)
+   port map(clock, reset, registra,
+            S(6 downto 0), s_reg1);
+	
+	Reg2: registrador_n
+   generic map(7)
+   port map(clock, reset, registra,
+            s_reg1, s_reg2);
+	
 	o_dados <= S;
+	o_reg1 <= s_reg1;
+	o_reg2 <= s_reg2;	
 end rx_serial_fd;
 
