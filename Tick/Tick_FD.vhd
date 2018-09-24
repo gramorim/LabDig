@@ -5,19 +5,21 @@ use IEEE.std_logic_arith.all;
 use ieee.std_logic_unsigned.alL;
 
 Entity Tick_FD is
-	generic(Constant Clk_BRate_m : integer := 166;
-			  Constant Clk_BRate_n : integer := 8;
-			  Constant Total_m     : integer := 11;
-			  Constant Total_n     : integer := 4);
-	port(tick, Enable_c, Reset_c, Reset_r, CLK : in  std_logic;
-		  estado, counter                       : in std_logic_vector(3 downto 0);
-		  Fim_h, Fim_t, Total                   : out std_logic;
-		  hex_estado                            : out std_logic_vector(6 downto 0));
+	generic(Constant Ratio_m : integer := 166;
+			  Constant Ratio_n : integer := 8;
+			  Constant Total_m : integer := 11;
+			  Constant Total_n : integer := 4);
+			  
+	port(CLK, enable, reset: in  std_logic;
+		  o_Tick, o_fim     : out std_logic;
+		  Estado            : in  std_logic_vector(3 downto 0);
+		  Hex_Estado        : out std_logic_vector(6 downto 0));
 end Entity;
 
 Architecture Tick_FD_ark of Tick_FD is
-	signal s_Tempo, s_Half : std_logic_vector (Clk_BRate_n-1 downto 0);
+	signal s_Ratio, s_Half : std_logic_vector (Ratio_n-1 downto 0);
 	signal s_Tick_counter  : std_logic_vector (Total_n-1 downto 0);
+	signal s_fim, s_tick   : std_logic;
 
 	Component Contador_m
 		generic (constant M: integer;
@@ -28,30 +30,32 @@ Architecture Tick_FD_ark of Tick_FD is
 	end component;
 	
 	component hex7seg
-	port (binary     : in std_logic_vector(3 downto 0);
-         enable     : in std_logic;
-         hex_output : out std_logic_vector(6 downto 0));
+		port (binary     : in std_logic_vector(3 downto 0);
+				enable     : in std_logic;
+				hex_output : out std_logic_vector(6 downto 0));
 	end component;
 	
 begin
-	Contador_tempo: Contador_m
-	generic map(Clk_BRate_m - 1, Clk_BRate_n)
-   port map(CLK, reset_c, enable_c,
-				s_Tempo, fim_t);
+	Contador_ratio: Contador_m
+	generic map(Ratio_m, Ratio_n)
+   port map(CLK, reset, enable,
+				s_Ratio, s_fim);
 				
-	s_Half <= conv_std_logic_vector(Clk_BRate_m/2 - 1,Clk_BRate_n);
+	s_Half <= conv_std_logic_vector(Ratio_m/2 - 1,Ratio_n);
 	
-	process(s_Half,s_tempo)
+	process(s_Half,s_Ratio)
 	begin
-		if s_half = s_tempo then fim_h <= '1';
-		else                     fim_h <= '0';
+		if s_half = s_Ratio then s_tick <= '1';
+		else                     s_tick <= '0';
 		end if;
 	end process;
 	
+	o_tick <= s_tick;
+	
 	Contador_tick: Contador_m
 	generic map(Total_m+1,Total_n)
-   port map(CLK, reset_r, tick,
-				s_Tick_counter, Total);
+   port map(CLK, reset, s_fim,
+				OPEN, o_fim);
 	
 	HexEstado: hex7seg
 	port map(estado,'1',hex_estado);
