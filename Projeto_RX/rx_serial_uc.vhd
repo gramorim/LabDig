@@ -43,9 +43,10 @@ begin
 										 
 		when registra =>   Snext <= final;
 										 
-		when final =>      if partida = '0' then Snext <= Final;
-								 else                  Snext <= Inicial;
-								 end if;
+		--when final =>      if partida = '0' then Snext <= Final;
+		--						 else                  Snext <= Inicial;
+		--						 end if;
+		when final =>      Snext <= inicial;
 										 
 		when others =>     Snext <= inicial;
 	 end case;
