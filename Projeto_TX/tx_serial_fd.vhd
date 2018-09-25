@@ -5,8 +5,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 
-
-entity tx_serial_fd is
+Entity tx_serial_fd is
     port (clock, reset: in std_logic;
            zera, conta, carrega, desloca, paridade: in std_logic;
            dados_ascii: in std_logic_vector (6 downto 0);

@@ -7,8 +7,9 @@ use ieee.std_logic_unsigned.alL;
 Entity ticker is
 	generic(Constant Ratio_m : integer := 7;
 			  Constant Ratio_n : integer := 3;
-			  Constant Total_m     : integer := 11;
-			  Constant Total_n     : integer := 4);
+			  Constant Total_m : integer := 11;
+			  Constant Total_n : integer := 4);
+			  
 	port(CLK, serial, Reset    : in  std_logic;
 	     tick, o_CLK, o_Serial : out std_logic;
 		  hex_estado            : out std_logic_vector(6 downto 0);

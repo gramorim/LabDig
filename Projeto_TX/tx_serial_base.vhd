@@ -6,11 +6,11 @@ use IEEE.std_logic_arith.all;
 
 
 entity tx_serial_base is
-	port (clock, reset, partida, paridade  : in std_logic;
-         dados_ascii                      : in std_logic_vector (6 downto 0);
+	port (clock, reset, partida, paridade  : in  std_logic;
+         dados_ascii                      : in  std_logic_vector (6 downto 0);
          saida_serial, pronto             : out std_logic;
 			o_paridade, o_clock              : out std_logic;
-		   hex1, hex0                                : out std_logic_vector(6 downto 0));
+		   hex1, hex0                       : out std_logic_vector(6 downto 0));
 end tx_serial_base;
 
 architecture arch_tx_serial_base of tx_serial_base is
@@ -22,9 +22,9 @@ architecture arch_tx_serial_base of tx_serial_base is
    end component;
 
    component tx_serial_fd 
-   port (clock, reset                            :  in std_logic;
-         zera, conta, carrega, desloca, paridade :  in std_logic;
-         dados_ascii                             :  in std_logic_vector (6 downto 0);
+   port (clock, reset                            :  in  std_logic;
+         zera, conta, carrega, desloca, paridade :  in  std_logic;
+         dados_ascii                             :  in  std_logic_vector (6 downto 0);
          saida_serial, fim, o_paridade           :  out std_logic;
 		   hex1, hex0                              :  out std_logic_vector(6 downto 0));
     end component;

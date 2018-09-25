@@ -37,7 +37,7 @@ Begin
 		end case;
 	end process;
 	
-	with Sreg select enable  <= '1' when Gera, '1' when others;
+	with Sreg select enable  <= '1' when Gera, '0' when others;
 	
 	with Sreg select o_reset <= '1' when Inicio, '0' when others;
 	
