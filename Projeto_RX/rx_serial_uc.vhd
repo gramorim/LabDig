@@ -8,7 +8,7 @@ entity rx_serial_uc is
 end;
 
 architecture rx_serial_uc of rx_serial_uc is
-    type State_type is (inicial, preparacao, espera, recepcao, final, espera_leitura);
+    type State_type is (inicial, preparacao, espera, recepcao, final, leitura);
     signal Sreg, Snext: State_type;  -- current state and next state
 begin
 
@@ -26,26 +26,26 @@ begin
 	process (tick, fim, recebe_dado, Sreg) 
 	begin
 	 case Sreg is
-		when inicial =>        if tick='1' then Snext <= preparacao;
-								     else             Snext <= inicial;
-								     end if;
+		when inicial    => if tick='1' then Snext <= preparacao;
+								 else             Snext <= inicial;
+								 end if;
 										 
-		when preparacao =>     Snext <= espera;
+		when preparacao => Snext <= espera;
 		
-		when espera =>         if    tick ='1' then Snext <= recepcao;
-								     elsif fim  ='0' then Snext <= espera;
-								     else                 Snext <= final;
-								     end if;
+		when espera     => if    tick = '1' then Snext <= recepcao;
+								 elsif fim  = '0' then Snext <= espera;
+								 else                 Snext <= final;
+								 end if;
 										 
-		when recepcao =>       Snext <= espera;
+		when recepcao   => Snext <= espera;
 										 
-		when final =>          Snext <= espera_leitura;
+		when final      => if recebe_dado = '1' then Snext <= leitura;
+								 else                      Snext <= final;
+								 end if;
 								 
-		when espera_leitura => if recebe_dado = '0' then Snext <= espera_leitura;
-								     else                      Snext <= inicial;
-								     end if;
+		when leitura    => Snext <= inicial;
 										 
-		when others =>         Snext <= inicial;
+		when others     => Snext <= inicial;
 	 end case;
 	end process;
 	
@@ -53,22 +53,22 @@ begin
   
 	-- output logic (based on state only)
 	with Sreg select  -- output logic (based on state only)
-      carregar   <= '1'   when preparacao, '0' when others;
+      carregar   <= '1' when preparacao, '0' when others;
 		
 	with Sreg select
-      zerar      <= '1'      when preparacao, '0' when others;
+      zerar      <= '1' when preparacao, '0' when others;
 		
 	with Sreg select
-      deslocar   <= '1'   when recepcao, '0' when others;
+      deslocar   <= '1' when recepcao, '0' when others;
 		
 	with Sreg select
       contar     <= '1' when recepcao, '0' when others;
 	
 	with Sreg select
-		o_registra <= '1' when final, '0' when others;
+		o_registra <= '1' when leitura, '0' when others;
 		
 	with Sreg select
-      pronto     <= '1'     when espera_leitura, '0' when others;
+      pronto     <= '1' when final, '0' when others;
 		
 		
 	with Sreg select
@@ -76,7 +76,7 @@ begin
 					 "0001" when preparacao,
 					 "0010" when espera,
 					 "0011" when recepcao,
-					 "0100" when espera_leitura,
-					 "0101" when final,
+					 "0100" when final,
+					 "0101" when leitura,
 					 "1110" when others;
 end rx_serial_uc;

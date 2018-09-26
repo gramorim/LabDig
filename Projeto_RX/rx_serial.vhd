@@ -30,16 +30,17 @@ architecture rx_serial_arch of rx_serial is
     end component;
 
     component rx_serial_fd
-    port (clock, reset                              : in  std_logic;
-          zerar, contar, carregar, deslocar         : in  std_logic;
-          entrada_serial, registra                  : in  std_logic;
-			 estado                                    : in  std_logic_vector(3 downto 0);
-			 fim, paridade_ok, tick                    : out std_logic;
-		    hex1, hex0, hex_est, hex_cont, hex_ticker : out std_logic_vector(6 downto 0);
-			 o_dados                                   : out std_logic_vector(9 downto 0);
-			 o_reg1                                    : out std_logic_vector(7 downto 0));
+		 generic(constant Ratio_m : integer := 100;
+					constant Ratio_n : integer := 7);
+		 port (clock, reset                              : in  std_logic;
+				 zerar, contar, carregar, deslocar         : in  std_logic;
+				 entrada_serial, registra                  : in  std_logic;
+				 estado                                    : in  std_logic_vector(3 downto 0);
+				 fim, paridade_ok, tick                    : out std_logic;
+				 hex1, hex0, hex_est, hex_cont, hex_ticker : out std_logic_vector(6 downto 0);
+				 o_dados                                   : out std_logic_vector(9 downto 0);
+				 o_reg1                                    : out std_logic_vector(7 downto 0));
 	 end component;
-	 
     
 
     
@@ -48,15 +49,19 @@ begin
 	s_reset <= reset;
 
     -- sinais reset e partida mapeados em botoes ativos em alto
-    U1: rx_serial_uc port map (clock, s_reset, s_tick, s_fim, recebe_dado,
-                               s_zera, s_conta, s_carrega, s_desloca, 
-										 tem_dado_recebido, s_registra, s_estado);
+    UC: rx_serial_uc 
+	 port map(clock, s_reset, s_tick, s_fim, recebe_dado,
+             s_zera, s_conta, s_carrega, s_desloca, 
+			    tem_dado_recebido, s_registra, s_estado);
     
-	 U2: rx_serial_fd port map (clock, s_reset, s_zera, s_conta, s_carrega, 
-										 s_desloca, entrada_serial, s_registra,
-                               s_estado, s_fim, s_paridade_ok, s_tick, 
-										 hex1, hex0, hex_est, hex_cont, hex_ticker,
-										 o_dados, s_dado_recebido);
+	 FD: rx_serial_fd 
+	 generic map(Ratio_m,Ratio_n)
+	 port map(clock, s_reset, s_zera, s_conta, s_carrega, 
+				 s_desloca, entrada_serial, s_registra,
+             s_estado, s_fim, s_paridade_ok, s_tick, 
+				 hex1, hex0, hex_est, hex_cont, hex_ticker,
+				 o_dados, s_dado_recebido);
+				 
     o_tick   <= s_tick;
 	 o_serial <= entrada_serial;
 	 o_fim    <= s_fim;
