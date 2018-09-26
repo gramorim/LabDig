@@ -10,7 +10,7 @@ entity tx_serial is
 				constant Ratio_n : integer := 7);
     port(clock, reset, partida, paridade : in  std_logic;
          dados_ascii                     : in  std_logic_vector (6 downto 0);
-         saida_serial, pronto            : out std_logic);
+         saida_serial, pronto, o_tick    : out std_logic);
 end tx_serial;
 
 architecture tx_serial of tx_serial is
@@ -59,5 +59,6 @@ begin
     -- U3: contador_m generic map (M => 10, N => 4) port map (clock, s_zera, '1', open, s_tick);
     U4: edge_detector port map (clock, partida, s_partida);
     
+	 o_tick <= s_tick;
 end tx_serial;
 
