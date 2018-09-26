@@ -4,14 +4,15 @@ use IEEE.std_logic_arith.all;
 
 
 entity rx_serial is
-    port (
-        clock, reset: in std_logic;
-        entrada_serial, partida: in std_logic;
-		  hex1, hex0, hex_est, hex_cont, hex_ticker    : out std_logic_vector(6 downto 0);
-        pronto, paridade_ok, o_tick, o_serial, O_FIM : out std_logic;
-		  o_estado                                     : out std_logic_vector(3 downto 0);
-		  o_dados                                      : out std_logic_vector(9 downto 0);
-		  o_reg1, o_reg2                               : out std_logic_vector(6 downto 0));
+	 generic(constant Ratio_m : integer := 100;
+				constant Ratio_n : integer := 7);
+    port (clock, reset: in std_logic;
+          entrada_serial, partida: in std_logic;
+		    hex1, hex0, hex_est, hex_cont, hex_ticker    : out std_logic_vector(6 downto 0);
+          pronto, paridade_ok, o_tick, o_serial, O_FIM : out std_logic;
+		    o_estado                                     : out std_logic_vector(3 downto 0);
+		    o_dados                                      : out std_logic_vector(9 downto 0);
+		    o_reg1, o_reg2                               : out std_logic_vector(6 downto 0));
 end rx_serial;
 
 architecture rx_serial_arch of rx_serial is

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Tick
-Wed Sep 19 11:53:08 2018
+Wed Sep 26 09:19:34 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -13,17 +13,16 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |ticker|Tick_UC:UC|Sreg
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |ticker
- 11. Parameter Settings for User Entity Instance: Tick_FD:FD
- 12. Parameter Settings for User Entity Instance: Tick_FD:FD|contador_m:Contador_tempo
- 13. Parameter Settings for User Entity Instance: Tick_FD:FD|contador_m:Contador_tick
- 14. Port Connectivity Checks: "Tick_FD:FD|hex7seg:HexEstado"
- 15. Port Connectivity Checks: "Tick_FD:FD|contador_m:Contador_tick"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |ticker
+ 10. Parameter Settings for User Entity Instance: Tick_FD:FD
+ 11. Parameter Settings for User Entity Instance: Tick_FD:FD|contador_m:Contador_ratio
+ 12. Parameter Settings for User Entity Instance: Tick_FD:FD|contador_m:Contador_tick
+ 13. Port Connectivity Checks: "Tick_FD:FD|hex7seg:HexEstado"
+ 14. Port Connectivity Checks: "Tick_FD:FD|contador_m:Contador_tick"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -50,14 +49,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Sep 19 11:53:08 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed Sep 26 09:19:34 2018       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; Tick                                        ;
 ; Top-level Entity Name           ; ticker                                      ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 13                                          ;
-; Total pins                      ; 13                                          ;
+; Total registers                 ; 8                                           ;
+; Total pins                      ; 17                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -174,44 +173,44 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                             ;
-+----------------------------------+-----------------+-----------------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+-----------------------+-------------------------------------------------------------+---------+
-; ticker.vhd                       ; yes             ; User VHDL File        ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd     ;         ;
-; contador_m.vhd                   ; yes             ; User VHDL File        ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/contador_m.vhd ;         ;
-; Tick_UC.vhd                      ; yes             ; User VHDL File        ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_UC.vhd    ;         ;
-; Tick_FD.vhd                      ; yes             ; User VHDL File        ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd    ;         ;
-; hex7seg.vhd                      ; yes             ; Auto-Found VHDL File  ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/hex7seg.vhd    ;         ;
-+----------------------------------+-----------------+-----------------------+-------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; ../Modulos/hex7seg.vhd           ; yes             ; User VHDL File  ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/Modulos/hex7seg.vhd    ;         ;
+; ../Modulos/contador_m.vhd        ; yes             ; User VHDL File  ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/Modulos/contador_m.vhd ;         ;
+; ticker.vhd                       ; yes             ; User VHDL File  ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd        ;         ;
+; Tick_UC.vhd                      ; yes             ; User VHDL File  ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_UC.vhd       ;         ;
+; Tick_FD.vhd                      ; yes             ; User VHDL File  ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd       ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 12        ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 21        ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 1         ;
-;     -- 5 input functions                    ; 1         ;
-;     -- 4 input functions                    ; 13        ;
-;     -- <=3 input functions                  ; 6         ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 13        ;
-;                                             ;           ;
-; I/O pins                                    ; 13        ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 14        ;
-; Total fan-out                               ; 144       ;
-; Average fan-out                             ; 2.40      ;
-+---------------------------------------------+-----------+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimate of Logic utilization (ALMs needed) ; 6               ;
+;                                             ;                 ;
+; Combinational ALUT usage for logic          ; 10              ;
+;     -- 7 input functions                    ; 0               ;
+;     -- 6 input functions                    ; 1               ;
+;     -- 5 input functions                    ; 1               ;
+;     -- 4 input functions                    ; 2               ;
+;     -- <=3 input functions                  ; 6               ;
+;                                             ;                 ;
+; Dedicated logic registers                   ; 8               ;
+;                                             ;                 ;
+; I/O pins                                    ; 17              ;
+;                                             ;                 ;
+; Total DSP Blocks                            ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; Tick_UC:UC|Sreg ;
+; Maximum fan-out                             ; 13              ;
+; Total fan-out                               ; 87              ;
+; Average fan-out                             ; 1.67            ;
++---------------------------------------------+-----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -219,28 +218,13 @@ agreement for further details.
 +-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                          ; Entity Name ; Library Name ;
 +-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------+-------------+--------------+
-; |ticker                           ; 21 (0)              ; 13 (0)                    ; 0                 ; 0          ; 13   ; 0            ; |ticker                                      ; ticker      ; work         ;
-;    |Tick_FD:FD|                   ; 14 (0)              ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ticker|Tick_FD:FD                           ; Tick_FD     ; work         ;
-;       |contador_m:Contador_tempo| ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |ticker|Tick_FD:FD|contador_m:Contador_tempo ; contador_m  ; work         ;
-;       |contador_m:Contador_tick|  ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |ticker|Tick_FD:FD|contador_m:Contador_tick  ; contador_m  ; work         ;
-;       |hex7seg:HexEstado|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ticker|Tick_FD:FD|hex7seg:HexEstado         ; hex7seg     ; work         ;
-;    |Tick_UC:UC|                   ; 7 (7)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |ticker|Tick_UC:UC                           ; Tick_UC     ; work         ;
+; |ticker                           ; 10 (0)              ; 8 (0)                     ; 0                 ; 0          ; 17   ; 0            ; |ticker                                      ; ticker      ; work         ;
+;    |Tick_FD:FD|                   ; 9 (1)               ; 7 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ticker|Tick_FD:FD                           ; Tick_FD     ; work         ;
+;       |contador_m:Contador_ratio| ; 4 (4)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |ticker|Tick_FD:FD|contador_m:Contador_ratio ; contador_m  ; work         ;
+;       |contador_m:Contador_tick|  ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |ticker|Tick_FD:FD|contador_m:Contador_tick  ; contador_m  ; work         ;
+;    |Tick_UC:UC|                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |ticker|Tick_UC:UC                           ; Tick_UC     ; work         ;
 +-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------+
-; State Machine - |ticker|Tick_UC:UC|Sreg                                            ;
-+--------------+--------------+------------+------------+--------------+-------------+
-; Name         ; Sreg.conta_t ; Sreg.saida ; Sreg.ativa ; Sreg.conta_h ; Sreg.Espera ;
-+--------------+--------------+------------+------------+--------------+-------------+
-; Sreg.Espera  ; 0            ; 0          ; 0          ; 0            ; 0           ;
-; Sreg.conta_h ; 0            ; 0          ; 0          ; 1            ; 1           ;
-; Sreg.ativa   ; 0            ; 0          ; 1          ; 0            ; 1           ;
-; Sreg.saida   ; 0            ; 1          ; 0          ; 0            ; 1           ;
-; Sreg.conta_t ; 1            ; 0          ; 0          ; 0            ; 1           ;
-+--------------+--------------+------------+------------+--------------+-------------+
 
 
 +------------------------------------------------------+
@@ -248,12 +232,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 13    ;
+; Total registers                              ; 8     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 13    ;
+; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 6     ;
+; Number of registers using Clock Enable       ; 3     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -263,8 +247,8 @@ Encoding Type:  One-Hot
 +----------------+-------+-----------------------------------------------+
 ; Parameter Name ; Value ; Type                                          ;
 +----------------+-------+-----------------------------------------------+
-; Clk_BRate_m    ; 10    ; Signed Integer                                ;
-; Clk_BRate_n    ; 4     ; Signed Integer                                ;
+; Ratio_m        ; 7     ; Signed Integer                                ;
+; Ratio_n        ; 3     ; Signed Integer                                ;
 ; Total_m        ; 11    ; Signed Integer                                ;
 ; Total_n        ; 4     ; Signed Integer                                ;
 +----------------+-------+-----------------------------------------------+
@@ -276,8 +260,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------+
 ; Parameter Name ; Value ; Type                           ;
 +----------------+-------+--------------------------------+
-; clk_brate_m    ; 10    ; Signed Integer                 ;
-; clk_brate_n    ; 4     ; Signed Integer                 ;
+; ratio_m        ; 7     ; Signed Integer                 ;
+; ratio_n        ; 3     ; Signed Integer                 ;
 ; total_m        ; 11    ; Signed Integer                 ;
 ; total_n        ; 4     ; Signed Integer                 ;
 +----------------+-------+--------------------------------+
@@ -285,12 +269,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Tick_FD:FD|contador_m:Contador_tempo ;
+; Parameter Settings for User Entity Instance: Tick_FD:FD|contador_m:Contador_ratio ;
 +----------------+-------+----------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                     ;
 +----------------+-------+----------------------------------------------------------+
-; m              ; 10    ; Signed Integer                                           ;
-; n              ; 4     ; Signed Integer                                           ;
+; m              ; 7     ; Signed Integer                                           ;
+; n              ; 3     ; Signed Integer                                           ;
 +----------------+-------+----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -300,7 +284,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+---------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                    ;
 +----------------+-------+---------------------------------------------------------+
-; m              ; 11    ; Signed Integer                                          ;
+; m              ; 12    ; Signed Integer                                          ;
 ; n              ; 4     ; Signed Integer                                          ;
 +----------------+-------+---------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -329,22 +313,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 13                          ;
-;     CLR               ; 7                           ;
-;     ENA CLR           ; 6                           ;
-; arriav_lcell_comb     ; 23                          ;
-;     normal            ; 23                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 13                          ;
+; arriav_ff             ; 8                           ;
+;     CLR               ; 5                           ;
+;     ENA CLR           ; 3                           ;
+; arriav_lcell_comb     ; 12                          ;
+;     normal            ; 12                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 2                           ;
 ;         5 data inputs ; 1                           ;
 ;         6 data inputs ; 1                           ;
-; boundary_port         ; 13                          ;
+; boundary_port         ; 17                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.41                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.83                        ;
 +-----------------------+-----------------------------+
 
 
@@ -363,48 +346,49 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Sep 19 11:52:56 2018
+    Info: Processing started: Wed Sep 26 09:19:22 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Tick -c Tick
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/modulos/hex7seg.vhd
+    Info (12022): Found design unit 1: hex7seg-hex7seg File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Modulos/hex7seg.vhd Line: 13
+    Info (12023): Found entity 1: hex7seg File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Modulos/hex7seg.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/modulos/contador_m.vhd
+    Info (12022): Found design unit 1: contador_m-contador_m_arch File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Modulos/contador_m.vhd Line: 22
+    Info (12023): Found entity 1: contador_m File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Modulos/contador_m.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file ticker.vhd
-    Info (12022): Found design unit 1: ticker-Tick_Ark File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 17
+    Info (12022): Found design unit 1: ticker-Tick_Ark File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 19
     Info (12023): Found entity 1: ticker File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file comparador.vhd
-    Info (12022): Found design unit 1: Comparador-Comparador_ark File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Comparador.vhd Line: 13
-    Info (12023): Found entity 1: Comparador File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Comparador.vhd Line: 7
-Info (12021): Found 2 design units, including 1 entities, in source file contador_m.vhd
-    Info (12022): Found design unit 1: contador_m-contador_m_arch File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/contador_m.vhd Line: 22
-    Info (12023): Found entity 1: contador_m File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/contador_m.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file tick_uc.vhd
     Info (12022): Found design unit 1: Tick_UC-Tick_UC_arc File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_UC.vhd Line: 13
     Info (12023): Found entity 1: Tick_UC File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_UC.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file tick_fd.vhd
-    Info (12022): Found design unit 1: Tick_FD-Tick_FD_ark File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd Line: 18
+    Info (12022): Found design unit 1: Tick_FD-Tick_FD_ark File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd Line: 19
     Info (12023): Found entity 1: Tick_FD File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd Line: 7
 Info (12127): Elaborating entity "ticker" for the top level hierarchy
-Info (12128): Elaborating entity "Tick_UC" for hierarchy "Tick_UC:UC" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 40
+Info (12128): Elaborating entity "Tick_UC" for hierarchy "Tick_UC:UC" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 42
 Warning (10492): VHDL Process Statement warning at Tick_UC.vhd(27): signal "Sreg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_UC.vhd Line: 27
-Info (12128): Elaborating entity "Tick_FD" for hierarchy "Tick_FD:FD" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 44
-Warning (10036): Verilog HDL or VHDL warning at Tick_FD.vhd(20): object "s_Tick_counter" assigned a value but never read File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd Line: 20
-Info (12128): Elaborating entity "contador_m" for hierarchy "Tick_FD:FD|contador_m:Contador_tempo" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd Line: 37
-Info (12128): Elaborating entity "contador_m" for hierarchy "Tick_FD:FD|contador_m:Contador_tick" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd Line: 51
-Warning (12125): Using design file hex7seg.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: hex7seg-hex7seg File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/hex7seg.vhd Line: 13
-    Info (12023): Found entity 1: hex7seg File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/hex7seg.vhd Line: 5
-Info (12128): Elaborating entity "hex7seg" for hierarchy "Tick_FD:FD|hex7seg:HexEstado" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd Line: 56
+Info (12128): Elaborating entity "Tick_FD" for hierarchy "Tick_FD:FD" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 47
+Info (12128): Elaborating entity "contador_m" for hierarchy "Tick_FD:FD|contador_m:Contador_ratio" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd Line: 39
+Info (12128): Elaborating entity "contador_m" for hierarchy "Tick_FD:FD|contador_m:Contador_tick" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd Line: 55
+Info (12128): Elaborating entity "hex7seg" for hierarchy "Tick_FD:FD|hex7seg:HexEstado" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/Tick_FD.vhd Line: 60
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "hex_estado[1]" is stuck at GND File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 14
+    Warning (13410): Pin "hex_estado[1]" is stuck at GND File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 15
+    Warning (13410): Pin "hex_estado[2]" is stuck at GND File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 15
+    Warning (13410): Pin "hex_estado[6]" is stuck at VCC File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 15
+    Warning (13410): Pin "o_estado[1]" is stuck at GND File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 16
+    Warning (13410): Pin "o_estado[2]" is stuck at GND File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 16
+    Warning (13410): Pin "o_estado[3]" is stuck at GND File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Tick/ticker.vhd Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 35 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 27 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 22 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4870 megabytes
-    Info: Processing ended: Wed Sep 19 11:53:08 2018
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 10 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Wed Sep 26 09:19:34 2018
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:27
 

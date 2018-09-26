@@ -5,6 +5,8 @@ use IEEE.std_logic_arith.all;
 
 
 entity rx_serial_fd is
+	 generic(constant Ratio_m : integer := 100;
+				constant Ratio_n : integer := 7);
     port (clock, reset                              : in std_logic;
           zerar, contar, carregar, deslocar         : in std_logic;
           entrada_serial, registra                  : in std_logic;
@@ -49,10 +51,10 @@ architecture rx_serial_fd of rx_serial_fd is
    end component; 
 	
 	component ticker
-	generic(Constant Clk_BRate_m : integer;
-			  Constant Clk_BRate_n : integer;
-			  Constant Total_m     : integer;
-			  Constant Total_n     : integer);
+	generic(Constant Ratio_m : integer := 7;
+			  Constant Ratio_n : integer := 3;
+			  Constant Total_m : integer := 11;
+			  Constant Total_n : integer := 4);
 	port(serial, CLK, Reset    : in  std_logic;
 	     tick, o_CLK, o_Serial : out std_logic;
 		  hex_estado            : out std_logic_vector(6 downto 0));
@@ -90,7 +92,7 @@ begin
 	port map (S(9 downto 3), paridade_ok, open);
 	
 	U4: ticker
-	generic map (7,3,11,4)
+	generic map (Ratio_m,Ratio_n,11,4)
 	port map (entrada_serial, clock, reset, tick, OPEN, OPEN, hex_ticker);
 	
 	s_hex0 <= S(3 downto 0);
