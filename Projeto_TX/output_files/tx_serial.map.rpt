@@ -1,5 +1,5 @@
 Analysis & Synthesis report for tx_serial
-Wed Sep 26 09:22:23 2018
+Wed Sep 26 12:27:57 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -53,14 +53,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Sep 26 09:22:23 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed Sep 26 12:27:57 2018       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; tx_serial                                   ;
 ; Top-level Entity Name           ; tx_serial                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 27                                          ;
-; Total pins                      ; 13                                          ;
+; Total pins                      ; 15                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -196,25 +196,25 @@ agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 19          ;
+; Estimate of Logic utilization (ALMs needed) ; 20          ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 33          ;
+; Combinational ALUT usage for logic          ; 35          ;
 ;     -- 7 input functions                    ; 0           ;
 ;     -- 6 input functions                    ; 4           ;
 ;     -- 5 input functions                    ; 1           ;
 ;     -- 4 input functions                    ; 5           ;
-;     -- <=3 input functions                  ; 23          ;
+;     -- <=3 input functions                  ; 25          ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 27          ;
 ;                                             ;             ;
-; I/O pins                                    ; 13          ;
+; I/O pins                                    ; 15          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
 ; Maximum fan-out                             ; 27          ;
-; Total fan-out                               ; 214         ;
-; Average fan-out                             ; 2.49        ;
+; Total fan-out                               ; 222         ;
+; Average fan-out                             ; 2.41        ;
 +---------------------------------------------+-------------+
 
 
@@ -223,13 +223,13 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------+---------------+--------------+
-; |tx_serial                 ; 33 (0)              ; 27 (0)                    ; 0                 ; 0          ; 13   ; 0            ; |tx_serial                                 ; tx_serial     ; work         ;
-;    |contador_m:U3|         ; 11 (11)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |tx_serial|contador_m:U3                   ; contador_m    ; work         ;
+; |tx_serial                 ; 35 (0)              ; 27 (0)                    ; 0                 ; 0          ; 15   ; 0            ; |tx_serial                                 ; tx_serial     ; work         ;
+;    |contador_m:U3|         ; 12 (12)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |tx_serial|contador_m:U3                   ; contador_m    ; work         ;
 ;    |edge_detector:U4|      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |tx_serial|edge_detector:U4                ; edge_detector ; work         ;
 ;    |tx_serial_fd:U2|       ; 17 (1)              ; 14 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |tx_serial|tx_serial_fd:U2                 ; tx_serial_fd  ; work         ;
 ;       |contador_m:U2|      ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |tx_serial|tx_serial_fd:U2|contador_m:U2   ; contador_m    ; work         ;
 ;       |deslocador_n:U1|    ; 11 (11)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |tx_serial|tx_serial_fd:U2|deslocador_n:U1 ; deslocador_n  ; work         ;
-;    |tx_serial_uc:U1|       ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |tx_serial|tx_serial_uc:U1                 ; tx_serial_uc  ; work         ;
+;    |tx_serial_uc:U1|       ; 6 (6)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |tx_serial|tx_serial_uc:U1                 ; tx_serial_uc  ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -375,17 +375,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     CLR               ; 14                          ;
 ;     ENA CLR           ; 12                          ;
 ;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 34                          ;
+; arriav_lcell_comb     ; 36                          ;
 ;     arith             ; 7                           ;
 ;         1 data inputs ; 7                           ;
-;     normal            ; 27                          ;
+;     normal            ; 29                          ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 3                           ;
+;         2 data inputs ; 5                           ;
 ;         3 data inputs ; 13                          ;
 ;         4 data inputs ; 5                           ;
 ;         5 data inputs ; 1                           ;
 ;         6 data inputs ; 4                           ;
-; boundary_port         ; 13                          ;
+; boundary_port         ; 15                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.60                        ;
 ; Average LUT depth     ; 1.55                        ;
@@ -407,7 +407,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Sep 26 09:22:10 2018
+    Info: Processing started: Wed Sep 26 12:27:45 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tx_serial -c tx_serial
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -445,14 +445,14 @@ Info (12128): Elaborating entity "edge_detector" for hierarchy "edge_detector:U4
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 47 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 51 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 34 logic cells
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 36 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4876 megabytes
-    Info: Processing ended: Wed Sep 26 09:22:23 2018
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Wed Sep 26 12:27:57 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
 
 

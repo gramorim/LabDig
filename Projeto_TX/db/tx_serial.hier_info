@@ -14,8 +14,10 @@ dados_ascii[3] => tx_serial_fd:U2.dados_ascii[3]
 dados_ascii[4] => tx_serial_fd:U2.dados_ascii[4]
 dados_ascii[5] => tx_serial_fd:U2.dados_ascii[5]
 dados_ascii[6] => tx_serial_fd:U2.dados_ascii[6]
-saida_serial << tx_serial_fd:U2.saida_serial
-pronto << tx_serial_uc:U1.pronto
+saida_serial <= tx_serial_fd:U2.saida_serial
+pronto <= tx_serial_uc:U1.pronto
+o_tick <= contador_m:U3.fim
+transm_andamento <= tx_serial_uc:U1.em_andamento
 
 
 |tx_serial|tx_serial_uc:U1
@@ -35,6 +37,7 @@ conta <= conta.DB_MAX_OUTPUT_PORT_TYPE
 carrega <= carrega.DB_MAX_OUTPUT_PORT_TYPE
 desloca <= desloca.DB_MAX_OUTPUT_PORT_TYPE
 pronto <= pronto.DB_MAX_OUTPUT_PORT_TYPE
+em_andamento <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |tx_serial|tx_serial_fd:U2

@@ -1,5 +1,5 @@
 Flow report for tx_serial
-Wed Sep 26 09:22:53 2018
+Wed Sep 26 12:28:29 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Sep 26 09:22:47 2018       ;
+; Flow Status                     ; Successful - Wed Sep 26 12:28:22 2018       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; tx_serial                                   ;
 ; Top-level Entity Name           ; tx_serial                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 19 / 18,480 ( < 1 % )                       ;
+; Logic utilization (in ALMs)     ; 20 / 18,480 ( < 1 % )                       ;
 ; Total registers                 ; 31                                          ;
-; Total pins                      ; 13 / 224 ( 6 % )                            ;
+; Total pins                      ; 15 / 224 ( 7 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 66 ( 0 % )                              ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/26/2018 09:22:11 ;
+; Start date & time ; 09/26/2018 12:27:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; tx_serial           ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 233360577867549.153796453108744        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 233360577867549.153797566507920        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -96,11 +96,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 4876 MB             ; 00:00:26                           ;
-; Fitter                    ; 00:00:17     ; 1.0                     ; 6249 MB             ; 00:00:30                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 4833 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 5057 MB             ; 00:00:05                           ;
-; Total                     ; 00:00:38     ; --                      ; --                  ; 00:01:05                           ;
+; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 4871 MB             ; 00:00:25                           ;
+; Fitter                    ; 00:00:18     ; 1.0                     ; 6299 MB             ; 00:00:31                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 4828 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 5084 MB             ; 00:00:05                           ;
+; Total                     ; 00:00:40     ; --                      ; --                  ; 00:01:05                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

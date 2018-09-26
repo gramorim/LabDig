@@ -12,6 +12,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "o_tick",
+					"strict" : false
+				},
+				{
+					"name" : "transm_andamento",
+					"strict" : false
+				},
+				{
 					"name" : "clock",
 					"strict" : false
 				},
