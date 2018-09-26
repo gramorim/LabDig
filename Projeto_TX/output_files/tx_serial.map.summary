@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Sep 18 15:24:55 2018
-Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Analysis & Synthesis Status : Successful - Wed Sep 26 09:22:23 2018
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : tx_serial
 Top-level Entity Name : tx_serial
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 29
+Total registers : 27
 Total pins : 13
 Total virtual pins : 0
 Total block memory bits : 0

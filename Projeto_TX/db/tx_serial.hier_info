@@ -14,8 +14,8 @@ dados_ascii[3] => tx_serial_fd:U2.dados_ascii[3]
 dados_ascii[4] => tx_serial_fd:U2.dados_ascii[4]
 dados_ascii[5] => tx_serial_fd:U2.dados_ascii[5]
 dados_ascii[6] => tx_serial_fd:U2.dados_ascii[6]
-saida_serial <= tx_serial_fd:U2.saida_serial
-pronto <= tx_serial_uc:U1.pronto
+saida_serial << tx_serial_fd:U2.saida_serial
+pronto << tx_serial_uc:U1.pronto
 
 
 |tx_serial|tx_serial_uc:U1
@@ -156,8 +156,6 @@ CLK => IQ[3].CLK
 CLK => IQ[4].CLK
 CLK => IQ[5].CLK
 CLK => IQ[6].CLK
-CLK => IQ[7].CLK
-CLK => IQ[8].CLK
 zera => IQ[0].ACLR
 zera => IQ[1].ACLR
 zera => IQ[2].ACLR
@@ -165,11 +163,7 @@ zera => IQ[3].ACLR
 zera => IQ[4].ACLR
 zera => IQ[5].ACLR
 zera => IQ[6].ACLR
-zera => IQ[7].ACLR
-zera => IQ[8].ACLR
 conta => IQ[0].ENA
-conta => IQ[8].ENA
-conta => IQ[7].ENA
 conta => IQ[6].ENA
 conta => IQ[5].ENA
 conta => IQ[4].ENA
@@ -183,8 +177,6 @@ Q[3] <= IQ[3].DB_MAX_OUTPUT_PORT_TYPE
 Q[4] <= IQ[4].DB_MAX_OUTPUT_PORT_TYPE
 Q[5] <= IQ[5].DB_MAX_OUTPUT_PORT_TYPE
 Q[6] <= IQ[6].DB_MAX_OUTPUT_PORT_TYPE
-Q[7] <= IQ[7].DB_MAX_OUTPUT_PORT_TYPE
-Q[8] <= IQ[8].DB_MAX_OUTPUT_PORT_TYPE
 fim <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 
 
