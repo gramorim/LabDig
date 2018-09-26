@@ -1,5 +1,5 @@
 Fitter report for rx_serial
-Wed Sep 26 12:08:32 2018
+Wed Sep 26 12:15:22 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -64,7 +64,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Wed Sep 26 12:08:32 2018       ;
+; Fitter Status                   ; Successful - Wed Sep 26 12:15:22 2018       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; rx_serial                                   ;
 ; Top-level Entity Name           ; rx_serial                                   ;
@@ -72,8 +72,8 @@ agreement for further details.
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 42 / 18,480 ( < 1 % )                       ;
-; Total registers                 ; 52                                          ;
-; Total pins                      ; 66 / 224 ( 29 % )                           ;
+; Total registers                 ; 50                                          ;
+; Total pins                      ; 65 / 224 ( 29 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
 ; Total RAM Blocks                ; 0 / 308 ( 0 % )                             ;
@@ -161,7 +161,7 @@ agreement for further details.
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.5%      ;
 ;     Processor 3            ;   0.5%      ;
-;     Processor 4            ;   0.5%      ;
+;     Processor 4            ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -172,17 +172,15 @@ agreement for further details.
 +----------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+--------------------------------------------------------------------------------+------------------+-----------------------+
 ; clock~inputCLKENA0                                                   ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                                                ;                  ;                       ;
 ; rx_serial_fd:U2|contador_m:U2|IQ[0]                                  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|contador_m:U2|IQ[0]~DUPLICATE                                  ;                  ;                       ;
-; rx_serial_fd:U2|contador_m:U2|IQ[3]                                  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|contador_m:U2|IQ[3]~DUPLICATE                                  ;                  ;                       ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[1]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|deslocador_n:U1|IQ[1]~DUPLICATE                                ;                  ;                       ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[2]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|deslocador_n:U1|IQ[2]~DUPLICATE                                ;                  ;                       ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[4]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|deslocador_n:U1|IQ[4]~DUPLICATE                                ;                  ;                       ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[6]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|deslocador_n:U1|IQ[6]~DUPLICATE                                ;                  ;                       ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[8]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|deslocador_n:U1|IQ[8]~DUPLICATE                                ;                  ;                       ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[1] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[1]~DUPLICATE ;                  ;                       ;
+; rx_serial_fd:U2|contador_m:U2|IQ[1]                                  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|contador_m:U2|IQ[1]~DUPLICATE                                  ;                  ;                       ;
+; rx_serial_fd:U2|contador_m:U2|IQ[2]                                  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|contador_m:U2|IQ[2]~DUPLICATE                                  ;                  ;                       ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[0]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|deslocador_n:U1|IQ[0]~DUPLICATE                                ;                  ;                       ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[3]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|deslocador_n:U1|IQ[3]~DUPLICATE                                ;                  ;                       ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[5]                                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|deslocador_n:U1|IQ[5]~DUPLICATE                                ;                  ;                       ;
 ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[4] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[4]~DUPLICATE ;                  ;                       ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[5] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[5]~DUPLICATE ;                  ;                       ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[6] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[6]~DUPLICATE ;                  ;                       ;
 ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[0]  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[0]~DUPLICATE  ;                  ;                       ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[2]  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[2]~DUPLICATE  ;                  ;                       ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[3]  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[3]~DUPLICATE  ;                  ;                       ;
 +----------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+--------------------------------------------------------------------------------+------------------+-----------------------+
 
 
@@ -202,8 +200,8 @@ agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 255 ) ; 0.00 % ( 0 / 255 )         ; 0.00 % ( 0 / 255 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 255 ) ; 0.00 % ( 0 / 255 )         ; 0.00 % ( 0 / 255 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 253 ) ; 0.00 % ( 0 / 253 )         ; 0.00 % ( 0 / 253 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 253 ) ; 0.00 % ( 0 / 253 )         ; 0.00 % ( 0 / 253 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -226,7 +224,7 @@ agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 255 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 253 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -244,12 +242,12 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 +-------------------------------------------------------------+--------------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 42 / 18,480        ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 42                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 44 / 18,480        ; < 1 % ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 45 / 18,480        ; < 1 % ;
 ;         [a] ALMs used for LUT logic and registers           ; 20                 ;       ;
 ;         [b] ALMs used for LUT logic                         ; 24                 ;       ;
-;         [c] ALMs used for registers                         ; 0                  ;       ;
+;         [c] ALMs used for registers                         ; 1                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 2 / 18,480         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 3 / 18,480         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 18,480         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -270,16 +268,16 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ;     -- <=3 input functions                                  ; 42                 ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 52                 ;       ;
+; Dedicated logic registers                                   ; 50                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
 ;         -- Primary logic registers                          ; 40 / 36,960        ; < 1 % ;
-;         -- Secondary logic registers                        ; 12 / 36,960        ; < 1 % ;
+;         -- Secondary logic registers                        ; 10 / 36,960        ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
 ;         -- Design implementation registers                  ; 40                 ;       ;
-;         -- Routing optimization registers                   ; 12                 ;       ;
+;         -- Routing optimization registers                   ; 10                 ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
-; I/O pins                                                    ; 66 / 224           ; 29 %  ;
+; I/O pins                                                    ; 65 / 224           ; 29 %  ;
 ;     -- Clock pins                                           ; 5 / 9              ; 56 %  ;
 ;     -- Dedicated input pins                                 ; 0 / 11             ; 0 %   ;
 ;                                                             ;                    ;       ;
@@ -303,11 +301,11 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; Oscillator blocks                                           ; 0 / 1              ; 0 %   ;
 ; Impedance control blocks                                    ; 0 / 3              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.1% / 0.1% / 0.1% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0.8% / 0.8% / 0.8% ;       ;
-; Maximum fan-out                                             ; 52                 ;       ;
-; Highest non-global fan-out                                  ; 30                 ;       ;
-; Total fan-out                                               ; 573                ;       ;
-; Average fan-out                                             ; 2.15               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 0.9% / 0.9% / 0.7% ;       ;
+; Maximum fan-out                                             ; 50                 ;       ;
+; Highest non-global fan-out                                  ; 28                 ;       ;
+; Total fan-out                                               ; 561                ;       ;
+; Average fan-out                                             ; 2.13               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -318,12 +316,12 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 42 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 42                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 44 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 45 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
 ;         [a] ALMs used for LUT logic and registers           ; 20                   ; 0                              ;
 ;         [b] ALMs used for LUT logic                         ; 24                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 0                    ; 0                              ;
+;         [c] ALMs used for registers                         ; 1                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 2 / 18480 ( < 1 % )  ; 0 / 18480 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 3 / 18480 ( < 1 % )  ; 0 / 18480 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 18480 ( 0 % )    ; 0 / 18480 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -350,14 +348,14 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; Dedicated logic registers                                   ; 0                    ; 0                              ;
 ;     -- By type:                                             ;                      ;                                ;
 ;         -- Primary logic registers                          ; 40 / 36960 ( < 1 % ) ; 0 / 36960 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 12 / 36960 ( < 1 % ) ; 0 / 36960 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 10 / 36960 ( < 1 % ) ; 0 / 36960 ( 0 % )              ;
 ;     -- By function:                                         ;                      ;                                ;
 ;         -- Design implementation registers                  ; 40                   ; 0                              ;
-;         -- Routing optimization registers                   ; 12                   ; 0                              ;
+;         -- Routing optimization registers                   ; 10                   ; 0                              ;
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
-; I/O pins                                                    ; 66                   ; 0                              ;
+; I/O pins                                                    ; 65                   ; 0                              ;
 ; I/O registers                                               ; 0                    ; 0                              ;
 ; Total block memory bits                                     ; 0                    ; 0                              ;
 ; Total block memory implementation bits                      ; 0                    ; 0                              ;
@@ -370,8 +368,8 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 573                  ; 0                              ;
-;     -- Registered Connections                               ; 283                  ; 0                              ;
+;     -- Total Connections                                    ; 561                  ; 0                              ;
+;     -- Registered Connections                               ; 282                  ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
 ;     -- Top                                                  ; 0                    ; 0                              ;
@@ -379,7 +377,7 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ;                                                             ;                      ;                                ;
 ; Partition Interface                                         ;                      ;                                ;
 ;     -- Input Ports                                          ; 4                    ; 0                              ;
-;     -- Output Ports                                         ; 62                   ; 0                              ;
+;     -- Output Ports                                         ; 61                   ; 0                              ;
 ;     -- Bidir Ports                                          ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Registered Ports                                            ;                      ;                                ;
@@ -403,10 +401,10 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 +----------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name           ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; clock          ; M9    ; 3B       ; 22           ; 0            ; 0            ; 52                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; clock          ; M9    ; 3B       ; 22           ; 0            ; 0            ; 50                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; entrada_serial ; B12   ; 7A       ; 36           ; 45           ; 34           ; 3                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; recebe_dado    ; AB15  ; 4A       ; 36           ; 0            ; 51           ; 2                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; reset          ; AB12  ; 4A       ; 33           ; 0            ; 74           ; 30                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; recebe_dado    ; AB21  ; 4A       ; 40           ; 0            ; 74           ; 2                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; reset          ; AB12  ; 4A       ; 33           ; 0            ; 74           ; 28                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 +----------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
@@ -451,49 +449,48 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; hex_ticker[4]      ; U15   ; 4A       ; 43           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; hex_ticker[5]      ; Y15   ; 4A       ; 36           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; hex_ticker[6]      ; P9    ; 3B       ; 29           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; o_dado_recebido[0] ; AB22  ; 4A       ; 46           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dado_recebido[1] ; Y14   ; 4A       ; 36           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dado_recebido[2] ; R14   ; 4A       ; 50           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dado_recebido[3] ; Y19   ; 4A       ; 48           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dado_recebido[4] ; T17   ; 5A       ; 54           ; 14           ; 60           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dado_recebido[5] ; U13   ; 4A       ; 33           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dado_recebido[6] ; AA12  ; 3B       ; 29           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dado_recebido[7] ; AB5   ; 3B       ; 16           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dados[0]         ; AB17  ; 4A       ; 38           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dados[1]         ; V15   ; 4A       ; 38           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dados[2]         ; V14   ; 4A       ; 38           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dados[3]         ; AA14  ; 4A       ; 34           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dados[4]         ; AB21  ; 4A       ; 40           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dado_recebido[0] ; T13   ; 4A       ; 34           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dado_recebido[1] ; V13   ; 4A       ; 33           ; 0            ; 57           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dado_recebido[2] ; Y11   ; 3B       ; 29           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dado_recebido[3] ; R11   ; 3B       ; 25           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dado_recebido[4] ; U11   ; 3B       ; 24           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dado_recebido[5] ; U12   ; 3B       ; 24           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dado_recebido[6] ; R10   ; 3B       ; 25           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dados[0]         ; AA15  ; 4A       ; 36           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dados[1]         ; AA13  ; 4A       ; 34           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dados[2]         ; U13   ; 4A       ; 33           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dados[3]         ; AB15  ; 4A       ; 36           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dados[4]         ; AA14  ; 4A       ; 34           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 ; o_dados[5]         ; AB13  ; 4A       ; 33           ; 0            ; 91           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 ; o_dados[6]         ; T12   ; 4A       ; 34           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dados[7]         ; T13   ; 4A       ; 34           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dados[8]         ; V13   ; 4A       ; 33           ; 0            ; 57           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_dados[9]         ; AA13  ; 4A       ; 34           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_estado[0]        ; Y11   ; 3B       ; 29           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_estado[1]        ; AB10  ; 3B       ; 25           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dados[7]         ; V15   ; 4A       ; 38           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dados[8]         ; AB17  ; 4A       ; 38           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_dados[9]         ; V14   ; 4A       ; 38           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_estado[0]        ; AB10  ; 3B       ; 25           ; 0            ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_estado[1]        ; AA12  ; 3B       ; 29           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 ; o_estado[2]        ; AB11  ; 3B       ; 25           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; o_estado[3]        ; P22   ; 5A       ; 54           ; 16           ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; o_estado[3]        ; A8    ; 8A       ; 12           ; 45           ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 ; o_serial           ; H15   ; 7A       ; 44           ; 45           ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; o_tick             ; A12   ; 7A       ; 36           ; 45           ; 51           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; paridade_ok        ; AA1   ; 2A       ; 0            ; 18           ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; tem_dado_recebido  ; AA15  ; 4A       ; 36           ; 0            ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; tem_dado_recebido  ; Y14   ; 4A       ; 36           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 +--------------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------+
-; I/O Bank Usage                                                              ;
-+----------+-------------------+---------------+--------------+---------------+
-; I/O Bank ; Usage             ; VCCIO Voltage ; VREF Voltage ; VCCPD Voltage ;
-+----------+-------------------+---------------+--------------+---------------+
-; 2A       ; 4 / 16 ( 25 % )   ; 2.5V          ; --           ; 2.5V          ;
-; 3A       ; 0 / 16 ( 0 % )    ; 2.5V          ; --           ; 2.5V          ;
-; 3B       ; 9 / 32 ( 28 % )   ; 2.5V          ; --           ; 2.5V          ;
-; 4A       ; 48 / 48 ( 100 % ) ; 2.5V          ; --           ; 2.5V          ;
-; 5A       ; 2 / 16 ( 13 % )   ; 2.5V          ; --           ; 2.5V          ;
-; 5B       ; 0 / 16 ( 0 % )    ; 2.5V          ; --           ; 2.5V          ;
-; 7A       ; 3 / 48 ( 6 % )    ; 2.5V          ; --           ; 2.5V          ;
-; 8A       ; 0 / 32 ( 0 % )    ; 2.5V          ; --           ; 2.5V          ;
-+----------+-------------------+---------------+--------------+---------------+
++----------------------------------------------------------------------------+
+; I/O Bank Usage                                                             ;
++----------+------------------+---------------+--------------+---------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ; VCCPD Voltage ;
++----------+------------------+---------------+--------------+---------------+
+; 2A       ; 4 / 16 ( 25 % )  ; 2.5V          ; --           ; 2.5V          ;
+; 3A       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
+; 3B       ; 12 / 32 ( 38 % ) ; 2.5V          ; --           ; 2.5V          ;
+; 4A       ; 45 / 48 ( 94 % ) ; 2.5V          ; --           ; 2.5V          ;
+; 5A       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
+; 5B       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
+; 7A       ; 3 / 48 ( 6 % )   ; 2.5V          ; --           ; 2.5V          ;
+; 8A       ; 1 / 32 ( 3 % )   ; 2.5V          ; --           ; 2.5V          ;
++----------+------------------+---------------+--------------+---------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -508,7 +505,7 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; A5       ; 264        ; 8A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A6       ;            ; 8A       ; VCCIO8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; A7       ; 273        ; 8A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; A8       ; 271        ; 8A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; A8       ; 271        ; 8A       ; o_estado[3]                     ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; A9       ; 262        ; 8A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A10      ; 260        ; 8A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; A11      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -534,10 +531,10 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; AA9      ; 89         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA10     ; 87         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AA11     ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AA12     ; 105        ; 3B       ; o_dado_recebido[6]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AA13     ; 113        ; 4A       ; o_dados[9]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AA14     ; 111        ; 4A       ; o_dados[3]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AA15     ; 116        ; 4A       ; tem_dado_recebido               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA12     ; 105        ; 3B       ; o_estado[1]                     ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA13     ; 113        ; 4A       ; o_dados[1]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA14     ; 111        ; 4A       ; o_dados[4]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AA15     ; 116        ; 4A       ; o_dados[0]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AA16     ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; AA17     ; 127        ; 4A       ; hex1[5]                         ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; AA18     ; 129        ; 4A       ; hex1[3]                         ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
@@ -549,24 +546,24 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; AB2      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AB3      ; 55         ; 3A       ; ^AS_DATA1, DATA1                ;        ;              ;                     ; Weak Pull Up ;                 ; --       ; On           ;
 ; AB4      ; 57         ; 3A       ; ^AS_DATA0, ASDO, DATA0          ;        ;              ;                     ; Weak Pull Up ;                 ; --       ; On           ;
-; AB5      ; 76         ; 3B       ; o_dado_recebido[7]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB5      ; 76         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AB6      ; 74         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AB7      ; 81         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AB8      ; 84         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AB9      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AB10     ; 98         ; 3B       ; o_estado[1]                     ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB10     ; 98         ; 3B       ; o_estado[0]                     ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AB11     ; 100        ; 3B       ; o_estado[2]                     ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AB12     ; 108        ; 4A       ; reset                           ; input  ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; AB13     ; 106        ; 4A       ; o_dados[5]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AB14     ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; AB15     ; 114        ; 4A       ; recebe_dado                     ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB15     ; 114        ; 4A       ; o_dados[3]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AB16     ;            ; 4A       ; VREFB4AN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
-; AB17     ; 119        ; 4A       ; o_dados[0]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB17     ; 119        ; 4A       ; o_dados[8]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; AB18     ; 121        ; 4A       ; hex1[4]                         ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; AB19     ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; AB20     ; 122        ; 4A       ; hex1[1]                         ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
-; AB21     ; 124        ; 4A       ; o_dados[4]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; AB22     ; 135        ; 4A       ; o_dado_recebido[0]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB21     ; 124        ; 4A       ; recebe_dado                     ; input  ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; AB22     ; 135        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; B1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; B2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; B3       ;            ;          ; DNU                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -852,7 +849,7 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; P19      ; 166        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; P20      ;            ; 5A       ; VCCIO5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; P21      ;            ; 5A       ; VCCPD5A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; P22      ; 164        ; 5A       ; o_estado[3]                     ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; P22      ; 164        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; R1       ;            ; 2A       ; VCCIO2A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; R2       ;            ; 1A, 2A   ; VCCPD1A2A                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; R3       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -862,11 +859,11 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; R7       ; 71         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; R8       ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; R9       ; 93         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; R10      ; 99         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; R11      ; 101        ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
+; R10      ; 99         ; 3B       ; o_dado_recebido[6]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; R11      ; 101        ; 3B       ; o_dado_recebido[3]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; R12      ; 95         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; R13      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; R14      ; 144        ; 4A       ; o_dado_recebido[2]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; R14      ; 144        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; R15      ; 161        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; R16      ; 163        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; R17      ; 165        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
@@ -887,11 +884,11 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; T10      ; 91         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; T11      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; T12      ; 110        ; 4A       ; o_dados[6]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; T13      ; 112        ; 4A       ; o_dados[7]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; T13      ; 112        ; 4A       ; o_dado_recebido[0]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; T14      ; 126        ; 4A       ; hex_est[2]                      ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; T15      ; 159        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; T16      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; T17      ; 157        ; 5A       ; o_dado_recebido[4]              ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; T17      ; 157        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; T18      ; 155        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; T19      ; 154        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; T20      ; 156        ; 5A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
@@ -907,9 +904,9 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; U8       ; 61         ; 3A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; U9       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; U10      ; 85         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; U11      ; 94         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; U12      ; 96         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; U13      ; 109        ; 4A       ; o_dado_recebido[5]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; U11      ; 94         ; 3B       ; o_dado_recebido[4]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; U12      ; 96         ; 3B       ; o_dado_recebido[5]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; U13      ; 109        ; 4A       ; o_dados[2]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; U14      ;            ; 4A       ; VCCIO4A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; U15      ; 128        ; 4A       ; hex_ticker[4]                   ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; U16      ; 150        ; 4A       ; hex_ticker[3]                   ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
@@ -931,9 +928,9 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; V10      ; 77         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; V11      ;            ;          ; NC                              ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; V12      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; V13      ; 107        ; 4A       ; o_dados[8]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; V14      ; 118        ; 4A       ; o_dados[2]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
-; V15      ; 120        ; 4A       ; o_dados[1]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; V13      ; 107        ; 4A       ; o_dado_recebido[1]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; V14      ; 118        ; 4A       ; o_dados[9]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; V15      ; 120        ; 4A       ; o_dados[7]                      ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; V16      ; 134        ; 4A       ; hex_cont[3]                     ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; V17      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; V18      ; 149        ; 4A       ; hex_cont[5]                     ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
@@ -973,15 +970,15 @@ The pin-out file can be found in C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto
 ; Y8       ;            ; 3A       ; VCCIO3A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; Y9       ; 92         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; Y10      ; 90         ; 3B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; Y11      ; 103        ; 3B       ; o_estado[0]                     ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y11      ; 103        ; 3B       ; o_dado_recebido[2]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; Y12      ;            ; 3B       ; VREFB3BN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
 ; Y13      ;            ; 3B       ; VCCIO3B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; Y14      ; 115        ; 4A       ; o_dado_recebido[1]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y14      ; 115        ; 4A       ; tem_dado_recebido               ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
 ; Y15      ; 117        ; 4A       ; hex_ticker[5]                   ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; Y16      ; 123        ; 4A       ; hex_cont[0]                     ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; Y17      ; 125        ; 4A       ; hex_cont[2]                     ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; Y18      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; Y19      ; 141        ; 4A       ; o_dado_recebido[3]              ; output ; 2.5 V        ;                     ; Column I/O   ; N               ; no       ; Off          ;
+; Y19      ; 141        ; 4A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; Y20      ; 139        ; 4A       ; hex_ticker[1]                   ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; Y21      ; 143        ; 4A       ; hex0[5]                         ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; Y22      ; 138        ; 4A       ; hex0[4]                         ; output ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
@@ -1055,7 +1052,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; o_dado_recebido[4] ; Incomplete set of assignments ;
 ; o_dado_recebido[5] ; Incomplete set of assignments ;
 ; o_dado_recebido[6] ; Incomplete set of assignments ;
-; o_dado_recebido[7] ; Incomplete set of assignments ;
 ; entrada_serial     ; Incomplete set of assignments ;
 ; clock              ; Incomplete set of assignments ;
 ; reset              ; Incomplete set of assignments ;
@@ -1082,7 +1078,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; o_dado_recebido[4] ; Missing location assignment   ;
 ; o_dado_recebido[5] ; Missing location assignment   ;
 ; o_dado_recebido[6] ; Missing location assignment   ;
-; o_dado_recebido[7] ; Missing location assignment   ;
 ; recebe_dado        ; Missing location assignment   ;
 +--------------------+-------------------------------+
 
@@ -1092,22 +1087,22 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node              ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Entity Name        ; Library Name ;
 +-----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------+--------------------+--------------+
-; |rx_serial                              ; 42.0 (0.5)           ; 44.0 (0.5)                       ; 2.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 82 (1)              ; 52 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 66   ; 0            ; |rx_serial                                                                ; rx_serial          ; work         ;
-;    |rx_serial_fd:U2|                    ; 36.2 (0.0)           ; 38.2 (0.0)                       ; 2.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 71 (0)              ; 46 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2                                                ; rx_serial_fd       ; work         ;
-;       |contador_m:U2|                   ; 2.7 (2.7)            ; 2.8 (2.8)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 6 (6)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|contador_m:U2                                  ; contador_m         ; work         ;
-;       |deslocador_n:U1|                 ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 15 (15)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|deslocador_n:U1                                ; deslocador_n       ; work         ;
-;       |gerador_paridade_n:U3|           ; 0.7 (0.7)            ; 0.7 (0.7)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|gerador_paridade_n:U3                          ; gerador_paridade_n ; work         ;
+; |rx_serial                              ; 42.0 (0.5)           ; 44.0 (0.5)                       ; 2.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 82 (1)              ; 50 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 65   ; 0            ; |rx_serial                                                                ; rx_serial          ; work         ;
+;    |rx_serial_fd:U2|                    ; 36.2 (0.0)           ; 38.5 (0.0)                       ; 2.3 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 71 (0)              ; 44 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2                                                ; rx_serial_fd       ; work         ;
+;       |contador_m:U2|                   ; 2.7 (2.7)            ; 3.0 (3.0)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 7 (7)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|contador_m:U2                                  ; contador_m         ; work         ;
+;       |deslocador_n:U1|                 ; 5.3 (5.3)            ; 5.3 (5.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 13 (13)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|deslocador_n:U1                                ; deslocador_n       ; work         ;
+;       |gerador_paridade_n:U3|           ; 0.6 (0.6)            ; 0.6 (0.6)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|gerador_paridade_n:U3                          ; gerador_paridade_n ; work         ;
 ;       |hex7seg:H0|                      ; 3.3 (3.3)            ; 3.3 (3.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|hex7seg:H0                                     ; hex7seg            ; work         ;
 ;       |hex7seg:H1|                      ; 3.3 (3.3)            ; 3.3 (3.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|hex7seg:H1                                     ; hex7seg            ; work         ;
-;       |hex7seg:Hcont|                   ; 3.0 (3.0)            ; 3.0 (3.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|hex7seg:Hcont                                  ; hex7seg            ; work         ;
-;       |hex7seg:Hest|                    ; 3.3 (3.3)            ; 5.5 (5.5)                        ; 2.2 (2.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|hex7seg:Hest                                   ; hex7seg            ; work         ;
-;       |registrador_n:Reg1|              ; 4.2 (4.2)            ; 4.2 (4.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 8 (8)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|registrador_n:Reg1                             ; registrador_n      ; work         ;
-;       |ticker:U4|                       ; 10.3 (0.0)           ; 10.3 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 19 (0)              ; 17 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|ticker:U4                                      ; ticker             ; work         ;
-;          |Tick_FD:FD|                   ; 9.3 (1.1)            ; 9.3 (1.1)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 18 (3)              ; 16 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|ticker:U4|Tick_FD:FD                           ; Tick_FD            ; work         ;
-;             |contador_m:Contador_ratio| ; 5.5 (5.5)            ; 5.5 (5.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 11 (11)             ; 9 (9)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio ; contador_m         ; work         ;
-;             |contador_m:Contador_tick|  ; 2.7 (2.7)            ; 2.8 (2.8)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 4 (4)               ; 7 (7)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick  ; contador_m         ; work         ;
-;          |Tick_UC:UC|                   ; 1.0 (1.0)            ; 1.0 (1.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|ticker:U4|Tick_UC:UC                           ; Tick_UC            ; work         ;
-;    |rx_serial_uc:U1|                    ; 5.3 (5.3)            ; 5.3 (5.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 6 (6)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_uc:U1                                                ; rx_serial_uc       ; work         ;
+;       |hex7seg:Hcont|                   ; 3.2 (3.2)            ; 3.3 (3.3)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|hex7seg:Hcont                                  ; hex7seg            ; work         ;
+;       |hex7seg:Hest|                    ; 3.5 (3.5)            ; 5.3 (5.3)                        ; 1.8 (1.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|hex7seg:Hest                                   ; hex7seg            ; work         ;
+;       |registrador_n:Reg1|              ; 3.8 (3.8)            ; 3.9 (3.9)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 8 (8)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|registrador_n:Reg1                             ; registrador_n      ; work         ;
+;       |ticker:U4|                       ; 10.5 (0.0)           ; 10.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 19 (0)              ; 16 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|ticker:U4                                      ; ticker             ; work         ;
+;          |Tick_FD:FD|                   ; 9.2 (0.9)            ; 9.2 (0.9)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 18 (3)              ; 15 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|ticker:U4|Tick_FD:FD                           ; Tick_FD            ; work         ;
+;             |contador_m:Contador_ratio| ; 5.3 (5.3)            ; 5.3 (5.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 11 (11)             ; 10 (10)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio ; contador_m         ; work         ;
+;             |contador_m:Contador_tick|  ; 2.7 (2.7)            ; 2.9 (2.9)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 4 (4)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick  ; contador_m         ; work         ;
+;          |Tick_UC:UC|                   ; 1.0 (1.0)            ; 1.3 (1.3)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|ticker:U4|Tick_UC:UC                           ; Tick_UC            ; work         ;
+;    |rx_serial_uc:U1|                    ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 6 (6)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_uc:U1                                                ; rx_serial_uc       ; work         ;
 +-----------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1178,11 +1173,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; o_dado_recebido[4] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; o_dado_recebido[5] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; o_dado_recebido[6] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; o_dado_recebido[7] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; entrada_serial     ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; clock              ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; reset              ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; recebe_dado        ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; reset              ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; recebe_dado        ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +--------------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
@@ -1197,56 +1191,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - o_serial~output                                 ; 0                 ; 0       ;
 ; clock                                                  ;                   ;         ;
 ; reset                                                  ;                   ;         ;
-;      - rx_serial_fd:U2|ticker:U4|Tick_UC:UC|Sreg       ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[0]        ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[1]        ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[2]        ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[3]        ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[4]        ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[5]        ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[6]        ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[7]        ; 1                 ; 0       ;
-;      - rx_serial_uc:U1|Sreg.preparacao                 ; 1                 ; 0       ;
-;      - rx_serial_uc:U1|Sreg.espera                     ; 1                 ; 0       ;
-;      - rx_serial_uc:U1|Sreg.recepcao                   ; 1                 ; 0       ;
-;      - rx_serial_uc:U1|Sreg.final                      ; 1                 ; 0       ;
-;      - rx_serial_uc:U1|Sreg.espera_leitura             ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[4]           ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[5]           ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[6]           ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[3]           ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[2]           ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[1]           ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[0]           ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[7]           ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[8]           ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[9]           ; 1                 ; 0       ;
-;      - rx_serial_uc:U1|Sreg.inicial                    ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[6]~DUPLICATE ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[4]~DUPLICATE ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[1]~DUPLICATE ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[2]~DUPLICATE ; 1                 ; 0       ;
-;      - rx_serial_fd:U2|deslocador_n:U1|IQ[8]~DUPLICATE ; 1                 ; 0       ;
+;      - rx_serial_fd:U2|ticker:U4|Tick_UC:UC|Sreg       ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[0]        ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[1]        ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[2]        ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[3]        ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[4]        ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[5]        ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[6]        ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|registrador_n:Reg1|IQ[7]        ; 0                 ; 0       ;
+;      - rx_serial_uc:U1|Sreg.preparacao                 ; 0                 ; 0       ;
+;      - rx_serial_uc:U1|Sreg.espera                     ; 0                 ; 0       ;
+;      - rx_serial_uc:U1|Sreg.recepcao                   ; 0                 ; 0       ;
+;      - rx_serial_uc:U1|Sreg.final                      ; 0                 ; 0       ;
+;      - rx_serial_uc:U1|Sreg.espera_leitura             ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[4]           ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[5]           ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[6]           ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[3]           ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[2]           ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[1]           ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[0]           ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[7]           ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[8]           ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[9]           ; 0                 ; 0       ;
+;      - rx_serial_uc:U1|Sreg.inicial                    ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[5]~DUPLICATE ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[0]~DUPLICATE ; 0                 ; 0       ;
+;      - rx_serial_fd:U2|deslocador_n:U1|IQ[3]~DUPLICATE ; 0                 ; 0       ;
 ; recebe_dado                                            ;                   ;         ;
-;      - rx_serial_uc:U1|Selector2~0                     ; 0                 ; 0       ;
-;      - rx_serial_uc:U1|Selector0~0                     ; 0                 ; 0       ;
+;      - rx_serial_uc:U1|Selector2~0                     ; 1                 ; 0       ;
+;      - rx_serial_uc:U1|Selector0~0                     ; 1                 ; 0       ;
 +--------------------------------------------------------+-------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                                      ;
-+-------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                                                    ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; clock                                                                   ; PIN_M9             ; 52      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; reset                                                                   ; PIN_AB12           ; 30      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|Equal0~0 ; LABCELL_X41_Y1_N21 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; rx_serial_fd:U2|ticker:U4|Tick_UC:UC|Sreg                               ; FF_X41_Y1_N56      ; 21      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; rx_serial_uc:U1|Sreg.final                                              ; FF_X40_Y1_N20      ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; rx_serial_uc:U1|Sreg.preparacao                                         ; FF_X40_Y1_N26      ; 24      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; rx_serial_uc:U1|Sreg.recepcao                                           ; FF_X40_Y1_N38      ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; rx_serial_uc:U1|WideOr5~0                                               ; LABCELL_X40_Y1_N21 ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-+-------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                       ;
++-------------------------------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                    ; Location            ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; clock                                                                   ; PIN_M9              ; 50      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; reset                                                                   ; PIN_AB12            ; 28      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|Equal0~0 ; LABCELL_X36_Y2_N21  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; rx_serial_fd:U2|ticker:U4|Tick_UC:UC|Sreg                               ; FF_X36_Y2_N2        ; 20      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; rx_serial_uc:U1|Sreg.final                                              ; FF_X37_Y2_N41       ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; rx_serial_uc:U1|Sreg.preparacao                                         ; FF_X37_Y2_N38       ; 25      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; rx_serial_uc:U1|Sreg.recepcao                                           ; FF_X37_Y2_N5        ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; rx_serial_uc:U1|WideOr5~0                                               ; MLABCELL_X37_Y2_N57 ; 14      ; Clock enable ; no     ; --                   ; --               ; --                        ;
++-------------------------------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -1254,7 +1246,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------+----------+---------+----------------------+------------------+---------------------------+
 ; Name  ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------+----------+---------+----------------------+------------------+---------------------------+
-; clock ; PIN_M9   ; 52      ; Global Clock         ; GCLK6            ; --                        ;
+; clock ; PIN_M9   ; 50      ; Global Clock         ; GCLK6            ; --                        ;
 +-------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1263,21 +1255,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------+-------------------------+
 ; Routing Resource Type        ; Usage                   ;
 +------------------------------+-------------------------+
-; Block interconnects          ; 109 / 140,056 ( < 1 % ) ;
-; C12 interconnects            ; 7 / 6,048 ( < 1 % )     ;
-; C2 interconnects             ; 48 / 54,648 ( < 1 % )   ;
-; C4 interconnects             ; 39 / 25,920 ( < 1 % )   ;
+; Block interconnects          ; 120 / 140,056 ( < 1 % ) ;
+; C12 interconnects            ; 6 / 6,048 ( < 1 % )     ;
+; C2 interconnects             ; 43 / 54,648 ( < 1 % )   ;
+; C4 interconnects             ; 44 / 25,920 ( < 1 % )   ;
 ; DQS bus muxes                ; 0 / 17 ( 0 % )          ;
 ; DQS-18 I/O buses             ; 0 / 17 ( 0 % )          ;
 ; DQS-9 I/O buses              ; 0 / 17 ( 0 % )          ;
-; Direct links                 ; 14 / 140,056 ( < 1 % )  ;
+; Direct links                 ; 26 / 140,056 ( < 1 % )  ;
 ; Global clocks                ; 1 / 16 ( 6 % )          ;
-; Local interconnects          ; 33 / 36,960 ( < 1 % )   ;
+; Local interconnects          ; 30 / 36,960 ( < 1 % )   ;
 ; Quadrant clocks              ; 0 / 88 ( 0 % )          ;
-; R14 interconnects            ; 19 / 5,984 ( < 1 % )    ;
-; R14/C12 interconnect drivers ; 22 / 9,504 ( < 1 % )    ;
-; R3 interconnects             ; 67 / 60,192 ( < 1 % )   ;
-; R6 interconnects             ; 47 / 127,072 ( < 1 % )  ;
+; R14 interconnects            ; 18 / 5,984 ( < 1 % )    ;
+; R14/C12 interconnect drivers ; 23 / 9,504 ( < 1 % )    ;
+; R3 interconnects             ; 56 / 60,192 ( < 1 % )   ;
+; R6 interconnects             ; 71 / 127,072 ( < 1 % )  ;
 ; Spine clocks                 ; 1 / 120 ( < 1 % )       ;
 ; Wire stub REs                ; 0 / 7,344 ( 0 % )       ;
 +------------------------------+-------------------------+
@@ -1338,9 +1330,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
 ; Pin/Rules          ; IO_000001    ; IO_000002    ; IO_000003    ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007    ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000034    ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
-; Total Pass         ; 42           ; 0            ; 42           ; 0            ; 0            ; 66        ; 42           ; 0            ; 66        ; 66        ; 0            ; 62           ; 0            ; 0            ; 0            ; 0            ; 62           ; 0            ; 0            ; 0            ; 0            ; 62           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; Total Pass         ; 42           ; 0            ; 42           ; 0            ; 0            ; 65        ; 42           ; 0            ; 65        ; 65        ; 0            ; 61           ; 0            ; 0            ; 0            ; 0            ; 61           ; 0            ; 0            ; 0            ; 0            ; 61           ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
-; Total Inapplicable ; 24           ; 66           ; 24           ; 66           ; 66           ; 0         ; 24           ; 66           ; 0         ; 0         ; 66           ; 4            ; 66           ; 66           ; 66           ; 66           ; 4            ; 66           ; 66           ; 66           ; 66           ; 4            ; 66           ; 66           ; 66           ; 66           ; 66           ; 66           ;
+; Total Inapplicable ; 23           ; 65           ; 23           ; 65           ; 65           ; 0         ; 23           ; 65           ; 0         ; 0         ; 65           ; 4            ; 65           ; 65           ; 65           ; 65           ; 4            ; 65           ; 65           ; 65           ; 65           ; 4            ; 65           ; 65           ; 65           ; 65           ; 65           ; 65           ;
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; hex1[0]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; hex1[1]            ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
@@ -1403,7 +1395,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; o_dado_recebido[4] ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; o_dado_recebido[5] ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; o_dado_recebido[6] ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; o_dado_recebido[7] ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; entrada_serial     ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; clock              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; reset              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
@@ -1459,47 +1450,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; clock           ; clock                ; 13.3              ;
+; clock           ; clock                ; 12.8              ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                  ;
-+----------------------------------------------------------------------+---------------------------------------------------------------------+-------------------+
-; Source Register                                                      ; Destination Register                                                ; Delay Added in ns ;
-+----------------------------------------------------------------------+---------------------------------------------------------------------+-------------------+
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[6] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[1] ; 0.291             ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[2]  ; rx_serial_fd:U2|ticker:U4|Tick_UC:UC|Sreg                           ; 0.288             ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[1] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[1] ; 0.284             ;
-; rx_serial_fd:U2|contador_m:U2|IQ[0]                                  ; rx_serial_fd:U2|contador_m:U2|IQ[1]                                 ; 0.273             ;
-; rx_serial_uc:U1|Sreg.recepcao                                        ; rx_serial_fd:U2|contador_m:U2|IQ[2]                                 ; 0.273             ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[6]                                ; rx_serial_fd:U2|registrador_n:Reg1|IQ[7]                            ; 0.272             ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[3]  ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[2] ; 0.272             ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[2]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[1]                               ; 0.263             ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[4]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[3]                               ; 0.263             ;
-; rx_serial_uc:U1|Sreg.espera                                          ; rx_serial_uc:U1|Sreg.recepcao                                       ; 0.259             ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[5]                                ; rx_serial_fd:U2|registrador_n:Reg1|IQ[5]                            ; 0.257             ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[4] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[1] ; 0.254             ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[0] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[1] ; 0.244             ;
-; rx_serial_fd:U2|contador_m:U2|IQ[1]                                  ; rx_serial_fd:U2|contador_m:U2|IQ[0]                                 ; 0.243             ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[3]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[2]                               ; 0.241             ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[1]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[0]                               ; 0.241             ;
-; rx_serial_uc:U1|Sreg.inicial                                         ; rx_serial_uc:U1|Sreg.preparacao                                     ; 0.236             ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[0]  ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[2] ; 0.236             ;
-; rx_serial_fd:U2|contador_m:U2|IQ[3]                                  ; rx_serial_fd:U2|contador_m:U2|IQ[0]                                 ; 0.235             ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[1]  ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[2] ; 0.235             ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[8]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[7]                               ; 0.224             ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[7]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[6]                               ; 0.224             ;
-; rx_serial_fd:U2|contador_m:U2|IQ[2]                                  ; rx_serial_fd:U2|contador_m:U2|IQ[3]                                 ; 0.220             ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[5] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[1] ; 0.212             ;
-; rx_serial_fd:U2|deslocador_n:U1|IQ[9]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[8]                               ; 0.210             ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[2] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[1] ; 0.203             ;
-; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[3] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[1] ; 0.201             ;
-; rx_serial_uc:U1|Sreg.preparacao                                      ; rx_serial_uc:U1|Sreg.espera                                         ; 0.154             ;
-+----------------------------------------------------------------------+---------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 28 path(s) that have the largest delay added for hold.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                   ;
++----------------------------------------------------------------------+----------------------------------------------------------------------+-------------------+
+; Source Register                                                      ; Destination Register                                                 ; Delay Added in ns ;
++----------------------------------------------------------------------+----------------------------------------------------------------------+-------------------+
+; rx_serial_fd:U2|contador_m:U2|IQ[0]                                  ; rx_serial_fd:U2|contador_m:U2|IQ[1]                                  ; 0.297             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[6] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[2] ; 0.293             ;
+; rx_serial_uc:U1|Sreg.recepcao                                        ; rx_serial_fd:U2|contador_m:U2|IQ[2]                                  ; 0.289             ;
+; rx_serial_uc:U1|Sreg.espera_leitura                                  ; rx_serial_uc:U1|Sreg.inicial                                         ; 0.289             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[3]  ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[2]  ; 0.284             ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[3]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[2]                                ; 0.277             ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[1]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[0]                                ; 0.277             ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[6]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[5]                                ; 0.277             ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[5]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[4]                                ; 0.277             ;
+; rx_serial_uc:U1|Sreg.final                                           ; rx_serial_uc:U1|Sreg.espera_leitura                                  ; 0.273             ;
+; rx_serial_fd:U2|contador_m:U2|IQ[1]                                  ; rx_serial_fd:U2|contador_m:U2|IQ[3]                                  ; 0.267             ;
+; rx_serial_uc:U1|Sreg.espera                                          ; rx_serial_uc:U1|Sreg.recepcao                                        ; 0.263             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[0]  ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[3]  ; 0.261             ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[2]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[1]                                ; 0.259             ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[4]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[3]                                ; 0.259             ;
+; rx_serial_fd:U2|contador_m:U2|IQ[2]                                  ; rx_serial_fd:U2|contador_m:U2|IQ[3]                                  ; 0.259             ;
+; rx_serial_uc:U1|Sreg.inicial                                         ; rx_serial_uc:U1|Sreg.preparacao                                      ; 0.259             ;
+; rx_serial_fd:U2|contador_m:U2|IQ[3]                                  ; rx_serial_fd:U2|contador_m:U2|IQ[1]                                  ; 0.258             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[1]  ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[3]  ; 0.258             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[1] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[6] ; 0.256             ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[9]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[8]                                ; 0.252             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[2]  ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_tick|IQ[3]  ; 0.248             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[4] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[6] ; 0.248             ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[8]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[7]                                ; 0.236             ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[7]                                ; rx_serial_fd:U2|deslocador_n:U1|IQ[6]                                ; 0.233             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[0] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[6] ; 0.229             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[5] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[6] ; 0.190             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[3] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[6] ; 0.190             ;
+; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[2] ; rx_serial_fd:U2|ticker:U4|Tick_FD:FD|contador_m:Contador_ratio|IQ[6] ; 0.190             ;
+; rx_serial_uc:U1|Sreg.preparacao                                      ; rx_serial_uc:U1|Sreg.espera                                          ; 0.172             ;
+; rx_serial_fd:U2|deslocador_n:U1|IQ[0]                                ; rx_serial_fd:U2|registrador_n:Reg1|IQ[0]                             ; 0.102             ;
++----------------------------------------------------------------------+----------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 31 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1513,7 +1507,7 @@ Info (21077): High junction temperature is 85 degrees C
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
-Critical Warning (169085): No exact pin location assignment(s) for 24 pins of 66 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
+Critical Warning (169085): No exact pin location assignment(s) for 23 pins of 65 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
 Info (184020): Starting Fitter periphery placement operations
 Info (11191): Automatically promoted 1 clock (1 global)
     Info (11162): clock~inputCLKENA0 with 40 fanout uses global clock CLKCTRL_G6
@@ -1542,7 +1536,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.49 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.46 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1551,10 +1545,10 @@ Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto_RX/output_files/rx_serial.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 6292 megabytes
-    Info: Processing ended: Wed Sep 26 12:08:32 2018
+    Info: Peak virtual memory: 6300 megabytes
+    Info: Processing ended: Wed Sep 26 12:15:23 2018
     Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Total CPU time (on all processors): 00:00:37
 
 
 +----------------------------+

@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Wed Sep 26 12:08:09 2018
+Analysis & Synthesis Status : Successful - Wed Sep 26 12:14:59 2018
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : rx_serial
 Top-level Entity Name : rx_serial
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 40
-Total pins : 66
+Total pins : 65
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

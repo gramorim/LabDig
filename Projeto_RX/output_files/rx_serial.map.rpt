@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rx_serial
-Wed Sep 26 12:08:09 2018
+Wed Sep 26 12:14:59 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -36,9 +36,10 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
  28. Port Connectivity Checks: "rx_serial_fd:U2|ticker:U4"
  29. Port Connectivity Checks: "rx_serial_fd:U2|gerador_paridade_n:U3"
  30. Port Connectivity Checks: "rx_serial_fd:U2|deslocador_n:U1"
- 31. Post-Synthesis Netlist Statistics for Top Partition
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
+ 31. Port Connectivity Checks: "rx_serial_fd:U2"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
 
 
 
@@ -65,14 +66,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Sep 26 12:08:09 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed Sep 26 12:14:59 2018       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; rx_serial                                   ;
 ; Top-level Entity Name           ; rx_serial                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 40                                          ;
-; Total pins                      ; 66                                          ;
+; Total pins                      ; 65                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -224,14 +225,14 @@ agreement for further details.
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 40          ;
 ;                                             ;             ;
-; I/O pins                                    ; 66          ;
+; I/O pins                                    ; 65          ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
 ; Maximum fan-out                             ; 40          ;
-; Total fan-out                               ; 526         ;
-; Average fan-out                             ; 2.08        ;
+; Total fan-out                               ; 524         ;
+; Average fan-out                             ; 2.09        ;
 +---------------------------------------------+-------------+
 
 
@@ -240,7 +241,7 @@ agreement for further details.
 +-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Entity Name        ; Library Name ;
 +-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+--------------------+--------------+
-; |rx_serial                              ; 81 (0)              ; 40 (0)                    ; 0                 ; 0          ; 66   ; 0            ; |rx_serial                                                                ; rx_serial          ; work         ;
+; |rx_serial                              ; 81 (0)              ; 40 (0)                    ; 0                 ; 0          ; 65   ; 0            ; |rx_serial                                                                ; rx_serial          ; work         ;
 ;    |rx_serial_fd:U2|                    ; 71 (0)              ; 34 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2                                                ; rx_serial_fd       ; work         ;
 ;       |contador_m:U2|                   ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|contador_m:U2                                  ; contador_m         ; work         ;
 ;       |deslocador_n:U1|                 ; 10 (10)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |rx_serial|rx_serial_fd:U2|deslocador_n:U1                                ; deslocador_n       ; work         ;
@@ -513,6 +514,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+-------+----------+----------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rx_serial_fd:U2"                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; o_reg1[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
@@ -532,7 +542,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         4 data inputs ; 29                          ;
 ;         5 data inputs ; 9                           ;
 ;         6 data inputs ; 2                           ;
-; boundary_port         ; 66                          ;
+; boundary_port         ; 65                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.60                        ;
 ; Average LUT depth     ; 1.40                        ;
@@ -554,7 +564,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Wed Sep 26 12:07:56 2018
+    Info: Processing started: Wed Sep 26 12:14:47 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rx_serial -c rx_serial
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -592,8 +602,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file rx_seri
     Info (12022): Found design unit 1: rx_serial-rx_serial_arch File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto_RX/rx_serial.vhd Line: 19
     Info (12023): Found entity 1: rx_serial File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto_RX/rx_serial.vhd Line: 6
 Info (12127): Elaborating entity "rx_serial" for the top level hierarchy
-Info (12128): Elaborating entity "rx_serial_uc" for hierarchy "rx_serial_uc:U1" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto_RX/rx_serial.vhd Line: 50
-Info (12128): Elaborating entity "rx_serial_fd" for hierarchy "rx_serial_fd:U2" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto_RX/rx_serial.vhd Line: 54
+Info (12128): Elaborating entity "rx_serial_uc" for hierarchy "rx_serial_uc:U1" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto_RX/rx_serial.vhd Line: 51
+Info (12128): Elaborating entity "rx_serial_fd" for hierarchy "rx_serial_fd:U2" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto_RX/rx_serial.vhd Line: 55
 Info (12128): Elaborating entity "deslocador_n" for hierarchy "rx_serial_fd:U2|deslocador_n:U1" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto_RX/rx_serial_fd.vhd Line: 76
 Info (12128): Elaborating entity "contador_m" for hierarchy "rx_serial_fd:U2|contador_m:U2" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto_RX/rx_serial_fd.vhd Line: 84
 Info (12128): Elaborating entity "gerador_paridade_n" for hierarchy "rx_serial_fd:U2|gerador_paridade_n:U3" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/Projeto_RX/rx_serial_fd.vhd Line: 92
@@ -614,13 +624,13 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 147 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 146 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 62 output pins
+    Info (21059): Implemented 61 output pins
     Info (21061): Implemented 81 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4871 megabytes
-    Info: Processing ended: Wed Sep 26 12:08:09 2018
+    Info: Peak virtual memory: 4870 megabytes
+    Info: Processing ended: Wed Sep 26 12:15:00 2018
     Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:26
 
