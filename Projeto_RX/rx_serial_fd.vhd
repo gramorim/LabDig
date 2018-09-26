@@ -7,20 +7,21 @@ use IEEE.std_logic_arith.all;
 entity rx_serial_fd is
 	 generic(constant Ratio_m : integer := 100;
 				constant Ratio_n : integer := 7);
-    port (clock, reset                              : in std_logic;
-          zerar, contar, carregar, deslocar         : in std_logic;
-          entrada_serial, registra                  : in std_logic;
-			 estado                                    : in std_logic_vector(3 downto 0);
+    port (clock, reset                              : in  std_logic;
+          zerar, contar, carregar, deslocar         : in  std_logic;
+          entrada_serial, registra                  : in  std_logic;
+			 estado                                    : in  std_logic_vector(3 downto 0);
 			 fim, paridade_ok, tick                    : out std_logic;
 		    hex1, hex0, hex_est, hex_cont, hex_ticker : out std_logic_vector(6 downto 0);
 			 o_dados                                   : out std_logic_vector(9 downto 0);
-			 o_reg1, o_reg2                            : out std_logic_vector(6 downto 0));
+			 o_reg1                                    : out std_logic_vector(7 downto 0));
 end rx_serial_fd;
 
 architecture rx_serial_fd of rx_serial_fd is
    signal D, S                   : std_logic_vector (9 downto 0);
 	signal s_hex1, s_hex0, s_cont : std_logic_vector (3 downto 0);
-	signal s_reg1, s_reg2         : std_logic_vector (6 downto 0);
+	signal s_reg0, s_reg1, s_reg2 : std_logic_vector (7 downto 0);
+	signal s_paridade_ok          : std_logic;
      
 	component deslocador_n
 	generic (constant N: integer); -- numero de bits
@@ -89,7 +90,7 @@ begin
 				 s_cont, 
 				 fim);
 	U3: gerador_paridade_n
-	port map (S(9 downto 3), paridade_ok, open);
+	port map (S(9 downto 3), s_paridade_ok, open);
 	
 	U4: ticker
 	generic map (Ratio_m,Ratio_n,11,4)
@@ -112,18 +113,16 @@ begin
 	Hcont: hex7seg
 	port map(s_cont,'1',hex_cont);
 	
-	Reg1: registrador_n
-   generic map(7)
-   port map(clock, reset, registra,
-            S(6 downto 0), s_reg1);
+	s_reg0(7)          <= s_paridade_ok;
+	s_reg0(6 downto 0) <= S(6 downto 0);
 	
-	Reg2: registrador_n
-   generic map(7)
+	Reg1: registrador_n
+   generic map(8)
    port map(clock, reset, registra,
-            s_reg1, s_reg2);
+            s_reg0, s_reg1);
 	
 	o_dados <= S;
 	o_reg1 <= s_reg1;
-	o_reg2 <= s_reg2;	
+	paridade_ok <= s_reg1(7);
 end rx_serial_fd;
 
