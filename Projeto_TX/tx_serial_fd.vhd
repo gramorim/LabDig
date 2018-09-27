@@ -14,7 +14,7 @@ Entity tx_serial_fd is
 end tx_serial_fd;
 
 architecture tx_serial_fd of tx_serial_fd is
-    signal D, S: std_logic_vector (9 downto 0);
+    signal D, S: std_logic_vector (8 downto 0);
      
 	component deslocador_n
     generic (
@@ -40,13 +40,19 @@ architecture tx_serial_fd of tx_serial_fd is
     
 begin
 
-    D(0) <= '1';
-    D(1) <= '0';
-    D(8 downto 2) <= dados_ascii;
-    D(9) <= paridade xor dados_ascii(0) xor dados_ascii(1) xor dados_ascii(2) xor dados_ascii(3) 
-            xor dados_ascii(4) xor dados_ascii(5) xor dados_ascii(6);
-    U1: deslocador_n generic map (N => 10)  port map (clock, reset, carrega, desloca, '1', D, S);
-    U2: contador_m generic map (M => 13, N => 4) port map (clock, zera, conta, open, fim);
+    D(0) <= '0';
+    D(7 downto 1) <= dados_ascii;
+    D(8) <= paridade       xor 
+	         dados_ascii(0) xor 
+				dados_ascii(1) xor 
+				dados_ascii(2) xor 
+				dados_ascii(3) xor 
+				dados_ascii(4) xor 
+				dados_ascii(5) xor
+				dados_ascii(6);
+				
+    U1: deslocador_n generic map (N => 9)  port map (clock, reset, carrega, desloca, '1', D, S);
+    U2: contador_m generic map (M => 12, N => 4) port map (clock, zera, conta, open, fim);
     saida_serial <= S(0);
     
 end tx_serial_fd;
