@@ -7,8 +7,9 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity tx_serial_uc is 
-  port ( clock, reset, partida, tick, fim: in STD_LOGIC;
-         zera, conta, carrega, desloca, pronto, em_andamento: out STD_LOGIC );
+  port ( clock, reset, partida, tick, fim                    : in  STD_LOGIC;
+         zera, conta, carrega, desloca, pronto, em_andamento : out STD_LOGIC;
+			o_estado                                            : out std_logic_vector(3 downto 0));
 end;
 
 architecture tx_serial_uc of tx_serial_uc is
@@ -60,5 +61,13 @@ begin
 		
 	with Sreg select
 		em_andamento <= '1' when espera|transmissao, '0' when others;
+		
+	with Sreg select
+		o_estado <= "0000" when inicial,
+						"0001" when preparacao,
+						"0010" when espera,
+						"0011" when transmissao, 
+						"0100" when final,
+						"1110" when others;
 		
 end tx_serial_uc;

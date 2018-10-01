@@ -10,16 +10,18 @@ entity tx_serial is
 				constant Ratio_n : integer := 7);
     port(clock, reset, partida, paridade                : in  std_logic;
          dados_ascii                                    : in  std_logic_vector (6 downto 0);
-         saida_serial, pronto, o_tick, transm_andamento : out std_logic);
+         saida_serial, pronto, o_tick, transm_andamento : out std_logic;
+			o_estado                                       : out std_logic_vector(3 downto 0));
 end tx_serial;
 
 architecture tx_serial of tx_serial is
     signal s_zera, s_conta, s_carrega, s_desloca, s_tick, s_fim: std_logic;
     signal s_partida: std_logic; -- used by edge_detector
      
-    component tx_serial_uc port ( 
-            clock, reset, partida, tick, fim                    : in std_logic;
-            zera, conta, carrega, desloca, pronto, em_andamento : out STD_LOGIC);
+    component tx_serial_uc 
+		  port ( clock, reset, partida, tick, fim                    : in  STD_LOGIC;
+					zera, conta, carrega, desloca, pronto, em_andamento : out STD_LOGIC;
+					o_estado                                            : out std_logic_vector(3 downto 0));
     end component;
 
     component tx_serial_fd port (
@@ -50,7 +52,8 @@ begin
 
     -- sinais reset e partida mapeados em botoes ativos em alto
     UC: tx_serial_uc port map (clock, reset, s_partida, s_tick, s_fim,
-                               s_zera, s_conta, s_carrega, s_desloca, pronto, transm_andamento);
+                               s_zera, s_conta, s_carrega, s_desloca, pronto, transm_andamento,
+										 o_estado);
     FD: tx_serial_fd port map (clock, reset, s_zera, s_conta, s_carrega, s_desloca, paridade, 
                                dados_ascii, saida_serial, s_fim);
     -- fator de divisao para 115.200 bauds (434=50M/115200)
