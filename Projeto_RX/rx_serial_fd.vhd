@@ -82,7 +82,7 @@ begin
 				 entrada_serial,D,S);
 				 
    U2: contador_m 
-	generic map (M => 12, 
+	generic map (M => 11, 
 	             N => 4) 
 	port map (clock, 
 	          zerar, 

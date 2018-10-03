@@ -21,7 +21,7 @@ entity UART is
 		  --Depuracao rx
 		--o_estado_rx : out std_logic_vector(3 downto 0);
 		--o_tick_rx   : out std_logic);
-		  o_serial_entrada : out std_logic);
+		  o_serial_entrada, o_fim : out std_logic;
 		  hex_estado       : out std_logic_vector(6 downto 0));
 end UART;
 
@@ -42,7 +42,7 @@ Architecture UART_ark of UART is
 				constant Ratio_n : integer);
     port (clock, reset                                 : in std_logic;
           entrada_serial, recebe_dado                  : in  std_logic;
-		    hex1, hex0, hex_estado, hex_cont, hex_ticker    : out std_logic_vector(6 downto 0);
+		    hex1, hex0, hex_est, hex_cont, hex_ticker    : out std_logic_vector(6 downto 0);
           tem_dado_recebido, paridade_ok, o_tick       : out std_logic;
 			 o_serial, O_FIM                              : out std_logic;
 		    o_estado                                     : out std_logic_vector(3 downto 0);
@@ -60,12 +60,12 @@ begin
 	
 	RX: rx_serial
 	generic map(Ratio_m,Ratio_n)
-	port map(clock, reset,
+	port map(clock, s_reset,
             serial_entrada, s_recebe,
-		      hex_dado_1, hex_dado_0, open, open, open,
+		      hex_dado_1, hex_dado_0, hex_estado, open, open,
           --tem_dado_rec, paridade_ok, o_tick_rx,
             tem_dado_rec, paridade_ok, open,
-			   open, open,
+			   open, o_fim,
 		    --o_estado_rx,
 		      open);
 		    --o_dado_ascii);
