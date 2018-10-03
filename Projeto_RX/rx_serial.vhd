@@ -6,8 +6,8 @@ use IEEE.std_logic_arith.all;
 entity rx_serial is
 	 generic(constant Ratio_m : integer := 100;
 				constant Ratio_n : integer := 7);
-    port (clock, reset                                 : in std_logic;
-          entrada_serial, recebe_dado                  : in  std_logic;
+    port (clock, reset                                 : in  std_logic;
+          entrada_serial, recebe_dado, paridade        : in  std_logic;
 		    hex1, hex0, hex_est, hex_cont, hex_ticker    : out std_logic_vector(6 downto 0);
           tem_dado_recebido, paridade_ok, o_tick       : out std_logic;
 			 o_serial, O_FIM                              : out std_logic;
@@ -32,14 +32,14 @@ architecture rx_serial_arch of rx_serial is
     component rx_serial_fd
 		 generic(constant Ratio_m : integer := 100;
 					constant Ratio_n : integer := 7);
-		 port (clock, reset                              : in  std_logic;
-				 zerar, contar, carregar, deslocar         : in  std_logic;
-				 entrada_serial, registra                  : in  std_logic;
-				 estado                                    : in  std_logic_vector(3 downto 0);
-				 fim, paridade_ok, tick                    : out std_logic;
-				 hex1, hex0, hex_est, hex_cont, hex_ticker : out std_logic_vector(6 downto 0);
-				 o_dados                                   : out std_logic_vector(9 downto 0);
-				 o_reg1                                    : out std_logic_vector(7 downto 0));
+		 port (clock, reset                                : in  std_logic;
+				 zerar, contar, carregar, deslocar, paridade : in  std_logic;
+				 entrada_serial, registra                    : in  std_logic;
+				 estado                                      : in  std_logic_vector(3 downto 0);
+				 fim, paridade_ok, tick                      : out std_logic;
+				 hex1, hex0, hex_est, hex_cont, hex_ticker   : out std_logic_vector(6 downto 0);
+				 o_dados                                     : out std_logic_vector(9 downto 0);
+				 o_reg1                                      : out std_logic_vector(7 downto 0));
 	 end component;
 
 begin
@@ -55,7 +55,7 @@ begin
 	 FD: rx_serial_fd 
 	 generic map(Ratio_m,Ratio_n)
 	 port map(clock, s_reset, s_zera, s_conta, s_carrega, 
-				 s_desloca, entrada_serial, s_registra,
+				 s_desloca, paridade, entrada_serial, s_registra,
              s_estado, s_fim, s_paridade_ok, s_tick, 
 				 hex1, hex0, hex_est, hex_cont, hex_ticker,
 				 o_dados, s_dado_recebido);

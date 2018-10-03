@@ -40,8 +40,8 @@ Architecture UART_ark of UART is
 	component rx_serial
 	 generic(constant Ratio_m : integer;
 				constant Ratio_n : integer);
-    port (clock, reset                                 : in std_logic;
-          entrada_serial, recebe_dado                  : in  std_logic;
+    port (clock, reset                                 : in  std_logic;
+          entrada_serial, recebe_dado, paridade        : in  std_logic;
 		    hex1, hex0, hex_est, hex_cont, hex_ticker    : out std_logic_vector(6 downto 0);
           tem_dado_recebido, paridade_ok, o_tick       : out std_logic;
 			 o_serial, O_FIM                              : out std_logic;
@@ -61,7 +61,7 @@ begin
 	RX: rx_serial
 	generic map(Ratio_m,Ratio_n)
 	port map(clock, s_reset,
-            serial_entrada, s_recebe,
+            serial_entrada, s_recebe, '0',
 		      hex_dado_1, hex_dado_0, hex_estado, open, open,
           --tem_dado_rec, paridade_ok, o_tick_rx,
             tem_dado_rec, paridade_ok, open,
