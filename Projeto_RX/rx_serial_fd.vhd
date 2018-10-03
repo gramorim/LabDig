@@ -82,7 +82,7 @@ begin
 				 entrada_serial,D,S);
 				 
    U2: contador_m 
-	generic map (M => 11, 
+	generic map (M => 12, 
 	             N => 4) 
 	port map (clock, 
 	          zerar, 
@@ -96,10 +96,10 @@ begin
 	generic map (Ratio_m,Ratio_n,11,4)
 	port map (entrada_serial, clock, reset, tick, OPEN, OPEN, hex_ticker);
 	
-	s_hex0 <= S(3 downto 0);
+	s_hex0 <= s_reg1(3 downto 0);
 	
 	s_hex1(3) <= '0';
-	s_hex1(2 downto 0) <= S(6 downto 4);
+	s_hex1(2 downto 0) <= s_reg1(6 downto 4);
 	
 	H0: hex7seg 
 	port map(s_hex0,'1',hex0);

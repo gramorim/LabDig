@@ -32,9 +32,9 @@ begin
 										 
 		when preparacao => Snext <= espera;
 		
-		when espera     => if    tick = '1' then Snext <= recepcao;
-								 elsif fim  = '0' then Snext <= espera;
-								 else                 Snext <= final;
+		when espera     => if    fim  = '1' then Snext <= final;
+								 elsif tick = '1' then Snext <= recepcao;
+								 else                  Snext <= espera;
 								 end if;
 										 
 		when recepcao   => Snext <= espera;

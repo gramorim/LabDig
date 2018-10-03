@@ -41,9 +41,7 @@ architecture rx_serial_arch of rx_serial is
 				 o_dados                                   : out std_logic_vector(9 downto 0);
 				 o_reg1                                    : out std_logic_vector(7 downto 0));
 	 end component;
-    
 
-    
 begin
 
 	s_reset <= reset;
