@@ -90,7 +90,8 @@ begin
 				 s_cont, 
 				 fim);
 	U3: gerador_paridade_n
-	port map (S(9 downto 3), s_paridade_ok, open);
+	generic map(8)
+	port map (S(7 downto 0), open, s_paridade_ok);
 	
 	U4: ticker
 	generic map (Ratio_m,Ratio_n,11,4)

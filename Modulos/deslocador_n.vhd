@@ -8,8 +8,8 @@ entity deslocador_n is
     port (
         clock, reset: in std_logic;
         carrega, desloca, entrada_serial: in std_logic; 
-        dados: in std_logic_vector (N-1 downto 0);
-        saida: out  std_logic_vector (N-1 downto 0)
+        dados: in  std_logic_vector (N-1 downto 0);
+        saida: out std_logic_vector (N-1 downto 0)
     );
 end deslocador_n;
 
@@ -21,9 +21,9 @@ process (clock, reset, IQ)
   begin
     if reset='1' then IQ <= (others=>'1');
     elsif (clock'event and clock='1') then
-        if carrega='1' then IQ <= dados;
+        if    carrega='1' then IQ <= dados;
         elsif desloca='1' then IQ <= entrada_serial & IQ(N-1 downto 1);
-        else IQ <= IQ;
+        else  IQ <= IQ;
         end if;
     end if;
     saida <= IQ;     
