@@ -1,0 +1,28 @@
+|contador_m_load
+CLK => IQ[0].CLK
+CLK => IQ[1].CLK
+CLK => IQ[2].CLK
+CLK => IQ[3].CLK
+zera => IQ[0].ACLR
+zera => IQ[1].ACLR
+zera => IQ[2].ACLR
+zera => IQ[3].ACLR
+conta => IQ.OUTPUTSELECT
+conta => IQ.OUTPUTSELECT
+conta => IQ.OUTPUTSELECT
+conta => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+dados[0] => IQ.DATAB
+dados[1] => IQ.DATAB
+dados[2] => IQ.DATAB
+dados[3] => IQ.DATAB
+Q[0] << IQ[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] << IQ[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] << IQ[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] << IQ[3].DB_MAX_OUTPUT_PORT_TYPE
+fim << Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
