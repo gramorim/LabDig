@@ -5,6 +5,7 @@ use IEEE.std_logic_arith.all;
 entity UART is
 	generic(constant Ratio_m : integer := 25000000;
 			  constant Ratio_n : integer := 25);
+			  
 	port(i_dado_ascii             : in  std_logic_vector(6 downto 0);
 		  transmite_dado           : in  std_logic;
 		  transm_andamento, pronto : out std_logic;
@@ -16,13 +17,14 @@ entity UART is
 		  serial_entrada            : in  std_logic;
 		--hex_dado_1, hex_dado_0    : out std_logic_vector(6 downto 0);
 		  
-		  clock, reset : in std_logic);
+		  clock, reset : in std_logic;
 		  
 		  --Depuracao rx
 		--o_estado_rx : out std_logic_vector(3 downto 0);
 		--o_tick_rx   : out std_logic);
 		--o_serial_entrada, o_fim : out std_logic;
-		--hex_estado       : out std_logic_vector(6 downto 0));
+		--hex_estado       : out std_logic_vector(6 downto 0)
+		  o_estado_tx : out std_logic_vector(3 downto 0));
 end UART;
 
 Architecture UART_ark of UART is
@@ -32,9 +34,10 @@ Architecture UART_ark of UART is
 	component tx_serial
 		 generic(constant Ratio_m : integer;
 					constant Ratio_n : integer);
-		 port(clock, reset, partida, paridade                : in  std_logic;
-				dados_ascii                                    : in  std_logic_vector (6 downto 0);
-				saida_serial, pronto, o_tick, transm_andamento : out std_logic);
+    port(clock, reset, partida, paridade                : in  std_logic;
+         dados_ascii                                    : in  std_logic_vector (6 downto 0);
+         saida_serial, pronto, o_tick, transm_andamento : out std_logic;
+			o_estado                                       : out std_logic_vector(3 downto 0));
 	end component;
 	
 	component rx_serial
@@ -56,7 +59,8 @@ begin
 	generic map(Ratio_m,Ratio_n)
 	port map(clock, s_reset, s_transmite, '0',
 				i_dado_ascii,
-				serial_saida, pronto, open, transm_andamento);
+				serial_saida, pronto, open, transm_andamento,
+				o_estado_tx);
 	
 	RX: rx_serial
 	generic map(Ratio_m,Ratio_n)

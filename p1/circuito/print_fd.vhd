@@ -5,13 +5,17 @@ use IEEE.std_logic_arith.all;
 use ieee.std_logic_unsigned.alL;
 
 entity printf_fd is
-	generic(constant N_char : integer := 16;    -- quantidade caracteres
-			  constant N_end  : integer := 4);    -- quantidade bits endereçamento
+	generic(constant N_char  : integer := 16;    -- quantidade caracteres
+			  constant N_end   : integer := 4;     -- quantidade bits endereçamento
+			  constant Ratio_m : integer := 7;
+			  constant Ratio_n : integer := 3);
 	port(clock, carrega, conta, zera, transmite : in  std_logic;
 		  dados                                  : in  std_logic_vector(N_end-1 downto 0);
 		  we, ce                                 : in  std_logic;
 		  dado_entrada                           : in  std_logic_vector(6 downto 0);
-		  fim, pronto, saida_serial              : out std_logic);
+		  fim, pronto, saida_serial, transm      : out std_logic;
+		  o_estado_tx                            : out std_logic_vector(3 downto 0);
+		  o_end                 					  : out std_logic_vector(N_end-1 downto 0));
 end printf_fd;
 
 architecture printf_fd_arc of printf_fd is
@@ -56,7 +60,9 @@ architecture printf_fd_arc of printf_fd is
 			  recebe_dado               : in  std_logic;
 			  serial_entrada            : in  std_logic;
 			  
-			  clock, reset : in std_logic);
+			  clock, reset : in std_logic;
+			  
+			  o_estado_tx : out std_logic_vector(3 downto 0));
 	end component;
 
 begin
@@ -76,10 +82,10 @@ begin
 				we, ce);
 				
 	UART1: UART
-	generic map(25000000,25)
+	generic map(Ratio_m,Ratio_n)
 	port map(s_dado_saida,
 			   transmite,
-			   open, pronto,
+			   transm, pronto,
 			   saida_serial,
 			  
 			   open,
@@ -87,6 +93,11 @@ begin
 			   '0',
 			   '1',
 			  
-			   clock, '0');
+			   clock, '0',
+				
+				o_estado_tx);
+				
+	
+	o_end <= s_Q;
 
 end printf_fd_arc;

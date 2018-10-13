@@ -21,7 +21,8 @@ begin
   process (RESET, CLOCK)
   begin
       if RESET = '1' then
-          Sreg <= inicial;
+        --Sreg <= inicial;
+			 Sreg <= Snext;
       elsif CLOCK'event and CLOCK = '1' then
           Sreg <= Snext; 
       end if;
