@@ -14,10 +14,11 @@ entity print is
 		  saida_serial, pronto  : out std_logic;
 		  
 		  --depuracao
-		  o_estado, o_estado_tx : out std_logic_vector(3 downto 0);
-		  o_trams, o_conta      : out std_logic;
-		  o_end                 : out std_logic_vector(N_end-1 downto 0);
-		  o_mem                 : out std_logic_vector(6 downto 0));
+		  o_estado, o_estado_tx 				  : out std_logic_vector(3 downto 0);
+		  o_trams, o_conta      				  : out std_logic;
+		  o_end                 				  : out std_logic_vector(N_end-1 downto 0);
+		  o_mem                 				  : out std_logic_vector(6 downto 0);
+		  o_hex_mem_1, o_hex_mem_0, o_hex_end : out std_logic_vector(6 downto 0));
 end print;
 
 architecture print_arc of print is
@@ -36,8 +37,8 @@ architecture print_arc of print is
 			  dado_entrada                           : in  std_logic_vector(6 downto 0);
 			  fim, pronto, saida_serial, transm      : out std_logic;
 			  o_estado_tx                            : out std_logic_vector(3 downto 0);
-			  o_end                 					  : out std_logic_vector(N_end-1 downto 0);
-			  o_mem                                  : out std_logic_vector(6 downto 0));
+			  o_mem                                  : out std_logic_vector(6 downto 0);
+			  o_hex_mem_1, o_hex_mem_0, o_hex_end    : out std_logic_vector(6 downto 0));
 	end component;
 	
 	component print_uc is
@@ -59,8 +60,8 @@ begin
 				s_dado,
 				s_fim, s_pronto, saida_serial, s_trams,
 				o_estado_tx,
-				o_end,
-				o_mem);
+				o_mem,
+				o_hex_mem_1, o_hex_mem_0, o_hex_end);
 				
 	UC: print_uc
 	port map(clock, send, reset, s_fim, s_pronto, s_trams,	
