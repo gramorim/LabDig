@@ -45,8 +45,8 @@ architecture printf_fd_arc of printf_fd is
 		PORT (dado_entrada : IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 				dado_saida   : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 				endereco     : IN  STD_LOGIC_VECTOR(ADR-1 DOWNTO 0);         
-				we, L_ce     : IN  STD_LOGIC;
-				o_endereco   : out STD_LOGIC_VECTOR(ADR-1 DOWNTO 0));
+				we, L_ce     : IN  STD_LOGIC
+				);
 	END component;
 	
 	component UART is
@@ -81,8 +81,7 @@ begin
 	PORT map(dado_entrada,
 				s_dado_saida,
 				s_Q,         
-				we, ce,
-				o_end);
+				we, ce);
 				
 	UART1: UART
 	generic map(Ratio_m,Ratio_n)
