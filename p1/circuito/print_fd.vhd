@@ -50,8 +50,8 @@ architecture printf_fd_arc of printf_fd is
 	END component;
 	
 	component UART is
-		generic(constant Ratio_m : integer := 25000000;
-				  constant Ratio_n : integer := 25);
+		generic(constant Ratio_m : integer := 3473;
+				  constant Ratio_n : integer := 12);
 		port(i_dado_ascii             : in  std_logic_vector(6 downto 0);
 			  transmite_dado           : in  std_logic;
 			  transm_andamento, pronto : out std_logic;
@@ -81,7 +81,7 @@ begin
 	PORT map(dado_entrada,
 				s_dado_saida,
 				s_Q,         
-				we, ce);
+				we, not ce);
 				
 	UART1: UART
 	generic map(Ratio_m,Ratio_n)
