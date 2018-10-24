@@ -15,13 +15,14 @@ entity printf_fd is
 		  dado_entrada                           : in  std_logic_vector(6 downto 0);
 		  fim, pronto, saida_serial, transm      : out std_logic;
 		  o_estado_tx                            : out std_logic_vector(3 downto 0);
-		  o_end                 					  : out std_logic_vector(N_end-1 downto 0);
-		  o_mem                						  : out std_logic_vector(6 downto 0));
+		  o_mem                						  : out std_logic_vector(6 downto 0);
+		  o_hex_mem_1, o_hex_mem_0, o_hex_end    : out std_logic_vector(6 downto 0));
 end printf_fd;
 
 architecture printf_fd_arc of printf_fd is
 	signal s_Q          : std_logic_vector(N_end-1 downto 0);
 	signal s_dado_saida : std_logic_vector(6 downto 0);
+	signal hex1, hex0, hexend   : std_logic_vector(3 downto 0);
 
 	component contador_m_load is
 		generic (
@@ -44,7 +45,7 @@ architecture printf_fd_arc of printf_fd is
 		);
 		PORT (dado_entrada : IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 				dado_saida   : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
-				endereco     : IN  STD_LOGIC_VECTOR(ADR-1 DOWNTO 0);         
+				endereco     : IN  STD_LOGIC_VECTOR(ADR-1 DOWNTO 0);
 				we, L_ce     : IN  STD_LOGIC
 				);
 	END component;
@@ -65,6 +66,14 @@ architecture printf_fd_arc of printf_fd is
 			  clock, reset : in std_logic;
 			  
 			  o_estado_tx : out std_logic_vector(3 downto 0));
+	end component;
+	
+	component hex7seg is
+		 port (
+			  binary : in std_logic_vector(3 downto 0);
+			  enable : in std_logic;
+			  hex_output : out std_logic_vector(6 downto 0)
+		 );
 	end component;
 
 begin
@@ -99,8 +108,29 @@ begin
 				
 				o_estado_tx);
 				
+	hex1(3) <= '0';
+	hex1(2 downto 0) <= s_dado_saida(6 downto 4);
 	
-	--o_end <= s_Q;
+	uHex1: hex7seg
+	port map(hex1,
+				'1',
+				o_hex_mem_1);
+	
+	hex0 <= s_dado_saida(3 downto 0);
+	
+	uHex0: hex7seg
+	port map(hex0,
+				'1',
+				o_hex_mem_0);
+	
+	 			
 	o_mem <= s_dado_saida;
+	
+	hexend <= s_Q(3 downto 0);
+	
+	uHexcont: hex7seg
+	port map(s_Q,
+				'1',
+				o_hex_end);
 
 end printf_fd_arc;
