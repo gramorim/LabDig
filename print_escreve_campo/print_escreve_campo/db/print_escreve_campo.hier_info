@@ -1,0 +1,465 @@
+|print_escreve_campo
+clock => print_escreve_campo_uc:U1.clock
+clock => print_escreve_campo_fd:U2.clock
+clock => edge_detector:U3.i_clk
+reset => print_escreve_campo_uc:U1.reset
+iniciar => edge_detector:U3.i_input
+operacao[0] => print_escreve_campo_uc:U1.operacao[0]
+operacao[1] => print_escreve_campo_uc:U1.operacao[1]
+dado[0] => print_escreve_campo_fd:U2.dado[0]
+dado[1] => print_escreve_campo_fd:U2.dado[1]
+endereco[0] => print_escreve_campo_fd:U2.endereco[0]
+endereco[1] => print_escreve_campo_fd:U2.endereco[1]
+endereco[2] => print_escreve_campo_fd:U2.endereco[2]
+endereco[3] => print_escreve_campo_fd:U2.endereco[3]
+saida_serial <= print_escreve_campo_fd:U2.saida_serial
+pronto <= print_escreve_campo_uc:U1.pronto_out
+db_reseta <= print_escreve_campo_uc:U1.reseta
+db_partida <= print_escreve_campo_uc:U1.partida
+db_zera <= print_escreve_campo_uc:U1.zera
+db_conta <= print_escreve_campo_uc:U1.conta
+db_carrega <= print_escreve_campo_uc:U1.carrega
+db_pronto <= print_escreve_campo_fd:U2.pronto
+db_we <= print_escreve_campo_uc:U1.we
+db_fim <= print_escreve_campo_fd:U2.fim
+db_q[0] <= print_escreve_campo_fd:U2.db_q[0]
+db_q[1] <= print_escreve_campo_fd:U2.db_q[1]
+db_q[2] <= print_escreve_campo_fd:U2.db_q[2]
+db_q[3] <= print_escreve_campo_fd:U2.db_q[3]
+db_sel[0] <= print_escreve_campo_uc:U1.sel[0]
+db_sel[1] <= print_escreve_campo_uc:U1.sel[1]
+db_dados[0] <= print_escreve_campo_fd:U2.db_dados[0]
+db_dados[1] <= print_escreve_campo_fd:U2.db_dados[1]
+db_dados[2] <= print_escreve_campo_fd:U2.db_dados[2]
+db_dados[3] <= print_escreve_campo_fd:U2.db_dados[3]
+db_dados[4] <= print_escreve_campo_fd:U2.db_dados[4]
+db_dados[5] <= print_escreve_campo_fd:U2.db_dados[5]
+db_dados[6] <= print_escreve_campo_fd:U2.db_dados[6]
+
+
+|print_escreve_campo|print_escreve_campo_uc:U1
+clock => Sreg~1.DATAIN
+reset => Sreg~3.DATAIN
+iniciar => Snext.OUTPUTSELECT
+iniciar => Snext.OUTPUTSELECT
+iniciar => Snext.OUTPUTSELECT
+operacao[0] => Equal0.IN1
+operacao[0] => Equal1.IN1
+operacao[1] => Equal0.IN0
+operacao[1] => Equal1.IN0
+pronto => Snext.selecionaNL.DATAB
+pronto => Snext.OUTPUTSELECT
+pronto => Snext.OUTPUTSELECT
+pronto => Selector2.IN2
+pronto => Snext.OUTPUTSELECT
+pronto => Snext.OUTPUTSELECT
+pronto => Selector6.IN2
+pronto => Selector5.IN2
+fim => Snext.DATAA
+fim => Snext.DATAA
+fim_linha => Snext.DATAA
+fim_linha => Snext.DATAA
+zera <= zera.DB_MAX_OUTPUT_PORT_TYPE
+reseta <= reseta.DB_MAX_OUTPUT_PORT_TYPE
+conta <= conta.DB_MAX_OUTPUT_PORT_TYPE
+carrega <= carrega.DB_MAX_OUTPUT_PORT_TYPE
+we <= we.DB_MAX_OUTPUT_PORT_TYPE
+partida <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+pronto_out <= WideNor1.DB_MAX_OUTPUT_PORT_TYPE
+sel[0] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+sel[1] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2
+clock => tx_serial:U1.clock
+clock => contador_m_load:U3.CLK
+reset => tx_serial:U1.reset
+partida => tx_serial:U1.partida
+we => memoria_jogo_16x7:U2.we
+conta => contador_m_load:U3.conta
+zera => contador_m_load:U3.zera
+carrega => contador_m_load:U3.carrega
+endereco[0] => contador_m_load:U3.D[0]
+endereco[1] => contador_m_load:U3.D[1]
+endereco[2] => contador_m_load:U3.D[2]
+endereco[3] => contador_m_load:U3.D[3]
+dado[0] => mux3x1_n:U5.SEL[0]
+dado[1] => mux3x1_n:U5.SEL[1]
+sel[0] => mux3x1_n:U4.SEL[0]
+sel[1] => mux3x1_n:U4.SEL[1]
+fim <= contador_m_load:U3.fim
+fim_linha <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+saida_serial <= tx_serial:U1.saida_serial
+pronto <= tx_serial:U1.pronto
+db_q[0] <= contador_m_load:U3.Q[0]
+db_q[1] <= contador_m_load:U3.Q[1]
+db_q[2] <= contador_m_load:U3.Q[2]
+db_q[3] <= contador_m_load:U3.Q[3]
+db_dados[0] <= mux3x1_n:U4.MX_OUT[0]
+db_dados[1] <= mux3x1_n:U4.MX_OUT[1]
+db_dados[2] <= mux3x1_n:U4.MX_OUT[2]
+db_dados[3] <= mux3x1_n:U4.MX_OUT[3]
+db_dados[4] <= mux3x1_n:U4.MX_OUT[4]
+db_dados[5] <= mux3x1_n:U4.MX_OUT[5]
+db_dados[6] <= mux3x1_n:U4.MX_OUT[6]
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1
+clock => tx_serial_uc:U1.clock
+clock => tx_serial_fd:U2.clock
+clock => contador_m:U3.CLK
+clock => edge_detector:U4.i_clk
+reset => tx_serial_uc:U1.reset
+reset => tx_serial_fd:U2.reset
+partida => edge_detector:U4.i_input
+paridade => tx_serial_fd:U2.paridade
+dados_ascii[0] => tx_serial_fd:U2.dados_ascii[0]
+dados_ascii[1] => tx_serial_fd:U2.dados_ascii[1]
+dados_ascii[2] => tx_serial_fd:U2.dados_ascii[2]
+dados_ascii[3] => tx_serial_fd:U2.dados_ascii[3]
+dados_ascii[4] => tx_serial_fd:U2.dados_ascii[4]
+dados_ascii[5] => tx_serial_fd:U2.dados_ascii[5]
+dados_ascii[6] => tx_serial_fd:U2.dados_ascii[6]
+saida_serial <= tx_serial_fd:U2.saida_serial
+pronto <= tx_serial_uc:U1.pronto
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_uc:U1
+clock => Sreg~1.DATAIN
+reset => Sreg~3.DATAIN
+partida => Snext.preparacao.DATAB
+partida => Selector0.IN2
+tick => Snext.OUTPUTSELECT
+tick => Snext.OUTPUTSELECT
+tick => Snext.transmissao.DATAB
+fim => Snext.DATAA
+fim => Selector2.IN3
+fim => Snext.DATAA
+fim => Selector1.IN2
+zera <= zera.DB_MAX_OUTPUT_PORT_TYPE
+conta <= conta.DB_MAX_OUTPUT_PORT_TYPE
+carrega <= carrega.DB_MAX_OUTPUT_PORT_TYPE
+desloca <= desloca.DB_MAX_OUTPUT_PORT_TYPE
+pronto <= pronto.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2
+clock => deslocador_n:U1.clock
+clock => contador_m:U2.CLK
+reset => deslocador_n:U1.reset
+zera => contador_m:U2.zera
+conta => contador_m:U2.conta
+carrega => deslocador_n:U1.carrega
+desloca => deslocador_n:U1.desloca
+paridade => D.IN0
+dados_ascii[0] => D.IN1
+dados_ascii[0] => deslocador_n:U1.dados[2]
+dados_ascii[1] => D.IN1
+dados_ascii[1] => deslocador_n:U1.dados[3]
+dados_ascii[2] => D.IN1
+dados_ascii[2] => deslocador_n:U1.dados[4]
+dados_ascii[3] => D.IN1
+dados_ascii[3] => deslocador_n:U1.dados[5]
+dados_ascii[4] => D.IN1
+dados_ascii[4] => deslocador_n:U1.dados[6]
+dados_ascii[5] => D.IN1
+dados_ascii[5] => deslocador_n:U1.dados[7]
+dados_ascii[6] => D[9].IN1
+dados_ascii[6] => deslocador_n:U1.dados[8]
+saida_serial <= deslocador_n:U1.saida[0]
+fim <= contador_m:U2.fim
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1
+clock => IQ[0].CLK
+clock => IQ[1].CLK
+clock => IQ[2].CLK
+clock => IQ[3].CLK
+clock => IQ[4].CLK
+clock => IQ[5].CLK
+clock => IQ[6].CLK
+clock => IQ[7].CLK
+clock => IQ[8].CLK
+clock => IQ[9].CLK
+reset => IQ[0].PRESET
+reset => IQ[1].PRESET
+reset => IQ[2].PRESET
+reset => IQ[3].PRESET
+reset => IQ[4].PRESET
+reset => IQ[5].PRESET
+reset => IQ[6].PRESET
+reset => IQ[7].PRESET
+reset => IQ[8].PRESET
+reset => IQ[9].PRESET
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+desloca => IQ.OUTPUTSELECT
+desloca => IQ.OUTPUTSELECT
+desloca => IQ.OUTPUTSELECT
+desloca => IQ.OUTPUTSELECT
+desloca => IQ.OUTPUTSELECT
+desloca => IQ.OUTPUTSELECT
+desloca => IQ.OUTPUTSELECT
+desloca => IQ.OUTPUTSELECT
+desloca => IQ.OUTPUTSELECT
+desloca => IQ.OUTPUTSELECT
+entrada_serial => IQ.DATAB
+dados[0] => IQ.DATAB
+dados[1] => IQ.DATAB
+dados[2] => IQ.DATAB
+dados[3] => IQ.DATAB
+dados[4] => IQ.DATAB
+dados[5] => IQ.DATAB
+dados[6] => IQ.DATAB
+dados[7] => IQ.DATAB
+dados[8] => IQ.DATAB
+dados[9] => IQ.DATAB
+saida[0] <= IQ[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= IQ[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= IQ[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= IQ[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= IQ[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= IQ[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= IQ[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= IQ[7].DB_MAX_OUTPUT_PORT_TYPE
+saida[8] <= IQ[8].DB_MAX_OUTPUT_PORT_TYPE
+saida[9] <= IQ[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|contador_m:U2
+CLK => IQ[0].CLK
+CLK => IQ[1].CLK
+CLK => IQ[2].CLK
+CLK => IQ[3].CLK
+zera => IQ[0].ACLR
+zera => IQ[1].ACLR
+zera => IQ[2].ACLR
+zera => IQ[3].ACLR
+conta => IQ[0].ENA
+conta => IQ[3].ENA
+conta => IQ[2].ENA
+conta => IQ[1].ENA
+Q[0] <= IQ[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= IQ[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= IQ[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= IQ[3].DB_MAX_OUTPUT_PORT_TYPE
+fim <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|contador_m:U3
+CLK => IQ[0].CLK
+CLK => IQ[1].CLK
+CLK => IQ[2].CLK
+CLK => IQ[3].CLK
+CLK => IQ[4].CLK
+CLK => IQ[5].CLK
+CLK => IQ[6].CLK
+CLK => IQ[7].CLK
+CLK => IQ[8].CLK
+zera => IQ[0].ACLR
+zera => IQ[1].ACLR
+zera => IQ[2].ACLR
+zera => IQ[3].ACLR
+zera => IQ[4].ACLR
+zera => IQ[5].ACLR
+zera => IQ[6].ACLR
+zera => IQ[7].ACLR
+zera => IQ[8].ACLR
+conta => IQ[0].ENA
+conta => IQ[8].ENA
+conta => IQ[7].ENA
+conta => IQ[6].ENA
+conta => IQ[5].ENA
+conta => IQ[4].ENA
+conta => IQ[3].ENA
+conta => IQ[2].ENA
+conta => IQ[1].ENA
+Q[0] <= IQ[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= IQ[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= IQ[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= IQ[3].DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= IQ[4].DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= IQ[5].DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= IQ[6].DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= IQ[7].DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= IQ[8].DB_MAX_OUTPUT_PORT_TYPE
+fim <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|edge_detector:U4
+i_clk => r1_input.CLK
+i_clk => r0_input.CLK
+i_rstb => r1_input.ACLR
+i_rstb => r0_input.ACLR
+i_input => r0_input.DATAIN
+o_pulse <= o_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|memoria_jogo_16x7:U2
+linha[0] => memoria~1.DATAIN
+linha[0] => memoria.WADDR2
+linha[0] => memoria.RADDR2
+linha[1] => memoria~0.DATAIN
+linha[1] => memoria.WADDR3
+linha[1] => memoria.RADDR3
+coluna[0] => memoria~3.DATAIN
+coluna[0] => memoria.WADDR
+coluna[0] => memoria.RADDR
+coluna[1] => memoria~2.DATAIN
+coluna[1] => memoria.WADDR1
+coluna[1] => memoria.RADDR1
+we => memoria~11.CLK
+we => memoria~0.CLK
+we => memoria~1.CLK
+we => memoria~2.CLK
+we => memoria~3.CLK
+we => memoria~4.CLK
+we => memoria~5.CLK
+we => memoria~6.CLK
+we => memoria~7.CLK
+we => memoria~8.CLK
+we => memoria~9.CLK
+we => memoria~10.CLK
+we => memoria.CLK0
+dado_entrada[0] => memoria~10.DATAIN
+dado_entrada[0] => memoria.DATAIN
+dado_entrada[1] => memoria~9.DATAIN
+dado_entrada[1] => memoria.DATAIN1
+dado_entrada[2] => memoria~8.DATAIN
+dado_entrada[2] => memoria.DATAIN2
+dado_entrada[3] => memoria~7.DATAIN
+dado_entrada[3] => memoria.DATAIN3
+dado_entrada[4] => memoria~6.DATAIN
+dado_entrada[4] => memoria.DATAIN4
+dado_entrada[5] => memoria~5.DATAIN
+dado_entrada[5] => memoria.DATAIN5
+dado_entrada[6] => memoria~4.DATAIN
+dado_entrada[6] => memoria.DATAIN6
+dado_saida[0] <= memoria.DATAOUT
+dado_saida[1] <= memoria.DATAOUT1
+dado_saida[2] <= memoria.DATAOUT2
+dado_saida[3] <= memoria.DATAOUT3
+dado_saida[4] <= memoria.DATAOUT4
+dado_saida[5] <= memoria.DATAOUT5
+dado_saida[6] <= memoria.DATAOUT6
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|contador_m_load:U3
+CLK => IQ[0].CLK
+CLK => IQ[1].CLK
+CLK => IQ[2].CLK
+CLK => IQ[3].CLK
+zera => IQ[0].ACLR
+zera => IQ[1].ACLR
+zera => IQ[2].ACLR
+zera => IQ[3].ACLR
+conta => IQ.OUTPUTSELECT
+conta => IQ.OUTPUTSELECT
+conta => IQ.OUTPUTSELECT
+conta => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+carrega => IQ.OUTPUTSELECT
+D[0] => IQ.DATAB
+D[1] => IQ.DATAB
+D[2] => IQ.DATAB
+D[3] => IQ.DATAB
+Q[0] <= IQ[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= IQ[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= IQ[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= IQ[3].DB_MAX_OUTPUT_PORT_TYPE
+fim <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|mux3x1_n:U4
+D2[0] => MX_OUT.DATAB
+D2[1] => MX_OUT.DATAB
+D2[2] => MX_OUT.DATAB
+D2[3] => MX_OUT.DATAB
+D2[4] => MX_OUT.DATAB
+D2[5] => MX_OUT.DATAB
+D2[6] => MX_OUT.DATAB
+D1[0] => MX_OUT.DATAB
+D1[1] => MX_OUT.DATAB
+D1[2] => MX_OUT.DATAB
+D1[3] => MX_OUT.DATAB
+D1[4] => MX_OUT.DATAB
+D1[5] => MX_OUT.DATAB
+D1[6] => MX_OUT.DATAB
+D0[0] => MX_OUT.DATAB
+D0[1] => MX_OUT.DATAB
+D0[2] => MX_OUT.DATAB
+D0[3] => MX_OUT.DATAB
+D0[4] => MX_OUT.DATAB
+D0[5] => MX_OUT.DATAB
+D0[6] => MX_OUT.DATAB
+SEL[0] => Equal0.IN1
+SEL[0] => Equal1.IN1
+SEL[0] => Equal2.IN0
+SEL[1] => Equal0.IN0
+SEL[1] => Equal1.IN0
+SEL[1] => Equal2.IN1
+MX_OUT[0] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[1] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[2] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[3] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[4] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[5] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[6] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|print_escreve_campo|print_escreve_campo_fd:U2|mux3x1_n:U5
+D2[0] => MX_OUT.DATAB
+D2[1] => MX_OUT.DATAB
+D2[2] => MX_OUT.DATAB
+D2[3] => MX_OUT.DATAB
+D2[4] => MX_OUT.DATAB
+D2[5] => MX_OUT.DATAB
+D2[6] => MX_OUT.DATAB
+D1[0] => MX_OUT.DATAB
+D1[1] => MX_OUT.DATAB
+D1[2] => MX_OUT.DATAB
+D1[3] => MX_OUT.DATAB
+D1[4] => MX_OUT.DATAB
+D1[5] => MX_OUT.DATAB
+D1[6] => MX_OUT.DATAB
+D0[0] => MX_OUT.DATAB
+D0[1] => MX_OUT.DATAB
+D0[2] => MX_OUT.DATAB
+D0[3] => MX_OUT.DATAB
+D0[4] => MX_OUT.DATAB
+D0[5] => MX_OUT.DATAB
+D0[6] => MX_OUT.DATAB
+SEL[0] => Equal0.IN1
+SEL[0] => Equal1.IN1
+SEL[0] => Equal2.IN0
+SEL[1] => Equal0.IN0
+SEL[1] => Equal1.IN0
+SEL[1] => Equal2.IN1
+MX_OUT[0] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[1] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[2] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[3] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[4] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[5] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+MX_OUT[6] <= MX_OUT.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|print_escreve_campo|edge_detector:U3
+i_clk => r1_input.CLK
+i_clk => r0_input.CLK
+i_rstb => r1_input.ACLR
+i_rstb => r0_input.ACLR
+i_input => r0_input.DATAIN
+o_pulse <= o_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+

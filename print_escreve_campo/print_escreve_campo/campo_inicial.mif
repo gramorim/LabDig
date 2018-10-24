@@ -1,0 +1,30 @@
+% conteudo inicial da memoria de campo de batalha %
+% LabDig 2018                                     %
+% livre  _  1011111                               %
+% agua   A  1000001                               %
+% acerto X  1011000                               %
+%                                                 %
+WIDTH=7;
+DEPTH=16;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	0   :   1011111;
+	1   :   1000001;
+	2   :   1011000;
+	3   :   1011111;
+	4   :   1011111;
+	5   :   1011111;
+	6   :   1011111;
+	7   :   1011111;
+	8   :   1000001;
+	9   :   1000001;
+	10  :   1000001;
+	11  :   1000001;
+	12  :   1011111;
+	13  :   1011111;
+	14  :   1011111;
+	15  :   1011111;
+END;
