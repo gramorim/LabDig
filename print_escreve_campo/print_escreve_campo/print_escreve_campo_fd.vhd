@@ -31,7 +31,7 @@ architecture print_escreve_campo_fd of print_escreve_campo_fd is
     );
     end component;
     
-    component memoria_jogo_16x7 port (
+    component memoria_jogo_64x7 port (
         linha, coluna : in  std_logic_vector(2 downto 0);
         we            : in  std_logic;
         dado_entrada  : in  std_logic_vector(6 downto 0);
@@ -63,7 +63,7 @@ begin
     -- sinais reset e partida mapeados em botoes ativos em alto
     U1: tx_serial port map (clock=>clock, reset=>reset, partida=>partida, paridade=>'0',
                             dados_ascii=>s_mux, saida_serial=>saida_serial, pronto=>pronto);
-    U2: memoria_jogo_16x7 port map (linha=>s_contagem(5 downto 3), coluna=>s_contagem(2 downto 0), 
+    U2: memoria_jogo_64x7 port map (linha=>s_contagem(5 downto 3), coluna=>s_contagem(2 downto 0), 
                             we=>we, dado_entrada=>s_entrada, dado_saida=>s_dados);
     U3: contador_m_load generic map (M => 64, N => 6) port map (CLK=>clock, zera=>zera, conta=>conta, carrega=>carrega,
                                                            D=>endereco, q=>s_contagem, fim=>fim);

@@ -90,6 +90,7 @@ set_location_assignment PIN_G15 -to db_we
 set_location_assignment PIN_F12 -to db_zera
 set_location_assignment PIN_F15 -to pronto
 set_location_assignment PIN_A12 -to saida_serial
+set_global_assignment -name VHDL_FILE ../componentes/memoria_jogo_64x7.vhd
 set_global_assignment -name VHDL_FILE print_escreve_campo_uc.vhd
 set_global_assignment -name VHDL_FILE print_escreve_campo_fd.vhd
 set_global_assignment -name VHDL_FILE print_escreve_campo.vhd
@@ -98,7 +99,6 @@ set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial_uc.vhd
 set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial_fd.vhd
 set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial.vhd
 set_global_assignment -name VHDL_FILE ../componentes/mux3x1_n.vhd
-set_global_assignment -name VHDL_FILE ../componentes/memoria_jogo_16x7.vhd
 set_global_assignment -name VHDL_FILE ../componentes/edge_detector.vhd
 set_global_assignment -name VHDL_FILE ../componentes/deslocador_n.vhd
 set_global_assignment -name VHDL_FILE ../componentes/contador_m_load.vhd
