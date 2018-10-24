@@ -11,17 +11,17 @@ entity print_escreve_campo_fd is
         partida : in std_logic;                    -- tx_serial
         we: in std_logic;                          -- memoria_jogo_16x7
         conta, zera, carrega: in std_logic;        -- contador_m_load
-        endereco: in std_logic_vector(3 downto 0); -- contador_m_load
+        endereco: in std_logic_vector(5 downto 0); -- contador_m_load
         dado, sel: in std_logic_vector(1 downto 0);      -- mux3x1_n
         fim, fim_linha: out std_logic;             -- contador_m_load
         saida_serial, pronto : out std_logic;      -- tx_serial
-        db_q: out std_logic_vector(3 downto 0);
+        db_q: out std_logic_vector(5 downto 0);
         db_dados: out std_logic_vector(6 downto 0)
     );
 end print_escreve_campo_fd;
 
 architecture print_escreve_campo_fd of print_escreve_campo_fd is
-    signal s_contagem: std_logic_vector(3 downto 0);
+    signal s_contagem: std_logic_vector(5 downto 0);
     signal s_dados, s_mux, s_entrada: std_logic_vector (6 downto 0);
 
     component tx_serial port (
@@ -31,8 +31,8 @@ architecture print_escreve_campo_fd of print_escreve_campo_fd is
     );
     end component;
     
-    component memoria_jogo_16x7 port (
-        linha, coluna : in  std_logic_vector(1 downto 0);
+    component memoria_jogo_64x7 port (
+        linha, coluna : in  std_logic_vector(2 downto 0);
         we            : in  std_logic;
         dado_entrada  : in  std_logic_vector(6 downto 0);
         dado_saida    : out std_logic_vector(6 downto 0));
@@ -63,9 +63,9 @@ begin
     -- sinais reset e partida mapeados em botoes ativos em alto
     U1: tx_serial port map (clock=>clock, reset=>reset, partida=>partida, paridade=>'0',
                             dados_ascii=>s_mux, saida_serial=>saida_serial, pronto=>pronto);
-    U2: memoria_jogo_16x7 port map (linha=>s_contagem(3 downto 2), coluna=>s_contagem(1 downto 0), 
+    U2: memoria_jogo_64x7 port map (linha=>s_contagem(5 downto 3), coluna=>s_contagem(2 downto 0), 
                             we=>we, dado_entrada=>s_entrada, dado_saida=>s_dados);
-    U3: contador_m_load generic map (M => 16, N => 4) port map (CLK=>clock, zera=>zera, conta=>conta, carrega=>carrega,
+    U3: contador_m_load generic map (M => 64, N => 6) port map (CLK=>clock, zera=>zera, conta=>conta, carrega=>carrega,
                                                            D=>endereco, q=>s_contagem, fim=>fim);
     -- mux da saida memoria
     U4: mux3x1_n generic map (BITS => 7) port map (D2 => "0001101", D1=> "0001010", D0=>s_dados, 

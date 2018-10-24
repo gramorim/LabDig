@@ -1,133 +1,133 @@
 ------------------------------------------------------------
-Timing Analyzer Summary
+TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'clock'
-Slack : -5.244
-TNS   : -111.256
+Slack : -4.770
+TNS   : -126.984
 
 Type  : Slow 1100mV 85C Model Setup 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
-Slack : -4.527
-TNS   : -42.071
+Slack : -4.502
+TNS   : -53.871
 
 Type  : Slow 1100mV 85C Model Hold 'clock'
-Slack : 0.384
+Slack : 0.016
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
-Slack : 2.984
+Slack : 3.043
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'clock'
-Slack : -0.806
-TNS   : -25.002
+Slack : -0.852
+TNS   : -23.042
 
 Type  : Slow 1100mV 85C Model Removal 'clock'
-Slack : 1.008
+Slack : 0.702
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
 Slack : -2.636
-TNS   : -63.432
+TNS   : -74.198
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
 Slack : -2.636
-TNS   : -47.255
+TNS   : -55.460
 
 Type  : Slow 1100mV 0C Model Setup 'clock'
-Slack : -5.303
-TNS   : -111.770
+Slack : -4.837
+TNS   : -126.417
 
 Type  : Slow 1100mV 0C Model Setup 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
-Slack : -4.515
-TNS   : -42.258
+Slack : -4.505
+TNS   : -54.243
 
 Type  : Slow 1100mV 0C Model Hold 'clock'
-Slack : 0.122
-TNS   : 0.000
+Slack : -0.050
+TNS   : -0.098
 
 Type  : Slow 1100mV 0C Model Hold 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
-Slack : 3.058
+Slack : 3.143
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'clock'
-Slack : -0.764
-TNS   : -22.813
+Slack : -0.749
+TNS   : -20.814
 
 Type  : Slow 1100mV 0C Model Removal 'clock'
-Slack : 0.935
+Slack : 0.652
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
 Slack : -2.636
-TNS   : -64.590
+TNS   : -75.606
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
 Slack : -2.636
-TNS   : -47.005
+TNS   : -55.145
 
 Type  : Fast 1100mV 85C Model Setup 'clock'
-Slack : -2.372
-TNS   : -38.966
+Slack : -2.213
+TNS   : -44.369
 
 Type  : Fast 1100mV 85C Model Setup 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
-Slack : -2.108
-TNS   : -19.928
+Slack : -2.051
+TNS   : -25.388
 
 Type  : Fast 1100mV 85C Model Hold 'clock'
-Slack : 0.113
-TNS   : 0.000
+Slack : -0.172
+TNS   : -0.172
 
 Type  : Fast 1100mV 85C Model Hold 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
-Slack : 1.628
+Slack : 1.712
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'clock'
-Slack : 0.030
+Slack : 0.001
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'clock'
-Slack : 0.481
+Slack : 0.306
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
 Slack : -2.174
-TNS   : -34.190
+TNS   : -40.237
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock'
 Slack : -2.174
-TNS   : -23.679
+TNS   : -30.151
 
 Type  : Fast 1100mV 0C Model Setup 'clock'
-Slack : -2.185
-TNS   : -32.755
+Slack : -2.000
+TNS   : -37.436
 
 Type  : Fast 1100mV 0C Model Setup 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
-Slack : -2.032
-TNS   : -19.263
+Slack : -1.983
+TNS   : -24.556
 
 Type  : Fast 1100mV 0C Model Hold 'clock'
-Slack : 0.013
-TNS   : 0.000
+Slack : -0.238
+TNS   : -0.307
 
 Type  : Fast 1100mV 0C Model Hold 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
-Slack : 1.609
+Slack : 1.685
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'clock'
-Slack : 0.101
+Slack : 0.074
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'clock'
-Slack : 0.433
+Slack : 0.276
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'print_escreve_campo_uc:U1|Sreg.escreve_memoria'
 Slack : -2.174
-TNS   : -34.128
+TNS   : -40.149
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
 Slack : -2.174
-TNS   : -23.910
+TNS   : -30.404
 
 ------------------------------------------------------------
