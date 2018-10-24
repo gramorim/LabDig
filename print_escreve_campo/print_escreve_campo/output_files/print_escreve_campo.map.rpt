@@ -1,6 +1,6 @@
 Analysis & Synthesis report for print_escreve_campo
-Wed Oct 24 08:57:22 2018
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Wed Oct 24 10:25:42 2018
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
 ---------------------
@@ -16,37 +16,36 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_uc:U1|Sreg
  10. State Machine - |print_escreve_campo|print_escreve_campo_uc:U1|Sreg
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0|altsyncram_grl1:auto_generated
- 16. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1
- 17. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|contador_m:U2
- 18. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|tx_serial:U1|contador_m:U3
- 19. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|contador_m_load:U3
- 20. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|mux3x1_n:U4
- 21. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|mux3x1_n:U5
- 22. Parameter Settings for Inferred Entity Instance: print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0
- 23. altsyncram Parameter Settings by Entity Instance
- 24. Port Connectivity Checks: "edge_detector:U3"
- 25. Port Connectivity Checks: "print_escreve_campo_fd:U2|mux3x1_n:U5"
- 26. Port Connectivity Checks: "print_escreve_campo_fd:U2|mux3x1_n:U4"
- 27. Port Connectivity Checks: "print_escreve_campo_fd:U2|tx_serial:U1|edge_detector:U4"
- 28. Port Connectivity Checks: "print_escreve_campo_fd:U2|tx_serial:U1|contador_m:U3"
- 29. Port Connectivity Checks: "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|contador_m:U2"
- 30. Port Connectivity Checks: "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1"
- 31. Port Connectivity Checks: "print_escreve_campo_fd:U2|tx_serial:U1"
- 32. Post-Synthesis Netlist Statistics for Top Partition
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0|altsyncram_qrl1:auto_generated
+ 15. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1
+ 16. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|contador_m:U2
+ 17. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|tx_serial:U1|contador_m:U3
+ 18. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|contador_m_load:U3
+ 19. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|mux3x1_n:U4
+ 20. Parameter Settings for User Entity Instance: print_escreve_campo_fd:U2|mux3x1_n:U5
+ 21. Parameter Settings for Inferred Entity Instance: print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "edge_detector:U3"
+ 24. Port Connectivity Checks: "print_escreve_campo_fd:U2|mux3x1_n:U5"
+ 25. Port Connectivity Checks: "print_escreve_campo_fd:U2|mux3x1_n:U4"
+ 26. Port Connectivity Checks: "print_escreve_campo_fd:U2|tx_serial:U1|edge_detector:U4"
+ 27. Port Connectivity Checks: "print_escreve_campo_fd:U2|tx_serial:U1|contador_m:U3"
+ 28. Port Connectivity Checks: "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|contador_m:U2"
+ 29. Port Connectivity Checks: "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1"
+ 30. Port Connectivity Checks: "print_escreve_campo_fd:U2|tx_serial:U1"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2016  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -54,27 +53,28 @@ functions, and any output files from any of the foregoing
 associated documentation or information are expressly subject 
 to the terms and conditions of the Intel Program License 
 Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Oct 24 08:57:22 2018       ;
-; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Analysis & Synthesis Status     ; Successful - Wed Oct 24 10:25:42 2018       ;
+; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; print_escreve_campo                         ;
 ; Top-level Entity Name           ; print_escreve_campo                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 56                                          ;
-; Total pins                      ; 34                                          ;
+; Total registers                 ; 59                                          ;
+; Total pins                      ; 38                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 112                                         ;
+; Total block memory bits         ; 448                                         ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -94,13 +94,13 @@ refer to the applicable agreement for further details.
 ; Top-level entity name                                                           ; print_escreve_campo ; print_escreve_campo ;
 ; Family name                                                                     ; Cyclone V           ; Cyclone V           ;
 ; Use smart compilation                                                           ; Off                 ; Off                 ;
-; Enable parallel Assembler and Timing Analyzer during compilation                ; On                  ; On                  ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                  ; On                  ;
 ; Enable compact report table                                                     ; Off                 ; Off                 ;
 ; Restructure Multiplexers                                                        ; Auto                ; Auto                ;
 ; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                 ; Off                 ;
 ; Create Debugging Nodes for IP Cores                                             ; Off                 ; Off                 ;
 ; Preserve fewer node names                                                       ; On                  ; On                  ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable              ; Enable              ;
+; OpenCore Plus hardware evaluation                                               ; Enable              ; Enable              ;
 ; Verilog Version                                                                 ; Verilog_2001        ; Verilog_2001        ;
 ; VHDL Version                                                                    ; VHDL_1993           ; VHDL_1993           ;
 ; State Machine Processing                                                        ; Auto                ; Auto                ;
@@ -151,7 +151,7 @@ refer to the applicable agreement for further details.
 ; Report Connectivity Checks                                                      ; On                  ; On                  ;
 ; Ignore Maximum Fan-Out Assignments                                              ; Off                 ; Off                 ;
 ; Synchronization Register Chain Length                                           ; 3                   ; 3                   ;
-; Power Optimization During Synthesis                                             ; Normal compilation  ; Normal compilation  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation  ; Normal compilation  ;
 ; HDL message level                                                               ; Level2              ; Level2              ;
 ; Suppress Register Optimization Related Messages                                 ; Off                 ; Off                 ;
 ; Number of Removed Registers Reported in Synthesis Report                        ; 5000                ; 5000                ;
@@ -189,35 +189,35 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                              ;
-+--------------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path     ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                                                  ; Library ;
-+--------------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+---------+
-; print_escreve_campo_uc.vhd           ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo_uc.vhd ;         ;
-; print_escreve_campo_fd.vhd           ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd ;         ;
-; print_escreve_campo.vhd              ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo.vhd    ;         ;
-; campo_inicial.mif                    ; yes             ; User Memory Initialization File  ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/campo_inicial.mif          ;         ;
-; ../tx_serial_tick/tx_serial_uc.vhd   ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial_uc.vhd                ;         ;
-; ../tx_serial_tick/tx_serial_fd.vhd   ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial_fd.vhd                ;         ;
-; ../tx_serial_tick/tx_serial.vhd      ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial.vhd                   ;         ;
-; ../componentes/mux3x1_n.vhd          ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/mux3x1_n.vhd                       ;         ;
-; ../componentes/memoria_jogo_16x7.vhd ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/memoria_jogo_16x7.vhd              ;         ;
-; ../componentes/edge_detector.vhd     ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/edge_detector.vhd                  ;         ;
-; ../componentes/deslocador_n.vhd      ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/deslocador_n.vhd                   ;         ;
-; ../componentes/contador_m_load.vhd   ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/contador_m_load.vhd                ;         ;
-; ../componentes/contador_m.vhd        ; yes             ; User VHDL File                   ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/contador_m.vhd                     ;         ;
-; altsyncram.tdf                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altsyncram.tdf                                                         ;         ;
-; stratix_ram_block.inc                ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc                                                  ;         ;
-; lpm_mux.inc                          ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_mux.inc                                                            ;         ;
-; lpm_decode.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_decode.inc                                                         ;         ;
-; aglobal180.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/aglobal180.inc                                                         ;         ;
-; a_rdenreg.inc                        ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_rdenreg.inc                                                          ;         ;
-; altrom.inc                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altrom.inc                                                             ;         ;
-; altram.inc                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altram.inc                                                             ;         ;
-; altdpram.inc                         ; yes             ; Megafunction                     ; c:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altdpram.inc                                                           ;         ;
-; db/altsyncram_grl1.tdf               ; yes             ; Auto-Generated Megafunction      ; C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/db/altsyncram_grl1.tdf     ;         ;
-+--------------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                           ;
++--------------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                                               ; Library ;
++--------------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; print_escreve_campo_uc.vhd           ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo_uc.vhd ;         ;
+; print_escreve_campo_fd.vhd           ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd ;         ;
+; print_escreve_campo.vhd              ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo.vhd    ;         ;
+; campo_inicial.mif                    ; yes             ; User Memory Initialization File  ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/campo_inicial.mif          ;         ;
+; ../tx_serial_tick/tx_serial_uc.vhd   ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial_uc.vhd                ;         ;
+; ../tx_serial_tick/tx_serial_fd.vhd   ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial_fd.vhd                ;         ;
+; ../tx_serial_tick/tx_serial.vhd      ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial.vhd                   ;         ;
+; ../componentes/mux3x1_n.vhd          ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/mux3x1_n.vhd                       ;         ;
+; ../componentes/memoria_jogo_16x7.vhd ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/memoria_jogo_16x7.vhd              ;         ;
+; ../componentes/edge_detector.vhd     ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/edge_detector.vhd                  ;         ;
+; ../componentes/deslocador_n.vhd      ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/deslocador_n.vhd                   ;         ;
+; ../componentes/contador_m_load.vhd   ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/contador_m_load.vhd                ;         ;
+; ../componentes/contador_m.vhd        ; yes             ; User VHDL File                   ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/contador_m.vhd                     ;         ;
+; altsyncram.tdf                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf                                      ;         ;
+; stratix_ram_block.inc                ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/stratix_ram_block.inc                               ;         ;
+; lpm_mux.inc                          ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mux.inc                                         ;         ;
+; lpm_decode.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_decode.inc                                      ;         ;
+; aglobal161.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/aglobal161.inc                                      ;         ;
+; a_rdenreg.inc                        ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/a_rdenreg.inc                                       ;         ;
+; altrom.inc                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altrom.inc                                          ;         ;
+; altram.inc                           ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altram.inc                                          ;         ;
+; altdpram.inc                         ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altdpram.inc                                        ;         ;
+; db/altsyncram_qrl1.tdf               ; yes             ; Auto-Generated Megafunction      ; C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/db/altsyncram_qrl1.tdf     ;         ;
++--------------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -225,27 +225,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 42          ;
+; Estimate of Logic utilization (ALMs needed) ; 47          ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 75          ;
-;     -- 7 input functions                    ; 2           ;
-;     -- 6 input functions                    ; 6           ;
-;     -- 5 input functions                    ; 15          ;
-;     -- 4 input functions                    ; 13          ;
-;     -- <=3 input functions                  ; 39          ;
+; Combinational ALUT usage for logic          ; 78          ;
+;     -- 7 input functions                    ; 1           ;
+;     -- 6 input functions                    ; 12          ;
+;     -- 5 input functions                    ; 17          ;
+;     -- 4 input functions                    ; 11          ;
+;     -- <=3 input functions                  ; 37          ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 56          ;
+; Dedicated logic registers                   ; 59          ;
 ;                                             ;             ;
-; I/O pins                                    ; 34          ;
+; I/O pins                                    ; 38          ;
 ; Total MLAB memory bits                      ; 0           ;
-; Total block memory bits                     ; 112         ;
+; Total block memory bits                     ; 448         ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 57          ;
-; Total fan-out                               ; 582         ;
-; Average fan-out                             ; 2.83        ;
+; Maximum fan-out                             ; 59          ;
+; Total fan-out                               ; 657         ;
+; Average fan-out                             ; 2.99        ;
 +---------------------------------------------+-------------+
 
 
@@ -254,21 +254,21 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Entity Name            ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |print_escreve_campo                         ; 75 (0)              ; 56 (0)                    ; 112               ; 0          ; 34   ; 0            ; |print_escreve_campo                                                                                                        ; print_escreve_campo    ; work         ;
+; |print_escreve_campo                         ; 78 (0)              ; 59 (0)                    ; 448               ; 0          ; 38   ; 0            ; |print_escreve_campo                                                                                                        ; print_escreve_campo    ; work         ;
 ;    |edge_detector:U3|                        ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|edge_detector:U3                                                                                       ; edge_detector          ; work         ;
-;    |print_escreve_campo_fd:U2|               ; 61 (0)              ; 41 (0)                    ; 112               ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2                                                                              ; print_escreve_campo_fd ; work         ;
-;       |contador_m_load:U3|                   ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|contador_m_load:U3                                                           ; contador_m_load        ; work         ;
-;       |memoria_jogo_16x7:U2|                 ; 1 (1)               ; 7 (7)                     ; 112               ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|memoria_jogo_16x7:U2                                                         ; memoria_jogo_16x7      ; work         ;
-;          |altsyncram:memoria_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 112               ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0                                ; altsyncram             ; work         ;
-;             |altsyncram_grl1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 112               ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0|altsyncram_grl1:auto_generated ; altsyncram_grl1        ; work         ;
-;       |mux3x1_n:U4|                          ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|mux3x1_n:U4                                                                  ; mux3x1_n               ; work         ;
-;       |mux3x1_n:U5|                          ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|mux3x1_n:U5                                                                  ; mux3x1_n               ; work         ;
-;       |tx_serial:U1|                         ; 35 (0)              ; 30 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1                                                                 ; tx_serial              ; work         ;
+;    |print_escreve_campo_fd:U2|               ; 64 (0)              ; 44 (0)                    ; 448               ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2                                                                              ; print_escreve_campo_fd ; work         ;
+;       |contador_m_load:U3|                   ; 10 (10)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|contador_m_load:U3                                                           ; contador_m_load        ; work         ;
+;       |memoria_jogo_16x7:U2|                 ; 1 (1)               ; 8 (8)                     ; 448               ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|memoria_jogo_16x7:U2                                                         ; memoria_jogo_16x7      ; work         ;
+;          |altsyncram:memoria_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 448               ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0                                ; altsyncram             ; work         ;
+;             |altsyncram_qrl1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 448               ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0|altsyncram_qrl1:auto_generated ; altsyncram_qrl1        ; work         ;
+;       |mux3x1_n:U4|                          ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|mux3x1_n:U4                                                                  ; mux3x1_n               ; work         ;
+;       |mux3x1_n:U5|                          ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|mux3x1_n:U5                                                                  ; mux3x1_n               ; work         ;
+;       |tx_serial:U1|                         ; 36 (0)              ; 30 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1                                                                 ; tx_serial              ; work         ;
 ;          |contador_m:U3|                     ; 12 (12)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|contador_m:U3                                                   ; contador_m             ; work         ;
 ;          |edge_detector:U4|                  ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|edge_detector:U4                                                ; edge_detector          ; work         ;
-;          |tx_serial_fd:U2|                   ; 18 (3)              ; 14 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2                                                 ; tx_serial_fd           ; work         ;
+;          |tx_serial_fd:U2|                   ; 19 (5)              ; 14 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2                                                 ; tx_serial_fd           ; work         ;
 ;             |contador_m:U2|                  ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|contador_m:U2                                   ; contador_m             ; work         ;
-;             |deslocador_n:U1|                ; 10 (10)             ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1                                 ; deslocador_n           ; work         ;
+;             |deslocador_n:U1|                ; 9 (9)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1                                 ; deslocador_n           ; work         ;
 ;          |tx_serial_uc:U1|                   ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_uc:U1                                                 ; tx_serial_uc           ; work         ;
 ;    |print_escreve_campo_uc:U1|               ; 14 (14)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |print_escreve_campo|print_escreve_campo_uc:U1                                                                              ; print_escreve_campo_uc ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
@@ -280,7 +280,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-------------------+
 ; Name                                                                                                              ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF               ;
 +-------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-------------------+
-; print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0|altsyncram_grl1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16           ; 7            ; 16           ; 7            ; 112  ; campo_inicial.mif ;
+; print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0|altsyncram_qrl1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 64           ; 7            ; 64           ; 7            ; 448  ; campo_inicial.mif ;
 +-------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-------------------+
 
 
@@ -320,27 +320,17 @@ Encoding Type:  One-Hot
 +-----------------------+----------------------+-----------------------+---------------+--------------+------------------+---------------+--------------+------------------+------------+-----------------+-------------+------------+--------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                 ;
-+-----------------------------------------------------------+----------------------------------------+
-; Register name                                             ; Reason for Removal                     ;
-+-----------------------------------------------------------+----------------------------------------+
-; print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|memoria~19 ; Stuck at VCC due to stuck port data_in ;
-; Total Number of Removed Registers = 1                     ;                                        ;
-+-----------------------------------------------------------+----------------------------------------+
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 56    ;
+; Total registers                              ; 59    ;
 ; Number of registers using Synchronous Clear  ; 9     ;
 ; Number of registers using Synchronous Load   ; 2     ;
-; Number of registers using Asynchronous Clear ; 46    ;
+; Number of registers using Asynchronous Clear ; 48    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 18    ;
+; Number of registers using Clock Enable       ; 19    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -353,11 +343,6 @@ Encoding Type:  One-Hot
 ; print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[3] ; 1       ;
 ; print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[5] ; 1       ;
 ; print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[0] ; 1       ;
-; print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|memoria~13                    ; 2       ;
-; print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|memoria~14                    ; 2       ;
-; print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|memoria~15                    ; 2       ;
-; print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|memoria~16                    ; 2       ;
-; print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|memoria~17                    ; 3       ;
 ; print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[1] ; 1       ;
 ; print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[2] ; 1       ;
 ; print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[4] ; 1       ;
@@ -365,7 +350,7 @@ Encoding Type:  One-Hot
 ; print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[7] ; 1       ;
 ; print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[8] ; 1       ;
 ; print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[9] ; 2       ;
-; Total number of inverted registers = 15                                      ;         ;
+; Total number of inverted registers = 10                                      ;         ;
 +------------------------------------------------------------------------------+---------+
 
 
@@ -375,14 +360,14 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[1] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[4] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |print_escreve_campo|print_escreve_campo_fd:U2|contador_m_load:U3|IQ                              ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |print_escreve_campo|print_escreve_campo_fd:U2|mux3x1_n:U4|MX_OUT[1]                              ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |print_escreve_campo|print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1|IQ[3] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |print_escreve_campo|print_escreve_campo_fd:U2|contador_m_load:U3|IQ                              ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; No         ; |print_escreve_campo|print_escreve_campo_fd:U2|mux3x1_n:U4|MX_OUT[0]                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0|altsyncram_grl1:auto_generated ;
+; Source assignments for print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0|altsyncram_qrl1:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                              ;
 +---------------------------------+--------------------+------+-----------------------------------------------------------------+
@@ -427,8 +412,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+------------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                             ;
 +----------------+-------+------------------------------------------------------------------+
-; m              ; 16    ; Signed Integer                                                   ;
-; n              ; 4     ; Signed Integer                                                   ;
+; m              ; 64    ; Signed Integer                                                   ;
+; n              ; 6     ; Signed Integer                                                   ;
 +----------------+-------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -466,8 +451,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                      ;
 ; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                      ;
 ; WIDTH_A                            ; 7                    ; Untyped                                                      ;
-; WIDTHAD_A                          ; 4                    ; Untyped                                                      ;
-; NUMWORDS_A                         ; 16                   ; Untyped                                                      ;
+; WIDTHAD_A                          ; 6                    ; Untyped                                                      ;
+; NUMWORDS_A                         ; 64                   ; Untyped                                                      ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                      ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                      ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                      ;
@@ -475,8 +460,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                      ;
 ; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                      ;
 ; WIDTH_B                            ; 7                    ; Untyped                                                      ;
-; WIDTHAD_B                          ; 4                    ; Untyped                                                      ;
-; NUMWORDS_B                         ; 16                   ; Untyped                                                      ;
+; WIDTHAD_B                          ; 6                    ; Untyped                                                      ;
+; NUMWORDS_B                         ; 64                   ; Untyped                                                      ;
 ; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                      ;
 ; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                      ;
 ; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                      ;
@@ -509,7 +494,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                      ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                      ;
 ; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                      ;
-; CBXI_PARAMETER                     ; altsyncram_grl1      ; Untyped                                                      ;
+; CBXI_PARAMETER                     ; altsyncram_qrl1      ; Untyped                                                      ;
 +------------------------------------+----------------------+--------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -523,10 +508,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Entity Instance                           ; print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0 ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                                               ;
 ;     -- WIDTH_A                            ; 7                                                                       ;
-;     -- NUMWORDS_A                         ; 16                                                                      ;
+;     -- NUMWORDS_A                         ; 64                                                                      ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                            ;
 ;     -- WIDTH_B                            ; 7                                                                       ;
-;     -- NUMWORDS_B                         ; 16                                                                      ;
+;     -- NUMWORDS_B                         ; 64                                                                      ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                                                  ;
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                            ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                    ;
@@ -632,30 +617,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 56                          ;
-;     CLR               ; 25                          ;
+; arriav_ff             ; 59                          ;
+;     CLR               ; 27                          ;
 ;     CLR SCLR          ; 9                           ;
-;     ENA               ; 6                           ;
+;     ENA               ; 7                           ;
 ;     ENA CLR           ; 10                          ;
 ;     ENA CLR SLD       ; 2                           ;
 ;     plain             ; 4                           ;
-; arriav_lcell_comb     ; 80                          ;
+; arriav_lcell_comb     ; 83                          ;
 ;     arith             ; 9                           ;
 ;         1 data inputs ; 9                           ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 69                          ;
-;         1 data inputs ; 11                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 73                          ;
+;         1 data inputs ; 7                           ;
 ;         2 data inputs ; 11                          ;
-;         3 data inputs ; 13                          ;
-;         4 data inputs ; 13                          ;
-;         5 data inputs ; 15                          ;
-;         6 data inputs ; 6                           ;
-; boundary_port         ; 34                          ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 11                          ;
+;         5 data inputs ; 17                          ;
+;         6 data inputs ; 12                          ;
+; boundary_port         ; 38                          ;
 ; stratixv_ram_block    ; 7                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 1.98                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -664,7 +649,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -673,70 +658,72 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Wed Oct 24 08:57:11 2018
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Wed Oct 24 10:25:29 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off print_escreve_campo -c print_escreve_campo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file print_escreve_campo_uc.vhd
-    Info (12022): Found design unit 1: print_escreve_campo_uc-print_escreve_campo_uc File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo_uc.vhd Line: 15
-    Info (12023): Found entity 1: print_escreve_campo_uc File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo_uc.vhd Line: 7
+    Info (12022): Found design unit 1: print_escreve_campo_uc-print_escreve_campo_uc File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo_uc.vhd Line: 15
+    Info (12023): Found entity 1: print_escreve_campo_uc File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo_uc.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file print_escreve_campo_fd.vhd
-    Info (12022): Found design unit 1: print_escreve_campo_fd-print_escreve_campo_fd File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 23
-    Info (12023): Found entity 1: print_escreve_campo_fd File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 8
+    Info (12022): Found design unit 1: print_escreve_campo_fd-print_escreve_campo_fd File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 23
+    Info (12023): Found entity 1: print_escreve_campo_fd File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file print_escreve_campo.vhd
-    Info (12022): Found design unit 1: print_escreve_campo-print_escreve_campo File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo.vhd Line: 28
-    Info (12023): Found entity 1: print_escreve_campo File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo.vhd Line: 14
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gabriel.amorim/documents/faculdade/labdig2/projeto/print_ecreve_campo/tx_serial_tick/tx_serial_uc.vhd
-    Info (12022): Found design unit 1: tx_serial_uc-tx_serial_uc File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial_uc.vhd Line: 14
-    Info (12023): Found entity 1: tx_serial_uc File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial_uc.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gabriel.amorim/documents/faculdade/labdig2/projeto/print_ecreve_campo/tx_serial_tick/tx_serial_fd.vhd
-    Info (12022): Found design unit 1: tx_serial_fd-tx_serial_fd File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial_fd.vhd Line: 18
-    Info (12023): Found entity 1: tx_serial_fd File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial_fd.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gabriel.amorim/documents/faculdade/labdig2/projeto/print_ecreve_campo/tx_serial_tick/tx_serial.vhd
-    Info (12022): Found design unit 1: tx_serial-tx_serial File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial.vhd Line: 16
-    Info (12023): Found entity 1: tx_serial File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial.vhd Line: 8
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gabriel.amorim/documents/faculdade/labdig2/projeto/print_ecreve_campo/componentes/mux3x1_n.vhd
-    Info (12022): Found design unit 1: mux3x1_n-arch_mux3x1_n File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/mux3x1_n.vhd Line: 27
-    Info (12023): Found entity 1: mux3x1_n File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/mux3x1_n.vhd Line: 18
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gabriel.amorim/documents/faculdade/labdig2/projeto/print_ecreve_campo/componentes/memoria_jogo_16x7.vhd
-    Info (12022): Found design unit 1: memoria_jogo_16x7-ram1 File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/memoria_jogo_16x7.vhd Line: 16
-    Info (12023): Found entity 1: memoria_jogo_16x7 File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/memoria_jogo_16x7.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gabriel.amorim/documents/faculdade/labdig2/projeto/print_ecreve_campo/componentes/edge_detector.vhd
-    Info (12022): Found design unit 1: edge_detector-rtl File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/edge_detector.vhd Line: 38
-    Info (12023): Found entity 1: edge_detector File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/edge_detector.vhd Line: 31
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gabriel.amorim/documents/faculdade/labdig2/projeto/print_ecreve_campo/componentes/deslocador_n.vhd
-    Info (12022): Found design unit 1: deslocador_n-deslocador_n_arch File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/deslocador_n.vhd Line: 16
-    Info (12023): Found entity 1: deslocador_n File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/deslocador_n.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gabriel.amorim/documents/faculdade/labdig2/projeto/print_ecreve_campo/componentes/contador_m_load.vhd
-    Info (12022): Found design unit 1: contador_m_load-contador_m_load_arch File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/contador_m_load.vhd Line: 23
-    Info (12023): Found entity 1: contador_m_load File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/contador_m_load.vhd Line: 10
-Info (12021): Found 2 design units, including 1 entities, in source file /users/gabriel.amorim/documents/faculdade/labdig2/projeto/print_ecreve_campo/componentes/contador_m.vhd
-    Info (12022): Found design unit 1: contador_m-contador_m_arch File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/contador_m.vhd Line: 22
-    Info (12023): Found entity 1: contador_m File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/componentes/contador_m.vhd Line: 10
+    Info (12022): Found design unit 1: print_escreve_campo-print_escreve_campo File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo.vhd Line: 28
+    Info (12023): Found entity 1: print_escreve_campo File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/print_escreve_campo/tx_serial_tick/tx_serial_uc.vhd
+    Info (12022): Found design unit 1: tx_serial_uc-tx_serial_uc File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial_uc.vhd Line: 14
+    Info (12023): Found entity 1: tx_serial_uc File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial_uc.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/print_escreve_campo/tx_serial_tick/tx_serial_fd.vhd
+    Info (12022): Found design unit 1: tx_serial_fd-tx_serial_fd File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial_fd.vhd Line: 18
+    Info (12023): Found entity 1: tx_serial_fd File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial_fd.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/print_escreve_campo/tx_serial_tick/tx_serial.vhd
+    Info (12022): Found design unit 1: tx_serial-tx_serial File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial.vhd Line: 16
+    Info (12023): Found entity 1: tx_serial File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/print_escreve_campo/componentes/mux3x1_n.vhd
+    Info (12022): Found design unit 1: mux3x1_n-arch_mux3x1_n File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/mux3x1_n.vhd Line: 27
+    Info (12023): Found entity 1: mux3x1_n File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/mux3x1_n.vhd Line: 18
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/print_escreve_campo/componentes/memoria_jogo_16x7.vhd
+    Info (12022): Found design unit 1: memoria_jogo_16x7-ram1 File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/memoria_jogo_16x7.vhd Line: 16
+    Info (12023): Found entity 1: memoria_jogo_16x7 File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/memoria_jogo_16x7.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/print_escreve_campo/componentes/edge_detector.vhd
+    Info (12022): Found design unit 1: edge_detector-rtl File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/edge_detector.vhd Line: 38
+    Info (12023): Found entity 1: edge_detector File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/edge_detector.vhd Line: 31
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/print_escreve_campo/componentes/deslocador_n.vhd
+    Info (12022): Found design unit 1: deslocador_n-deslocador_n_arch File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/deslocador_n.vhd Line: 16
+    Info (12023): Found entity 1: deslocador_n File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/deslocador_n.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/print_escreve_campo/componentes/contador_m_load.vhd
+    Info (12022): Found design unit 1: contador_m_load-contador_m_load_arch File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/contador_m_load.vhd Line: 23
+    Info (12023): Found entity 1: contador_m_load File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/contador_m_load.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file /users/mypc/desktop/dobbyrocha/labdig/print_escreve_campo/componentes/contador_m.vhd
+    Info (12022): Found design unit 1: contador_m-contador_m_arch File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/contador_m.vhd Line: 22
+    Info (12023): Found entity 1: contador_m File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/componentes/contador_m.vhd Line: 10
 Info (12127): Elaborating entity "print_escreve_campo" for the top level hierarchy
-Info (12128): Elaborating entity "print_escreve_campo_uc" for hierarchy "print_escreve_campo_uc:U1" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo.vhd Line: 67
-Info (12128): Elaborating entity "print_escreve_campo_fd" for hierarchy "print_escreve_campo_fd:U2" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo.vhd Line: 70
-Info (12128): Elaborating entity "tx_serial" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 64
-Info (12128): Elaborating entity "tx_serial_uc" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_uc:U1" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial.vhd Line: 53
-Info (12128): Elaborating entity "tx_serial_fd" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial.vhd Line: 55
-Info (12128): Elaborating entity "deslocador_n" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial_fd.vhd Line: 50
-Info (12128): Elaborating entity "contador_m" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|contador_m:U2" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial_fd.vhd Line: 51
-Info (12128): Elaborating entity "contador_m" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|contador_m:U3" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial.vhd Line: 58
-Info (12128): Elaborating entity "edge_detector" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|edge_detector:U4" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/tx_serial_tick/tx_serial.vhd Line: 61
-Info (12128): Elaborating entity "memoria_jogo_16x7" for hierarchy "print_escreve_campo_fd:U2|memoria_jogo_16x7:U2" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 66
-Info (12128): Elaborating entity "contador_m_load" for hierarchy "print_escreve_campo_fd:U2|contador_m_load:U3" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 68
-Info (12128): Elaborating entity "mux3x1_n" for hierarchy "print_escreve_campo_fd:U2|mux3x1_n:U4" File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 71
+Info (12128): Elaborating entity "print_escreve_campo_uc" for hierarchy "print_escreve_campo_uc:U1" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo.vhd Line: 67
+Info (12128): Elaborating entity "print_escreve_campo_fd" for hierarchy "print_escreve_campo_fd:U2" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo.vhd Line: 70
+Info (12128): Elaborating entity "tx_serial" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 64
+Info (12128): Elaborating entity "tx_serial_uc" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_uc:U1" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial.vhd Line: 53
+Info (12128): Elaborating entity "tx_serial_fd" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial.vhd Line: 55
+Info (12128): Elaborating entity "deslocador_n" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|deslocador_n:U1" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial_fd.vhd Line: 50
+Info (12128): Elaborating entity "contador_m" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|tx_serial_fd:U2|contador_m:U2" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial_fd.vhd Line: 51
+Info (12128): Elaborating entity "contador_m" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|contador_m:U3" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial.vhd Line: 58
+Info (12128): Elaborating entity "edge_detector" for hierarchy "print_escreve_campo_fd:U2|tx_serial:U1|edge_detector:U4" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/tx_serial_tick/tx_serial.vhd Line: 61
+Info (12128): Elaborating entity "memoria_jogo_16x7" for hierarchy "print_escreve_campo_fd:U2|memoria_jogo_16x7:U2" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 66
+Info (12128): Elaborating entity "contador_m_load" for hierarchy "print_escreve_campo_fd:U2|contador_m_load:U3" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 68
+Info (12128): Elaborating entity "mux3x1_n" for hierarchy "print_escreve_campo_fd:U2|mux3x1_n:U4" File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/print_escreve_campo_fd.vhd Line: 71
 Warning (276027): Inferred dual-clock RAM node "print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|memoria_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Warning (113028): 1 out of 64 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/campo_inicial.mif Line: 1
+    Warning (113026): Memory Initialization File Address 0 is not initialized File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/campo_inicial.mif Line: 1
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|memoria_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 7
-        Info (286033): Parameter WIDTHAD_A set to 4
-        Info (286033): Parameter NUMWORDS_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 6
+        Info (286033): Parameter NUMWORDS_A set to 64
         Info (286033): Parameter WIDTH_B set to 7
-        Info (286033): Parameter WIDTHAD_B set to 4
-        Info (286033): Parameter NUMWORDS_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 6
+        Info (286033): Parameter NUMWORDS_B set to 64
         Info (286033): Parameter ADDRESS_ACLR_A set to NONE
         Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
         Info (286033): Parameter ADDRESS_ACLR_B set to NONE
@@ -749,11 +736,11 @@ Info (12130): Elaborated megafunction instantiation "print_escreve_campo_fd:U2|m
 Info (12133): Instantiated megafunction "print_escreve_campo_fd:U2|memoria_jogo_16x7:U2|altsyncram:memoria_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
     Info (12134): Parameter "WIDTH_A" = "7"
-    Info (12134): Parameter "WIDTHAD_A" = "4"
-    Info (12134): Parameter "NUMWORDS_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "6"
+    Info (12134): Parameter "NUMWORDS_A" = "64"
     Info (12134): Parameter "WIDTH_B" = "7"
-    Info (12134): Parameter "WIDTHAD_B" = "4"
-    Info (12134): Parameter "NUMWORDS_B" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "6"
+    Info (12134): Parameter "NUMWORDS_B" = "64"
     Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
     Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
     Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
@@ -762,20 +749,20 @@ Info (12133): Instantiated megafunction "print_escreve_campo_fd:U2|memoria_jogo_
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
     Info (12134): Parameter "INIT_FILE" = "campo_inicial.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_grl1.tdf
-    Info (12023): Found entity 1: altsyncram_grl1 File: C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/print_ecreve_campo/print_escreve_campo/db/altsyncram_grl1.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qrl1.tdf
+    Info (12023): Found entity 1: altsyncram_qrl1 File: C:/Users/mypc/Desktop/DobbyRocha/LabDig/print_escreve_campo/print_escreve_campo/db/altsyncram_qrl1.tdf Line: 28
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 134 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 23 output pins
-    Info (21061): Implemented 93 logic cells
+Info (21057): Implemented 144 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 25 output pins
+    Info (21061): Implemented 99 logic cells
     Info (21064): Implemented 7 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4885 megabytes
-    Info: Processing ended: Wed Oct 24 08:57:23 2018
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:22
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4882 megabytes
+    Info: Processing ended: Wed Oct 24 10:25:43 2018
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:28
 
 

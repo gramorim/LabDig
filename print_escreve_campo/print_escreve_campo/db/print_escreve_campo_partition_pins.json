@@ -60,6 +60,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "db_q[4]",
+					"strict" : false
+				},
+				{
+					"name" : "db_q[5]",
+					"strict" : false
+				},
+				{
 					"name" : "db_sel[0]",
 					"strict" : false
 				},
@@ -109,6 +117,14 @@
 				},
 				{
 					"name" : "operacao[0]",
+					"strict" : false
+				},
+				{
+					"name" : "endereco[5]",
+					"strict" : false
+				},
+				{
+					"name" : "endereco[4]",
 					"strict" : false
 				},
 				{
