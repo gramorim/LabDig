@@ -38,18 +38,26 @@
 # software binary files
 ### tbd
 
+*.cdf
+*.bak
+*.done
+*.rpt
+*.jdi
+*.summary
+*.pin
+*.qarlog
+*.qws
+*.do
+*.ini
+*.smsg
+*.sld
+*.nvd
+*.sof
 
-*
-!**/*.gitignore
-##
-!**/*.qpf
-!**/*.qsf
-##
-!**/*.bdf
-!**/*.vhd
-!**/*.v
-##
-!**/*.vwf
+**/incremental_db/
+**/simulation/
+**/db/
+
 
 
 # End of https://www.gitignore.io/api/alteraquartusii
