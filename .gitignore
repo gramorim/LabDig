@@ -53,10 +53,14 @@
 *.sld
 *.nvd
 *.sof
+*.hdb
+*.sig
+*.cdb
+*.kpt
 
-**/incremental_db/
-**/simulation/
-**/db/
+**/incremental_db/*
+**/simulation/*
+**/db/*
 
 
 
