@@ -74,8 +74,8 @@ begin
     -- mux da entrada da memoria
     U5: mux3x1_n generic map (BITS => 7) port map (D2 => "1011000", D1=> "1000001", D0=>"1011111", 
                                                    SEL=>dado, MX_OUT=>s_entrada);
-    with s_contagem(1 downto 0) select
-        fim_linha <= '1' when "11", '0' when others;
+    with s_contagem(2 downto 0) select
+        fim_linha <= '1' when "111", '0' when others;
 
 -- depuracao
 db_q <= s_contagem;
