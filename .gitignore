@@ -57,6 +57,8 @@
 *.sig
 *.cdb
 *.kpt
+*.txt
+*.qdf
 
 **/incremental_db/*
 **/simulation/*

@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off print_escreve_campo -c print_escreve_campo --vector_source="C:/Temp/quartus/print_escreve_campo_restored/print_escreve_campo/Waveform.vwf" --testbench_file="C:/Temp/quartus/print_escreve_campo_restored/print_escreve_campo/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off print_escreve_campo -c print_escreve_campo --vector_source="C:/intelFPGA_lite/Projetos/LabDig/exp5/print_escreve_campo/Waveform.vwf" --testbench_file="C:/intelFPGA_lite/Projetos/LabDig/exp5/print_escreve_campo/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Temp/quartus/print_escreve_campo_restored/print_escreve_campo/simulation/qsim/" print_escreve_campo -c print_escreve_campo</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/intelFPGA_lite/Projetos/LabDig/exp5/print_escreve_campo/simulation/qsim/" print_escreve_campo -c print_escreve_campo</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off print_escreve_campo -c print_escreve_campo --vector_source="C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/Projeto_Final/print_escreve_campo/Waveform.vwf" --testbench_file="C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/Projeto_Final/print_escreve_campo/simulation/qsim/Waveform.vwf.vht" </ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off print_escreve_campo -c print_escreve_campo --vector_source="C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/Projeto_Final/print_escreve_campo/Waveform.vwf" --testbench_file="C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/Projeto_Final/print_escreve_campo/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/Projeto_Final/print_escreve_campo/simulation/qsim/" print_escreve_campo -c print_escreve_campo</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Gabriel.Amorim/Documents/Faculdade/LabDig2/Projeto/Projeto_Final/print_escreve_campo/simulation/qsim/" print_escreve_campo -c print_escreve_campo</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work print_escreve_campo.vho
@@ -20,6 +20,8 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
 
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
@@ -39,6 +41,8 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
 
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
@@ -327,56 +331,6 @@ SIGNAL("db_zera")
 	PARENT = "";
 }
 
-SIGNAL("endereco")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = BUS;
-	WIDTH = 4;
-	LSB_INDEX = 0;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("endereco[3]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "endereco";
-}
-
-SIGNAL("endereco[2]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "endereco";
-}
-
-SIGNAL("endereco[1]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "endereco";
-}
-
-SIGNAL("endereco[0]")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "endereco";
-}
-
 SIGNAL("iniciar")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -475,6 +429,71 @@ SIGNAL("dado[0]")
 	LSB_INDEX = -1;
 	DIRECTION = INPUT;
 	PARENT = "dado";
+}
+
+SIGNAL("endereco[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("endereco[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("endereco[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("endereco[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("endereco[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("endereco[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+GROUP("endereco")
+{
+	MEMBERS = "endereco[0]", "endereco[1]", "endereco[2]", "endereco[3]", "endereco[4]", "endereco[5]";
 }
 
 TRANSITION_LIST("clock")
@@ -701,42 +720,6 @@ TRANSITION_LIST("db_zera")
 	}
 }
 
-TRANSITION_LIST("endereco[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 100000.0;
-	}
-}
-
-TRANSITION_LIST("endereco[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 100000.0;
-	}
-}
-
-TRANSITION_LIST("endereco[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 100000.0;
-	}
-}
-
-TRANSITION_LIST("endereco[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 100000.0;
-	}
-}
-
 TRANSITION_LIST("iniciar")
 {
 	NODE
@@ -815,6 +798,60 @@ TRANSITION_LIST("dado[0]")
 	}
 }
 
+TRANSITION_LIST("endereco[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 100000.0;
+	}
+}
+
+TRANSITION_LIST("endereco[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 100000.0;
+	}
+}
+
+TRANSITION_LIST("endereco[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 100000.0;
+	}
+}
+
+TRANSITION_LIST("endereco[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 100000.0;
+	}
+}
+
+TRANSITION_LIST("endereco[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 100000.0;
+	}
+}
+
+TRANSITION_LIST("endereco[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 100000.0;
+	}
+}
+
 DISPLAY_LINE
 {
 	CHANNEL = "clock";
@@ -874,17 +911,17 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "endereco";
+	CHANNEL = "dado";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 0;
-	CHILDREN = 7, 8, 9, 10;
+	CHILDREN = 7, 8;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "endereco[3]";
+	CHANNEL = "dado[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 7;
@@ -894,7 +931,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "endereco[2]";
+	CHANNEL = "dado[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 8;
@@ -904,60 +941,10 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "endereco[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 9;
-	TREE_LEVEL = 1;
-	PARENT = 6;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "endereco[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 10;
-	TREE_LEVEL = 1;
-	PARENT = 6;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "dado";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 11;
-	TREE_LEVEL = 0;
-	CHILDREN = 12, 13;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "dado[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 12;
-	TREE_LEVEL = 1;
-	PARENT = 11;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "dado[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 13;
-	TREE_LEVEL = 1;
-	PARENT = 11;
-}
-
-DISPLAY_LINE
-{
 	CHANNEL = "db_zera";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 14;
+	TREE_INDEX = 9;
 	TREE_LEVEL = 0;
 }
 
@@ -966,7 +953,7 @@ DISPLAY_LINE
 	CHANNEL = "db_conta";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 15;
+	TREE_INDEX = 10;
 	TREE_LEVEL = 0;
 }
 
@@ -975,7 +962,7 @@ DISPLAY_LINE
 	CHANNEL = "db_carrega";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 16;
+	TREE_INDEX = 11;
 	TREE_LEVEL = 0;
 }
 
@@ -984,9 +971,9 @@ DISPLAY_LINE
 	CHANNEL = "db_q";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 17;
+	TREE_INDEX = 12;
 	TREE_LEVEL = 0;
-	CHILDREN = 18, 19, 20, 21;
+	CHILDREN = 13, 14, 15, 16;
 }
 
 DISPLAY_LINE
@@ -994,9 +981,9 @@ DISPLAY_LINE
 	CHANNEL = "db_q[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 18;
+	TREE_INDEX = 13;
 	TREE_LEVEL = 1;
-	PARENT = 17;
+	PARENT = 12;
 }
 
 DISPLAY_LINE
@@ -1004,9 +991,9 @@ DISPLAY_LINE
 	CHANNEL = "db_q[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 19;
+	TREE_INDEX = 14;
 	TREE_LEVEL = 1;
-	PARENT = 17;
+	PARENT = 12;
 }
 
 DISPLAY_LINE
@@ -1014,9 +1001,9 @@ DISPLAY_LINE
 	CHANNEL = "db_q[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 20;
+	TREE_INDEX = 15;
 	TREE_LEVEL = 1;
-	PARENT = 17;
+	PARENT = 12;
 }
 
 DISPLAY_LINE
@@ -1024,9 +1011,9 @@ DISPLAY_LINE
 	CHANNEL = "db_q[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 21;
+	TREE_INDEX = 16;
 	TREE_LEVEL = 1;
-	PARENT = 17;
+	PARENT = 12;
 }
 
 DISPLAY_LINE
@@ -1034,7 +1021,7 @@ DISPLAY_LINE
 	CHANNEL = "db_fim";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 22;
+	TREE_INDEX = 17;
 	TREE_LEVEL = 0;
 }
 
@@ -1043,7 +1030,7 @@ DISPLAY_LINE
 	CHANNEL = "db_partida";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 23;
+	TREE_INDEX = 18;
 	TREE_LEVEL = 0;
 }
 
@@ -1052,7 +1039,7 @@ DISPLAY_LINE
 	CHANNEL = "db_pronto";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 24;
+	TREE_INDEX = 19;
 	TREE_LEVEL = 0;
 }
 
@@ -1061,7 +1048,7 @@ DISPLAY_LINE
 	CHANNEL = "db_reseta";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 25;
+	TREE_INDEX = 20;
 	TREE_LEVEL = 0;
 }
 
@@ -1070,9 +1057,9 @@ DISPLAY_LINE
 	CHANNEL = "db_sel";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 26;
+	TREE_INDEX = 21;
 	TREE_LEVEL = 0;
-	CHILDREN = 27, 28;
+	CHILDREN = 22, 23;
 }
 
 DISPLAY_LINE
@@ -1080,9 +1067,9 @@ DISPLAY_LINE
 	CHANNEL = "db_sel[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 27;
+	TREE_INDEX = 22;
 	TREE_LEVEL = 1;
-	PARENT = 26;
+	PARENT = 21;
 }
 
 DISPLAY_LINE
@@ -1090,9 +1077,9 @@ DISPLAY_LINE
 	CHANNEL = "db_sel[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 28;
+	TREE_INDEX = 23;
 	TREE_LEVEL = 1;
-	PARENT = 26;
+	PARENT = 21;
 }
 
 DISPLAY_LINE
@@ -1100,7 +1087,7 @@ DISPLAY_LINE
 	CHANNEL = "db_we";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 29;
+	TREE_INDEX = 24;
 	TREE_LEVEL = 0;
 }
 
@@ -1109,9 +1096,9 @@ DISPLAY_LINE
 	CHANNEL = "db_dados";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 30;
+	TREE_INDEX = 25;
 	TREE_LEVEL = 0;
-	CHILDREN = 31, 32, 33, 34, 35, 36, 37;
+	CHILDREN = 26, 27, 28, 29, 30, 31, 32;
 }
 
 DISPLAY_LINE
@@ -1119,9 +1106,9 @@ DISPLAY_LINE
 	CHANNEL = "db_dados[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 31;
+	TREE_INDEX = 26;
 	TREE_LEVEL = 1;
-	PARENT = 30;
+	PARENT = 25;
 }
 
 DISPLAY_LINE
@@ -1129,9 +1116,9 @@ DISPLAY_LINE
 	CHANNEL = "db_dados[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 32;
+	TREE_INDEX = 27;
 	TREE_LEVEL = 1;
-	PARENT = 30;
+	PARENT = 25;
 }
 
 DISPLAY_LINE
@@ -1139,9 +1126,9 @@ DISPLAY_LINE
 	CHANNEL = "db_dados[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 33;
+	TREE_INDEX = 28;
 	TREE_LEVEL = 1;
-	PARENT = 30;
+	PARENT = 25;
 }
 
 DISPLAY_LINE
@@ -1149,9 +1136,9 @@ DISPLAY_LINE
 	CHANNEL = "db_dados[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 34;
+	TREE_INDEX = 29;
 	TREE_LEVEL = 1;
-	PARENT = 30;
+	PARENT = 25;
 }
 
 DISPLAY_LINE
@@ -1159,9 +1146,9 @@ DISPLAY_LINE
 	CHANNEL = "db_dados[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 35;
+	TREE_INDEX = 30;
 	TREE_LEVEL = 1;
-	PARENT = 30;
+	PARENT = 25;
 }
 
 DISPLAY_LINE
@@ -1169,9 +1156,9 @@ DISPLAY_LINE
 	CHANNEL = "db_dados[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 36;
+	TREE_INDEX = 31;
 	TREE_LEVEL = 1;
-	PARENT = 30;
+	PARENT = 25;
 }
 
 DISPLAY_LINE
@@ -1179,9 +1166,9 @@ DISPLAY_LINE
 	CHANNEL = "db_dados[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 37;
+	TREE_INDEX = 32;
 	TREE_LEVEL = 1;
-	PARENT = 30;
+	PARENT = 25;
 }
 
 DISPLAY_LINE
@@ -1189,7 +1176,7 @@ DISPLAY_LINE
 	CHANNEL = "saida_serial";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 38;
+	TREE_INDEX = 33;
 	TREE_LEVEL = 0;
 }
 
@@ -1198,8 +1185,78 @@ DISPLAY_LINE
 	CHANNEL = "pronto";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 39;
+	TREE_INDEX = 34;
 	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "endereco";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 35;
+	TREE_LEVEL = 0;
+	CHILDREN = 36, 37, 38, 39, 40, 41;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "endereco[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 36;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "endereco[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 37;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "endereco[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 38;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "endereco[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 39;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "endereco[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 40;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "endereco[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 41;
+	TREE_LEVEL = 1;
+	PARENT = 35;
 }
 
 TIME_BAR

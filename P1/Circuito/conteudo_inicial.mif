@@ -1,0 +1,24 @@
+% conteudo da memoria %
+WIDTH=7;
+DEPTH=16;
+ADDRESS_RADIX=UNS;
+DATA_RADIX=HEX;
+CONTENT 
+BEGIN
+0  : 50;
+1  : 43;
+2  : 53;
+3  : 33;
+4  : 36;
+5  : 33;
+6  : 35;
+7  : 0D;
+8  : 0A;
+9  : 4C;
+10 : 61;
+11 : 62;
+12 : 44;
+13 : 69;
+14 : 67;
+15 : 2E;
+END;
