@@ -12,6 +12,7 @@ ADDRESS_RADIX=UNS;
 DATA_RADIX=HEX;
 
 CONTENT BEGIN
+	0   :   2D;
 	1	:	2D;
 	2	:	2D;
 	3	:	2D;
