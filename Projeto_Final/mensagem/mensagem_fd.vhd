@@ -6,10 +6,13 @@ use IEEE.numeric_std.all;
 
 entity mensagem_fd is
 	generic(	constant M : integer := 8;
-				constant N : integer := 7);
+				constant N : integer := 3);
 	port(	clock, reset, enable	: in  std_logic;
 			fim						: out std_logic;
-			ascii						: out std_logic_vector(6 downto 0));
+			ascii						: out std_logic_vector(6 downto 0);
+			
+			--depuração
+			db_end : out std_logic_vector(N-1 downto 0));
 end mensagem_fd;
 
 architecture mensagem_fd_arc of mensagem_fd is
@@ -49,4 +52,7 @@ begin
 						ascii,
 						s_end,      
 						'0','1');
+		
+		db_end <= s_end;
+		
 end mensagem_fd_arc;

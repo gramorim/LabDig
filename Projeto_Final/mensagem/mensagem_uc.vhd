@@ -46,15 +46,15 @@ begin
 	end process;
 	
 	with sreg select
-		o_pronto	<= '0' when epronto, '1' when others;
+		o_pronto	<= '1' when epronto, '0' when others;
 		
 	with sreg select
-		o_start	<= '1' when mostra, '0' when others;
+		o_start	<= '1' when mostra, 	'0' when others;
 		
 	with sreg select
-		o_reset	<= '1' when inicio, '0' when others;
+		o_reset	<= '1' when inicio, 	'0' when others;
 		
 	with sreg select
-		o_enable	<= '1' when soma1, '0' when others;
+		o_enable	<= '1' when soma1, 	'0' when others;
 		
 end mensagem_uc_arc;

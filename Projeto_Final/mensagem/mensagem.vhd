@@ -8,7 +8,8 @@ entity mensagem is
 				constant N : integer := 3);
 	port(	clock, start, pronto, reset 	: in  std_logic;
 			o_pronto, o_start					: out std_logic;
-			ascii										: out std_logic_vector(6 downto 0));
+			ascii									: out std_logic_vector(6 downto 0);
+			db_end 								: out std_logic_vector(N-1 downto 0));
 end mensagem;
 
 architecture mensagem_arc of mensagem is
@@ -19,7 +20,8 @@ architecture mensagem_arc of mensagem is
 					constant N : integer := 3);
 		port(	clock, reset, enable	: in  std_logic;
 				fim						: out std_logic;
-				ascii						: out std_logic_vector(6 downto 0));
+				ascii						: out std_logic_vector(6 downto 0);
+				db_end 					: out std_logic_vector(N-1 downto 0));
 	end component;
 	
 	component mensagem_uc is
@@ -33,7 +35,8 @@ begin
 		generic map(M,N)
 		port map(	clock, s_reset, s_enable,
 						s_fim,
-						ascii);
+						ascii,
+						db_end);
 						
 	UC : mensagem_uc
 		port map(	clock, start, pronto, reset, s_fim,

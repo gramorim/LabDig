@@ -55,7 +55,7 @@ begin
     U2: tx_serial_fd port map (clock, reset, s_zera, s_conta, s_carrega, s_desloca, paridade, 
                                dados_ascii, saida_serial, s_fim);
     -- fator de divisao para 115.200 bauds (434=50M/115200)
-    U3: contador_m generic map (M => 434, N => 9) port map (clock, s_zera, '1', open, s_tick);
+    U3: contador_m generic map (M => 7, N => 3) port map (clock, s_zera, '1', open, s_tick);
     -- fator de divisao para simulacao
     --U3: contador_m generic map (M => 10, N => 4) port map (clock, s_zera, '1', open, s_tick);
     U4: edge_detector port map (clock, '1', partida, s_partida);

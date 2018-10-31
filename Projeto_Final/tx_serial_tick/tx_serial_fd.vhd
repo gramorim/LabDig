@@ -7,12 +7,10 @@ use IEEE.std_logic_arith.all;
 
 
 entity tx_serial_fd is
-    port (
-        clock, reset: in std_logic;
-        zera, conta, carrega, desloca, paridade: in std_logic;
-        dados_ascii: in std_logic_vector (6 downto 0);
-        saida_serial, fim : out std_logic
-    );
+    port(	clock, reset: in std_logic;
+				zera, conta, carrega, desloca, paridade: in std_logic;
+				dados_ascii: in std_logic_vector (6 downto 0);
+				saida_serial, fim : out std_logic);
 end tx_serial_fd;
 
 architecture tx_serial_fd of tx_serial_fd is
