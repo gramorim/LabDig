@@ -13,7 +13,8 @@ entity mensagem_fd is
 end mensagem_fd;
 
 architecture mensagem_fd_arc of mensagem_fd is
-	signal s_end, s_zero : std_logic_vector(N-1 downto 0);
+	signal s_zero	: std_logic_vector(6   downto 0);
+	signal s_end	: std_logic_vector(N-1 downto 0);
 
 	component contador_m is
 		 generic(	constant M: integer := 50;
@@ -43,7 +44,7 @@ begin
 	s_zero <= std_logic_vector(to_unsigned(0, 7));	
 					
 	RAM: ram_MxN
-		GENERIC map(M,8,N)
+		GENERIC map(M,7,N)
 		PORT map(	s_zero,
 						ascii,
 						s_end,      
