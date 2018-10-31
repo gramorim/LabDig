@@ -18,7 +18,7 @@ END ram_MxN;
 
 ARCHITECTURE ram1 OF ram_MxN IS
   TYPE   arranjo_memoria IS ARRAY(0 TO M-1) OF STD_LOGIC_VECTOR(N-1 DOWNTO 0);
-  SIGNAL memoria : arranjo_memoria;
+  signal memoria : arranjo_memoria;
   attribute ram_init_file: string;
   attribute ram_init_file of memoria: signal is "conteudo_inicial.mif";
 BEGIN
