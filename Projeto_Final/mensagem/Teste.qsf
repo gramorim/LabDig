@@ -19,7 +19,7 @@
 #
 # Quartus Prime
 # Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-# Date created = 09:16:47  October 31, 2018
+# Date created = 12:15:42  October 31, 2018
 #
 # -------------------------------------------------------------------------- #
 #
@@ -38,47 +38,27 @@
 
 
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name DEVICE 5CEFA4F23C7
+set_global_assignment -name DEVICE 5CGXFC7C7F23C8
 set_global_assignment -name TOP_LEVEL_ENTITY Teste
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.1.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:16:47  OCTOBER 31, 2018"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:15:42  OCTOBER 31, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "16.1.0 Lite Edition"
-set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
-set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
-set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name MIF_FILE conteudo_inicial.mif
-set_global_assignment -name VHDL_FILE ../Modulos/registrador_n.vhd
-set_global_assignment -name VHDL_FILE ../Modulos/hex7seg.vhd
-set_global_assignment -name VHDL_FILE ../Modulos/gerador_paridade_n.vhd
-set_global_assignment -name VHDL_FILE ../Modulos/edge_detector.vhd
-set_global_assignment -name VHDL_FILE ../Modulos/deslocador_n.vhd
-set_global_assignment -name VHDL_FILE ../Projeto_RX/rx_serial_uc.vhd
-set_global_assignment -name VHDL_FILE ../Projeto_RX/rx_serial_fd.vhd
-set_global_assignment -name VHDL_FILE ../Projeto_RX/rx_serial.vhd
-set_global_assignment -name VHDL_FILE ../Projeto_TX/tx_serial_uc.vhd
-set_global_assignment -name VHDL_FILE ../Projeto_TX/tx_serial_fd.vhd
-set_global_assignment -name VHDL_FILE ../Projeto_TX/tx_serial.vhd
-set_global_assignment -name VHDL_FILE ../Tick/ticker.vhd
-set_global_assignment -name VHDL_FILE ../Tick/Tick_UC.vhd
-set_global_assignment -name VHDL_FILE ../Tick/Tick_FD.vhd
-set_global_assignment -name VHDL_FILE ../UART/UART.vhd
-set_global_assignment -name VHDL_FILE componentes/ram_MxN.vhd
-set_global_assignment -name VHDL_FILE componentes/contador_m.vhd
-set_global_assignment -name VHDL_FILE mensagem/mensagem_uc.vhd
-set_global_assignment -name VHDL_FILE mensagem/mensagem_fd.vhd
-set_global_assignment -name VHDL_FILE mensagem/mensagem.vhd
+set_global_assignment -name VHDL_FILE ../componentes/deslocador_n.vhd
+set_global_assignment -name VHDL_FILE ../componentes/ram_MxN.vhd
+set_global_assignment -name VHDL_FILE ../componentes/edge_detector.vhd
+set_global_assignment -name VHDL_FILE ../componentes/contador_m.vhd
+set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial_uc.vhd
+set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial_fd.vhd
+set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial.vhd
 set_global_assignment -name VHDL_FILE Teste.vhd
-set_location_assignment PIN_M9 -to clock
-set_location_assignment PIN_AA2 -to o_andamento
-set_location_assignment PIN_M6 -to reset
-set_location_assignment PIN_K16 -to serial
-set_location_assignment PIN_U7 -to start
+set_global_assignment -name VHDL_FILE mensagem_uc.vhd
+set_global_assignment -name VHDL_FILE mensagem_fd.vhd
+set_global_assignment -name VHDL_FILE mensagem.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
