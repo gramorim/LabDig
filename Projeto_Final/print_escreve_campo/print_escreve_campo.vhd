@@ -18,6 +18,7 @@ entity print_escreve_campo is
         endereco: in std_logic_vector(5 downto 0);
         saida_serial, pronto : out std_logic;
         -- depuracao
+		  db_saida_serial : out std_logic;
         db_reseta, db_partida, db_zera, db_conta, db_carrega, db_pronto, db_we, db_fim: out std_logic;
         db_q: out std_logic_vector(5 downto 0);
         db_sel: out std_logic_vector(1 downto 0);
@@ -26,6 +27,7 @@ entity print_escreve_campo is
 end print_escreve_campo;
 
 architecture print_escreve_campo of print_escreve_campo is
+	signal s_saida_serial: std_logic;
     signal s_iniciar, s_reseta, s_partida, s_zera, s_conta, s_carrega, s_pronto, s_we, s_fim, s_fim_linha: std_logic;
     signal s_sel: std_logic_vector(1 downto 0);
     -- depuracao
@@ -70,7 +72,7 @@ begin
     U2: print_escreve_campo_fd port map (clock=>clock, reset=>s_reseta, partida=>s_partida , we=>s_we, 
                                  conta=>s_conta, zera=>s_zera, carrega=>s_carrega, endereco=>endereco, dado=>dado, sel=>s_sel, 
                                  fim=>s_fim, fim_linha=>s_fim_linha, 
-                                 saida_serial=>saida_serial, pronto=>s_pronto, 
+                                 saida_serial=>s_saida_serial, pronto=>s_pronto, 
                                  db_q=>s_q, db_dados=>db_dados);
     U3: edge_detector port map (clock, '1', iniciar, s_iniciar);
 
@@ -86,6 +88,9 @@ db_we<=s_we;
 db_fim<=s_fim;
 db_q<=s_q;
 db_sel <= s_sel;
+
+saida_serial    <= s_saida_serial;
+db_saida_serial <= s_saida_serial;
 
 end print_escreve_campo;
 

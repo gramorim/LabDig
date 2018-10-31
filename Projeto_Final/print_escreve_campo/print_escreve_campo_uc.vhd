@@ -9,7 +9,8 @@ entity print_escreve_campo_uc is
          operacao: in std_logic_vector(1 downto 0);
          pronto, fim, fim_linha: in std_logic;
          zera, reseta, conta, carrega, we, partida, pronto_out: out std_logic;
-         sel: out std_logic_vector(1 downto 0));
+         sel: out std_logic_vector(1 downto 0);
+			hex_estado	: out std_logic_vector(6 downto 0));
 end print_escreve_campo_uc;
 
 architecture print_escreve_campo_uc of print_escreve_campo_uc is
