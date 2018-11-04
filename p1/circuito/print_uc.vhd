@@ -13,7 +13,8 @@ entity print_uc is
 end print_uc;
 
 architecture print_uc_arc of print_uc is
-	type ESTADO is (Inicio, Prepara, IniciaT, EsperaP, Soma1, FimE, EsperaBotao, TestaChar);
+	type ESTADO is (Inicio, Prepara, IniciaT, EsperaP, Soma1, FimE);
+	--type ESTADO is (Inicio, Prepara, IniciaT, EsperaP, Soma1, FimE, EsperaBotao, TestaChar);
 	signal Sreg, Snext : ESTADO;
 
 begin
@@ -28,11 +29,12 @@ begin
 	begin
 		case Sreg is
 			when Inicio  => if send = '0' then Snext <= Inicio;
-								 else               Snext <= EsperaBotao;
+								 else 				  Snext <= Prepara;
+								 --else               Snext <= EsperaBotao;
 								 end if;
-			when EsperaBotao => if send = '0' then Snext <= Prepara;
-								 else               Snext <= EsperaBotao;
-								 end if;					 
+			--when EsperaBotao => if send = '0' then Snext <= Prepara;
+			--					 else               Snext <= EsperaBotao;
+			--					 end if;					 
 			
 			when Prepara => Snext <= IniciaT;
 			
@@ -41,13 +43,13 @@ begin
 								 end if;
 			
 			when EsperaP => if    pronto = '0' then Snext <= EsperaP;
-								 elsif fim    = '0' then Snext <= TestaChar;
-								 else							 Snext <= FimE;
-								 end if;
-			when TestaChar => if    char_fim = o_mem then Snext <= FimE;
 								 elsif fim    = '0' then Snext <= Soma1;
 								 else							 Snext <= FimE;
 								 end if;
+			--when TestaChar => if    char_fim = o_mem then Snext <= FimE;
+			--					 elsif fim    = '0' then Snext <= Soma1;
+			--					 else							 Snext <= FimE;
+			--					 end if;
 								 
 			when Soma1   => Snext <= IniciaT;
 			
