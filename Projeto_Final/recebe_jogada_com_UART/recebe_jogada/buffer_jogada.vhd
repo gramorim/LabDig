@@ -1,5 +1,5 @@
 library ieee;
-use ieee.std_logic.all;
+use ieee.std_logic_1164.all;
 
 entity buffer_jogada is
 	port(

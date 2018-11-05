@@ -1,5 +1,5 @@
 library ieee;
-use ieee.std_logic.all;
+use ieee.std_logic_1164.all;
 
 entity recebe_jogada_fd is
 	port(
@@ -13,7 +13,7 @@ entity recebe_jogada_fd is
 end entity;
 
 architecture recebe_jogada_fd_arch of recebe_jogada_fd is
-	signal endereco: std_logic;
+	signal endereco: std_logic_vector(1 downto 0);
 
 	component contador_m is
 		generic (

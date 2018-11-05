@@ -1,5 +1,5 @@
 library ieee;
-use ieee.std_logic.all;
+use ieee.std_logic_1164.all;
 
 entity recebe_jogada_uc is
 	port(
@@ -29,7 +29,7 @@ begin
   end process;
 
   -- next-state logic
-  process (partida, tick, fim, Sreg) 
+  process (enable, clock, Sreg) 
   begin
     case Sreg is
 		when inicial =>     if enable='1' then 

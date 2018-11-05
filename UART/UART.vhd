@@ -10,7 +10,7 @@ entity UART is
 		  transm_andamento, pronto : out std_logic;
 		  serial_saida             : out std_logic;
 		  
-		--o_dado_ascii              : out std_logic_vector(6 downto 0);
+		  o_dado_ascii              : out std_logic_vector(6 downto 0);
 		  paridade_ok, tem_dado_rec : out std_logic;
 		  recebe_dado               : in  std_logic;
 		  serial_entrada            : in  std_logic;
@@ -67,12 +67,12 @@ begin
             tem_dado_rec, paridade_ok, open,
 			   open, o_fim,
 		    --o_estado_rx,
-		      open);
-		    --o_dado_ascii);
+			  open, open, o_dado_ascii
+			);
 				
-	s_transmite <= not transmite_dado;
-	s_recebe    <= not recebe_dado;
-	s_reset     <= not reset;
+	s_transmite <= transmite_dado;--not transmite_dado;
+	s_recebe    <= recebe_dado;--not recebe_dado;
+	s_reset     <= reset;--not reset;
 	
 	o_serial_entrada <= serial_entrada;
 			
