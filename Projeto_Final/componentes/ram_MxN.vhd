@@ -9,7 +9,8 @@ USE ieee.numeric_std.ALL;
 ENTITY ram_MxN IS
 	GENERIC (	constant M   : integer := 16;
 					constant N   : integer := 7;
-					constant ADR : integer := 4);
+					constant ADR : integer := 4;
+					constant filename: string := "conteudo_inicial.mif");
    PORT(	dado_entrada : IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);
          dado_saida   : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
          endereco     : IN  STD_LOGIC_VECTOR(ADR-1 DOWNTO 0);         
@@ -20,7 +21,7 @@ ARCHITECTURE ram1 OF ram_MxN IS
   TYPE   arranjo_memoria IS ARRAY(0 TO M-1) OF STD_LOGIC_VECTOR(N-1 DOWNTO 0);
   signal memoria : arranjo_memoria;
   attribute ram_init_file: string;
-  attribute ram_init_file of memoria: signal is "conteudo_inicial.mif";
+  attribute ram_init_file of memoria: signal is filename;
 BEGIN
 
   PROCESS(we, ce, endereco)
