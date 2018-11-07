@@ -1,9 +1,19 @@
-% conteudo inicial da memoria de campo de batalha %
-% LabDig 2018                                     %
-% livre  -  2D		                              %
-% agua   A  41                                    %
-% acerto X  58                                    %
-%                                                 %
+-- Copyright (C) 2016  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel MegaCore Function License Agreement, or other 
+-- applicable license agreement, including, without limitation, 
+-- that your use is for the sole purpose of programming logic 
+-- devices manufactured by Intel and sold by Intel or its 
+-- authorized distributors.  Please refer to the applicable 
+-- agreement for further details.
+
+-- Quartus Prime generated Memory Initialization File (.mif)
 
 WIDTH=7;
 DEPTH=64;
@@ -12,69 +22,7 @@ ADDRESS_RADIX=UNS;
 DATA_RADIX=HEX;
 
 CONTENT BEGIN
-	0   :   2D;
-	1	:	2D;
-	2	:	2D;
-	3	:	2D;
-	4	:	2D;
-	5	:	2D;
-	6	:	2D;
-	7	:	2D;
-	8	:	2D;
-	9	:	2D;
-	10	:	2D;
-	11	:	2D;
-	12	:	2D;
-	13	:	2D;
-	14	:	2D;
-	15	:	2D;
-	16	:	2D;
-	17	:	2D;
-	18	:	2D;
-	19	:	2D;
-	20	:	2D;
-	21	:	2D;
-	22	:	2D;
-	23	:	2D;
-	24	:	2D;
-	25	:	2D;
-	26	:	2D;
-	27	:	2D;
-	28	:	2D;
-	29	:	2D;
-	30	:	2D;
-	31	:	2D;
-	32	:	2D;
-	33	:	2D;
-	34	:	2D;
-	35	:	2D;
-	36	:	2D;
-	37	:	2D;
-	38	:	2D;
-	39	:	2D;
-	40	:	2D;
-	41	:	2D;
-	42	:	2D;
-	43	:	2D;
-	44	:	2D;
-	45	:	2D;
-	46	:	2D;
-	47	:	2D;
-	48	:	2D;
-	49	:	2D;
-	50	:	2D;
-	51	:	2D;
-	52	:	2D;
-	53	:	2D;
-	54	:	2D;
-	55	:	2D;
-	56	:	2D;
-	57	:	2D;
-	58	:	2D;
-	59	:	2D;
-	60	:	2D;
-	61	:	2D;
-	62	:	2D;
-	63	:	2D;
-	
+	0   :   41;
+	[1..62]  :   2D;
+	63  :   58;
 END;

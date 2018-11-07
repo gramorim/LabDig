@@ -15,13 +15,15 @@ entity operacoes_campo_fd is
         saida_serial, pronto : out std_logic;      	-- tx_serial
         db_q: out std_logic_vector(5 downto 0);
         db_dados: out std_logic_vector(6 downto 0);
-        verifica: out std_logic_vector(1 downto 0)
+        verifica: out std_logic_vector(1 downto 0);
+		  i_verifica : in std_logic
     );
 end operacoes_campo_fd;
 
 architecture operacoes_campo_fd of operacoes_campo_fd is
     signal s_contagem: std_logic_vector(5 downto 0);
     signal s_dados, s_mux, s_entrada: std_logic_vector (6 downto 0);
+	 signal s_verifica : std_logic_vector(1 downto 0);
 
     component tx_serial port (
         clock, reset, partida, paridade: in std_logic;
@@ -63,6 +65,13 @@ architecture operacoes_campo_fd of operacoes_campo_fd is
         output : out std_logic_vector(1 downto 0)
     );
   end component; 
+  
+	component registrador_n is
+	  generic (constant N: integer := 8);
+	  port (clock, clear, enable: in STD_LOGIC;
+			  D: in STD_LOGIC_VECTOR(N-1 downto 0);
+			  Q: out STD_LOGIC_VECTOR (N-1 downto 0));
+	end component;
 
 begin
 
@@ -81,7 +90,14 @@ begin
     U5: mux3x1_n generic map (BITS => 7) port map (D2 => "1011000", D1=> "1000001", D0=>"1011111", 
                                                    SEL=>dado, MX_OUT=>s_entrada);
                                                                     
-    U6: decoder port map (input => s_dados, output => verifica);
+    U6: decoder port map (input => s_dados, output => s_verifica);
+	 
+	 
+	REG : registrador_n
+	  generic map(2)
+	  port map(clock, '0', i_verifica,
+			  s_verifica,
+			  verifica);
 
     with s_contagem(2 downto 0) select
         fim_linha <= '1' when "111", '0' when others;

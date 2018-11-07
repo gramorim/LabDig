@@ -7,7 +7,8 @@ entity operacoes_campo_uc is port (
 	pronto, fim, fim_linha: in std_logic;
 	zera, reseta, conta, carrega, we, partida, pronto_out: out std_logic;
 	sel: out std_logic_vector(1 downto 0);
-	hex_estado	: out std_logic_vector(6 downto 0));
+	hex_estado	: out std_logic_vector(6 downto 0);
+	o_verifica : out std_logic);
 end operacoes_campo_uc;
 
 architecture operacoes_campo_uc of operacoes_campo_uc is
@@ -61,8 +62,8 @@ begin
 										end if;
 
 			when carrega_endereco =>	if operacao=ESCREVE then Snext <= escreve_memoria;
-										elsif operacao=VERIFICA then Snext <= verifica_memoria;
-										end if;
+												else Snext <= verifica_memoria;
+												end if;
 			when escreve_memoria => 	Snext <= final;
 			when verifica_memoria => 	Snext <= final;
 			when others =>           	Snext <= inicial;
@@ -88,5 +89,7 @@ begin
 		we <= '0' when escreve_memoria, '1' when others;
 	with Sreg select
 		carrega <= '1' when carrega_endereco, '0' when others;
+	with sreg select
+		o_verifica <= '1' when verifica_memoria, '0' when others;
 	
 end operacoes_campo_uc;
