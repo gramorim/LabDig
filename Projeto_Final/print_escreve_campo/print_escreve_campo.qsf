@@ -94,7 +94,7 @@ set_location_assignment PIN_A12 -to saida_serial
 set_location_assignment PIN_AA2 -to db_saida_serial
 set_location_assignment PIN_AA14 -to endereco[4]
 set_location_assignment PIN_AA13 -to endereco[5]
-set_global_assignment -name VHDL_FILE ../componentes/memoria_jogo_81x7.vhd
+set_global_assignment -name VHDL_FILE ../componentes/memoria_jogo_64x7.vhd
 set_global_assignment -name VHDL_FILE print_escreve_campo_uc.vhd
 set_global_assignment -name VHDL_FILE print_escreve_campo_fd.vhd
 set_global_assignment -name VHDL_FILE print_escreve_campo.vhd

@@ -24,6 +24,7 @@ quit -f
 
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -42,6 +43,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 
@@ -425,7 +427,7 @@ TRANSITION_LIST("db_q[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL 0 FOR 10000.0;
 	}
 }
 
@@ -434,7 +436,7 @@ TRANSITION_LIST("db_q[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL 0 FOR 10000.0;
 	}
 }
 
@@ -443,7 +445,7 @@ TRANSITION_LIST("db_q[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL 0 FOR 10000.0;
 	}
 }
 
@@ -452,7 +454,7 @@ TRANSITION_LIST("db_q[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL 0 FOR 10000.0;
 	}
 }
 
@@ -461,7 +463,7 @@ TRANSITION_LIST("db_q[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL 0 FOR 10000.0;
 	}
 }
 
@@ -470,7 +472,7 @@ TRANSITION_LIST("db_q[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL 0 FOR 10000.0;
 	}
 }
 
@@ -479,7 +481,7 @@ TRANSITION_LIST("db_q[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 10000.0;
+		LEVEL 0 FOR 10000.0;
 	}
 }
 
@@ -615,7 +617,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "db_q";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Hexadecimal;
 	TREE_INDEX = 13;
 	TREE_LEVEL = 0;
 	CHILDREN = 14, 15, 16, 17, 18, 19, 20;
@@ -625,7 +627,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "db_q[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Hexadecimal;
 	TREE_INDEX = 14;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -635,7 +637,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "db_q[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Hexadecimal;
 	TREE_INDEX = 15;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -645,7 +647,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "db_q[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Hexadecimal;
 	TREE_INDEX = 16;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -655,7 +657,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "db_q[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Hexadecimal;
 	TREE_INDEX = 17;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -665,7 +667,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "db_q[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Hexadecimal;
 	TREE_INDEX = 18;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -675,7 +677,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "db_q[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Hexadecimal;
 	TREE_INDEX = 19;
 	TREE_LEVEL = 1;
 	PARENT = 13;
@@ -685,7 +687,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "db_q[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Hexadecimal;
 	TREE_INDEX = 20;
 	TREE_LEVEL = 1;
 	PARENT = 13;
