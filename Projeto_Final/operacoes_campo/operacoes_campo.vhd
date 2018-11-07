@@ -20,7 +20,8 @@ entity operacoes_campo is
         db_reseta, db_partida, db_zera, db_conta, db_carrega, db_pronto, db_we, db_fim: out std_logic;
         db_q: out std_logic_vector(5 downto 0);
         db_sel: out std_logic_vector(1 downto 0);
-        db_dados: out std_logic_vector(6 downto 0)
+        db_dados: out std_logic_vector(6 downto 0);
+		  verifica: out std_logic_vector(1 downto 0)
     );
 end operacoes_campo;
 
@@ -50,7 +51,8 @@ architecture operacoes_campo of operacoes_campo is
         fim, fim_linha: out std_logic;             -- contador_m_load
         saida_serial, pronto : out std_logic;      -- tx_serial
         db_q: out std_logic_vector(5 downto 0);
-        db_dados: out std_logic_vector(6 downto 0)
+        db_dados: out std_logic_vector(6 downto 0);
+		  verifica: out std_logic_vector(1 downto 0)
     );
     end component;
     
@@ -74,7 +76,7 @@ s_iniciar_0 <= not iniciar;
                                  conta=>s_conta, zera=>s_zera, carrega=>s_carrega, endereco=>endereco, dado=>dado, sel=>s_sel, 
                                  fim=>s_fim, fim_linha=>s_fim_linha, 
                                  saida_serial=>s_saida_serial, pronto=>s_pronto, 
-                                 db_q=>s_q, db_dados=>db_dados);
+                                 db_q=>s_q, db_dados=>db_dados, verifica=> verifica);
     U3: edge_detector port map (clock, '1', s_iniciar_0, s_iniciar);
 
 

@@ -9,8 +9,8 @@ end decoder;
 
 architecture decoder_arc of decoder is
 begin
-    with input select
-        output <=   "01" when "1000001",
-                    "10" when "1011000",
-                    "11" when others;
+	with input select
+        output <=	"01" when "1000001",
+						"10" when "1011000",
+                  "11" when others;
 end decoder_arc;
