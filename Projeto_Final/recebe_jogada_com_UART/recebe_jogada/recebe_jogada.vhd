@@ -10,20 +10,26 @@ entity recebe_jogada is
 		jogada_parcial:   		  in std_logic_vector(6 downto 0);
 		jogada:           		  out std_logic_vector(13 downto 0);
 		pronto:			  		  out std_logic;
-		recebe_dado:              out std_logic
+		recebe_dado:              out std_logic--;
+		--Debugging
+		--db_c:						 out std_logic_vector(1 downto 0);
+		--db_escreve:               out std_logic;
+		--db_estado:					out std_logic_vector(3 downto 0);
+		--db_teste: 			 out std_logic
 	);
 end entity;
 
 architecture recebe_jogada_arch of recebe_jogada is
-	signal fim_c, enable_c, escreve: std_logic;
+	signal fim_c, enable_c, escreve, reset_c: std_logic;
 	component recebe_jogada_uc is
 		port(
 			tem_dado_recebido:      in std_logic;
 			fim_c, clock:           in std_logic;
 			reset, enable:          in std_logic;
 			recebe_dado:            out std_logic;
-			enable_c:			      out std_logic;
+			enable_c, reset_c:      out std_logic;
 			reg_write:              out std_logic;
+			db_estado:					out std_logic_vector(3 downto 0);
 			pronto:					   out std_logic
 		);
 	end component;
@@ -35,12 +41,15 @@ architecture recebe_jogada_arch of recebe_jogada is
 			reset_c, reset_r:     in std_logic;
 			jogada_parcial:       in std_logic_vector (6 downto 0);
 			fim_c:                out std_logic;
+			db_c:						 out std_logic_vector(1 downto 0);
+			db_teste: 			 out std_logic;
 			jogada:               out std_logic_vector (13 downto 0)
 		);
 	end component;
 begin
-	FD: recebe_jogada_fd port map (clock, escreve, enable_c, reset, reset,
-									jogada_parcial, fim_c, jogada);
+	FD: recebe_jogada_fd port map (clock, escreve, enable_c, reset_c, reset,
+									jogada_parcial, fim_c, open, open, jogada);
 	UC: recebe_jogada_uc port map (tem_dado_rec, fim_c, clock, reset, enable,
-									recebe_dado, enable_c, escreve, pronto);
+									recebe_dado, enable_c, reset_c, escreve, open, pronto);
+	--db_escreve <= escreve;
 end architecture;
