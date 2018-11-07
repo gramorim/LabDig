@@ -6,7 +6,8 @@ use IEEE.numeric_std.all;
 
 entity mensagem_fd is
 	generic(	constant M : integer := 8;
-				constant N : integer := 3);
+				constant N : integer := 3;
+				constant filename: string := "conteudo_inicial.mif");
 	port(	clock, reset, enable	: in  std_logic;
 			fim						: out std_logic;
 			ascii						: out std_logic_vector(6 downto 0);
@@ -20,17 +21,18 @@ architecture mensagem_fd_arc of mensagem_fd is
 	signal s_end	: std_logic_vector(N-1 downto 0);
 
 	component contador_m is
-		 generic(	constant M: integer := 50;
-						constant N: integer := 6);
-		 port(	CLK, zera, conta: in STD_LOGIC;
-					Q: out STD_LOGIC_VECTOR (N-1 downto 0);
-					fim: out STD_LOGIC);
+		 generic(constant M: integer := 50;
+					constant N: integer := 6);
+		 port(CLK, zera, conta: in STD_LOGIC;
+				Q: out STD_LOGIC_VECTOR (N-1 downto 0);
+				fim: out STD_LOGIC);
 	end component;
 	
 	component ram_MxN IS
-		GENERIC (	constant M   : integer := 16;
-						constant N   : integer := 7;
-						constant ADR : integer := 4);
+		GENERIC(	constant M   : integer := 16;
+					constant N   : integer := 7;
+					constant ADR : integer := 4;
+					constant filename: string := "conteudo_inicial.mif");
 		PORT(	dado_entrada : IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 				dado_saida   : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 				endereco     : IN  STD_LOGIC_VECTOR(ADR-1 DOWNTO 0);         
@@ -47,7 +49,7 @@ begin
 	s_zero <= std_logic_vector(to_unsigned(0, 7));	
 					
 	RAM: ram_MxN
-		GENERIC map(M,7,N)
+		GENERIC map(M,7,N,filename)
 		PORT map(	s_zero,
 						ascii,
 						s_end,      
