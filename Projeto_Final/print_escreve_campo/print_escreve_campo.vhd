@@ -15,12 +15,12 @@ entity print_escreve_campo is
     port (
         clock, reset, iniciar: in std_logic;
         operacao, dado: in std_logic_vector(1 downto 0);
-        endereco: in std_logic_vector(5 downto 0);
+        endereco: in std_logic_vector(6 downto 0);
         saida_serial, pronto : out std_logic;
         -- depuracao
 		  db_saida_serial : out std_logic;
         db_reseta, db_partida, db_zera, db_conta, db_carrega, db_pronto, db_we, db_fim: out std_logic;
-        db_q: out std_logic_vector(5 downto 0);
+        db_q: out std_logic_vector(6 downto 0);
         db_sel: out std_logic_vector(1 downto 0);
         db_dados: out std_logic_vector(6 downto 0)
     );
@@ -31,7 +31,7 @@ architecture print_escreve_campo of print_escreve_campo is
     signal s_iniciar, s_reseta, s_partida, s_zera, s_conta, s_carrega, s_pronto, s_we, s_fim, s_fim_linha: std_logic;
     signal s_sel: std_logic_vector(1 downto 0);
     -- depuracao
-    signal s_q: std_logic_vector(5 downto 0);
+    signal s_q: std_logic_vector(6 downto 0);
      
     component print_escreve_campo_uc port ( 
          clock, reset, iniciar: in std_logic;
@@ -47,11 +47,11 @@ architecture print_escreve_campo of print_escreve_campo is
         partida : in std_logic;                    -- tx_serial
         we: in std_logic;                          -- memoria_jogo_16x7
         conta, zera, carrega: in std_logic;        -- contador_m_load
-        endereco: in std_logic_vector(5 downto 0); -- contador_m_load
+        endereco: in std_logic_vector(6 downto 0); -- contador_m_load
         dado, sel: in std_logic_vector(1 downto 0);      -- mux3x1_n
         fim, fim_linha: out std_logic;             -- contador_m_load
         saida_serial, pronto : out std_logic;      -- tx_serial
-        db_q: out std_logic_vector(5 downto 0);
+        db_q: out std_logic_vector(6 downto 0);
         db_dados: out std_logic_vector(6 downto 0)
     );
     end component;
