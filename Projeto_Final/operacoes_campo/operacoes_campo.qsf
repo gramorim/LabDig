@@ -93,6 +93,7 @@ set_location_assignment PIN_AA13 -to endereco[5]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE ../componentes/decoder.vhd
 set_global_assignment -name VHDL_FILE operacoes_campo_uc.vhd
 set_global_assignment -name VHDL_FILE operacoes_campo_fd.vhd
 set_global_assignment -name VHDL_FILE ../componentes/memoria_jogo_64x7.vhd
@@ -101,7 +102,6 @@ set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial_uc.vhd
 set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial_fd.vhd
 set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial.vhd
 set_global_assignment -name VHDL_FILE ../componentes/mux3x1_n.vhd
-set_global_assignment -name VHDL_FILE ../componentes/memoria_jogo_16x7.vhd
 set_global_assignment -name VHDL_FILE ../componentes/edge_detector.vhd
 set_global_assignment -name VHDL_FILE ../componentes/deslocador_n.vhd
 set_global_assignment -name VHDL_FILE ../componentes/contador_m_load.vhd

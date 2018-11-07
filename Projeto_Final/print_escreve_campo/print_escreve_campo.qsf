@@ -99,7 +99,6 @@ set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial_uc.vhd
 set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial_fd.vhd
 set_global_assignment -name VHDL_FILE ../tx_serial_tick/tx_serial.vhd
 set_global_assignment -name VHDL_FILE ../componentes/mux3x1_n.vhd
-set_global_assignment -name VHDL_FILE ../componentes/memoria_jogo_16x7.vhd
 set_global_assignment -name VHDL_FILE ../componentes/edge_detector.vhd
 set_global_assignment -name VHDL_FILE ../componentes/deslocador_n.vhd
 set_global_assignment -name VHDL_FILE ../componentes/contador_m_load.vhd
