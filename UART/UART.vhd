@@ -16,13 +16,14 @@ entity UART is
 		  serial_entrada            : in  std_logic;
 		  hex_dado_1, hex_dado_0    : out std_logic_vector(6 downto 0);
 		  
-		  clock, reset : in std_logic;
+		  clock, reset : in std_logic
 		  
 		  --Depuracao rx
-		--o_estado_rx : out std_logic_vector(3 downto 0);
-		--o_tick_rx   : out std_logic);
-		  o_serial_entrada, o_fim : out std_logic;
-		  hex_estado       : out std_logic_vector(6 downto 0));
+		  --o_estado_rx : out std_logic_vector(3 downto 0);
+		  --o_tick_rx   : out std_logic;
+		  --o_serial_entrada, o_fim : out std_logic;
+		  --hex_estado       : out std_logic_vector(6 downto 0)
+		  );
 end UART;
 
 Architecture UART_ark of UART is
@@ -62,10 +63,10 @@ begin
 	generic map(Ratio_m,Ratio_n)
 	port map(clock, s_reset,
             serial_entrada, s_recebe, '0',
-		      hex_dado_1, hex_dado_0, hex_estado, open, open,
+		      hex_dado_1, hex_dado_0, open, open, open,
           --tem_dado_rec, paridade_ok, o_tick_rx,
             tem_dado_rec, paridade_ok, open,
-			   open, o_fim,
+			   open, open,
 		    --o_estado_rx,
 			  open, open, o_dado_ascii
 			);
@@ -74,6 +75,6 @@ begin
 	s_recebe    <= recebe_dado;--not recebe_dado;
 	s_reset     <= reset;--not reset;
 	
-	o_serial_entrada <= serial_entrada;
+	--o_serial_entrada <= serial_entrada;
 			
 end UART_ark;
