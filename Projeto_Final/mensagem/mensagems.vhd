@@ -62,6 +62,29 @@ begin
 		PORT map(s_matrix_mux,
 					endereco,
 					s_out_mux);
+	
+	MEN0 : mensagem_fd
+		generic map(8,3)
+		port map(clock, s_matrix_demux(0,0), s_matrix_demux(0,1),
+					s_matrix_mux(0,7),
+					s_matrix_mux(0,6 downto 0));
+				
+	MEN1 : mensagem_fd
+		generic map(8,3)
+		port map(clock, s_matrix_demux(1,0), s_matrix_demux(1,1),
+					s_matrix_mux(1,7),
+					s_matrix_mux(1,6 downto 0));	
 					
+	MEN2 : mensagem_fd
+		generic map(8,3)
+		port map(clock, s_matrix_demux(2,0), s_matrix_demux(2,1),
+					s_matrix_mux(2,7),
+					s_matrix_mux(2,6 downto 0));
+					
+	MEN3 : mensagem_fd
+		generic map(8,3)
+		port map(clock, s_matrix_demux(3,0), s_matrix_demux(3,1),
+					s_matrix_mux(3,7),
+					s_matrix_mux(3,6 downto 0));
 	
 end mensagens_arc;
