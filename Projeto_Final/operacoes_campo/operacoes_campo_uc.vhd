@@ -17,8 +17,8 @@ architecture operacoes_campo_uc of operacoes_campo_uc is
 	signal Sreg, Snext: State_type;
 
 -- constantes
-constant IMPRIME:	std_logic_vector(1 downto 0) := "00";
-constant ESCREVE:	std_logic_vector(1 downto 0) := "01";
+constant IMPRIME :	std_logic_vector(1 downto 0) := "00";
+constant ESCREVE :	std_logic_vector(1 downto 0) := "01";
 constant VERIFICA:	std_logic_vector(1 downto 0) := "10";
 
 begin
