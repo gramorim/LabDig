@@ -9,7 +9,8 @@ entity tx_serial is
     port (
         clock, reset, partida, paridade: in std_logic;
         dados_ascii: in std_logic_vector (6 downto 0);
-        saida_serial, pronto : out std_logic
+        saida_serial, pronto : out std_logic;
+		  db_tick					: out std_logic
     );
 end tx_serial;
 
@@ -59,6 +60,6 @@ begin
     -- fator de divisao para simulacao
     --U3: contador_m generic map (M => 10, N => 4) port map (clock, s_zera, '1', open, s_tick);
     U4: edge_detector port map (clock, '1', partida, s_partida);
-    
+    db_tick <= s_tick;
 end tx_serial;
 
