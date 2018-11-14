@@ -4,12 +4,16 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 
 entity mensagem_uc is
-	port(	clock, start, pronto, reset, fim			: in  std_logic;
-			o_pronto, o_start, o_reset, o_enable	: out std_logic);
+	port(	clock, start, pronto, reset					: in  std_logic;
+			mensagem									: in std_logic_vector (2 downto 0);
+			jogada										: in std_logic_vector (13 downto 0);
+			o_ascii										: out std_logic_vector (6 downto 0);
+			endereco									: out std_logic_vector (2 downto 0);
+			o_pronto, o_transmite, o_write				: out std_logic);
 end mensagem_uc;
 
 architecture mensagem_uc_arc of mensagem_uc is
-	type estado is (inicio, mostra, soma1, espera, epronto);
+	type estado is (inicio, transmite, verifica, espera_t, epronto, escreve1, escreve2);
 	signal sreg, snext 	: estado;
 	
 begin
@@ -22,23 +26,27 @@ begin
 		end if;
 	end process;
 	
-	process(start, pronto, fim)
+	process(start, pronto, mensagem)
 	begin
 		case sreg is
-			when inicio	=> if start = '0' then 	snext <= inicio;
-								else						snext <= mostra;
+			when inicio	=> 	if start = '0' then 	snext <= inicio;
+								else						snext <= verifica;
+							end if;
+			
+			when verifica	=> 	if mensagem 	= "000" then	snext <= escreve1;
+									else snext <= transmite;
 								end if;
 			
-			when mostra	=> if pronto 	= '0' then	snext <= mostra;
-								elsif fim	= '0'	then	snext <= soma1;
-								else							snext <= espera;
+			when escreve1	=>	snext <= transmite;
+
+			when transmite  =>  snext <= espera_t;
+			
+			when espera_t	=> 	if pronto = '0' then 	snext <= espera_t;
+									elsif mensagem = "000" then		snext <= escreve2;
+									else snext <= epronto;
 								end if;
 			
-			when soma1	=>	snext <= mostra;
-			
-			when espera	=> if start = '1' then 	snext <= espera;
-								else						snext <= epronto;
-								end if;
+			when escreve2	=>	snext <= transmite;					
 								
 			when epronto	=> snext <= inicio;
 			
@@ -49,12 +57,15 @@ begin
 		o_pronto	<= '1' when epronto, '0' when others;
 		
 	with sreg select
-		o_start	<= '1' when mostra, 	'0' when others;
+		endereco	<= "001" when escreve2, mensagem when others;
 		
 	with sreg select
-		o_reset	<= '1' when inicio, 	'0' when others;
+		o_ascii	<= jogada(6 downto 0) when escreve1, jogada(13 downto 7) when escreve2,  	(others=>'0') when others;
 		
 	with sreg select
-		o_enable	<= '1' when soma1, 	'0' when others;
-		
+		o_transmite	<= '1' when transmite, 	'0' when others;
+	
+	with sreg select
+		o_write	<= '1' when escreve1, '1' when escreve2,  '0' when others;
+
 end mensagem_uc_arc;
