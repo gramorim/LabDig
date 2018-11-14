@@ -4,6 +4,8 @@ use IEEE.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
 entity recebe_jogada is
+	generic(	constant N_ascii  : integer := 2;     -- Numero de characteres desejados
+				constant log2N		: integer := 2);
 	port(
 		clock, reset, enable:     in std_logic;
 		tem_dado_rec:     		  in std_logic;
@@ -35,6 +37,8 @@ architecture recebe_jogada_arch of recebe_jogada is
 	end component;
 
 	component recebe_jogada_fd is
+	generic(	constant N_ascii  : integer := 2;     -- Numero de characteres desejados
+				constant log2N		: integer := 2);
 		port(
 			clock, escreve:       in std_logic;
 			enable_c: 			    in std_logic;
@@ -47,7 +51,7 @@ architecture recebe_jogada_arch of recebe_jogada is
 		);
 	end component;
 begin
-	FD: recebe_jogada_fd port map (clock, escreve, enable_c, reset_c, reset,
+	FD: recebe_jogada_fd generic map (N_ascii,log2n) port map (clock, escreve, enable_c, reset_c, reset,
 									jogada_parcial, fim_c, open, open, jogada);
 	UC: recebe_jogada_uc port map (tem_dado_rec, fim_c, clock, reset, enable,
 									recebe_dado, enable_c, reset_c, escreve, open, pronto);

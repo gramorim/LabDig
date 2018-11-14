@@ -30,6 +30,8 @@ architecture recebe_jogada_UART_arch of recebe_jogada_UART is
 	signal s_reset: std_logic;
 	
 	component recebe_jogada is
+		generic(	constant N_ascii  : integer := 2;     -- Numero de characteres desejados
+					constant log2N		: integer := 2);
 		port(
 			clock, reset, enable:     in std_logic;
 			tem_dado_rec:     		  in std_logic;
@@ -78,7 +80,7 @@ architecture recebe_jogada_UART_arch of recebe_jogada_UART is
 begin
 	s_reset <= not reset;
 	
-	R_JOG: recebe_jogada port map (clock, s_reset, enable, s_tem_dado_rec, s_jogada_parcial,
+	R_JOG: recebe_jogada generic map(2,2) port map (clock, s_reset, enable, s_tem_dado_rec, s_jogada_parcial,
 									s_jogada, pronto, s_recebe_dado);
 	--BoudRate -> 115200
 	UART_RX: UART  generic map(434, 9)

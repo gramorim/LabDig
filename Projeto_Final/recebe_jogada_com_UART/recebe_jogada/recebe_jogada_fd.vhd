@@ -2,6 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity recebe_jogada_fd is
+	generic(	constant N_ascii  : integer := 2;     -- Numero de characteres desejados
+				constant log2N		: integer := 2);
 	port(
 		clock, escreve:       in std_logic;
 		enable_c:  			  in std_logic;
@@ -42,7 +44,7 @@ architecture recebe_jogada_fd_arch of recebe_jogada_fd is
 	
 begin
 	
-	U1: contador_m  generic map (3, 2)
+	U1: contador_m  generic map (N_ascii+1, log2N)
 					port map (clock, reset_c, enable_c, endereco, fim_c);
 	U2: buffer_jogada port map (clock, reset_r, endereco(0), jogada_parcial, escreve, jogada, db_teste);
 	db_c <= endereco;
