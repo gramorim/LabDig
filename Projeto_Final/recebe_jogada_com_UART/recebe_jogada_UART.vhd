@@ -4,19 +4,21 @@ use IEEE.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
 entity recebe_jogada_UART is
+	generic(	constant N_ascii  		: integer := 2;     -- Numero de characteres desejados
+				constant log2_1+N		: integer := 2);
 	port(
 		clock, reset, enable:     in std_logic;
 		entrada_serial:   		  in std_logic;
 		erro:             		  out std_logic;
-		hex0, hex1, hex2, hex3:   out std_logic_vector(6 downto 0);
-		pronto:						  out std_logic--;
+		pronto:					  out std_logic;
+		jogada:					  out std_logic_vector(13 downto 0)--;
 		--Debugging
 		--db_hex5, db_hex4:         out std_logic_vector(6 downto 0);
 		--db_estado_rx: 				  out std_logic_vector(3 downto 0);
 		--db_tick:                  out std_logic;
-		--db_jogada:					  out std_logic_vector(13 downto 0);
 		--db_contador:				  out std_logic_vector(1 downto 0);
 		--db_escreve:               out std_logic;
+		--hex0, hex1, hex2, hex3:   out std_logic_vector(6 downto 0);
 		--db_estado:					out std_logic_vector(3 downto 0);
 		--db_teste: 			 out std_logic;
 	);
@@ -30,8 +32,8 @@ architecture recebe_jogada_UART_arch of recebe_jogada_UART is
 	signal s_reset: std_logic;
 	
 	component recebe_jogada is
-		generic(	constant N_ascii  : integer := 2;     -- Numero de characteres desejados
-					constant log2N		: integer := 2);
+		generic(	constant N_ascii  : integer ;     -- Numero de characteres desejados
+					constant log2N		: integer );
 		port(
 			clock, reset, enable:     in std_logic;
 			tem_dado_rec:     		  in std_logic;
@@ -88,6 +90,7 @@ begin
 						entrada_serial, open, open, clock, s_reset);
 	erro <= not s_erro;
 	
+
 	s_hex5(3) <= '0';
 	s_hex5(2 downto 0) <= s_jogada_parcial(6 downto 4);
 	
@@ -98,11 +101,13 @@ begin
 	s_hex1(3) <= '0';
 	s_hex1(2 downto 0) <= s_jogada(6 downto 4);
 
+	jogada <= s_jogada;
+
 	--DB_J_HEX5: hex7seg port map (s_hex5, '1', db_hex5);
 	--DB_J_HEX4: hex7seg port map (s_jogada_parcial(3 downto 0), '1', db_hex4);
-	J_HEX3: hex7seg port map (s_hex3, '1', hex3);
-	J_HEX2: hex7seg port map (s_jogada(10 downto 7), '1', hex2);
-	J_HEX1: hex7seg port map (s_hex1, '1', hex1);
-	J_HEX0: hex7seg port map (s_jogada(3 downto 0), '1', hex0);
+	--J_HEX3: hex7seg port map (s_hex3, '1', hex3);
+	--J_HEX2: hex7seg port map (s_jogada(10 downto 7), '1', hex2);
+	--J_HEX1: hex7seg port map (s_hex1, '1', hex1);
+	--J_HEX0: hex7seg port map (s_jogada(3 downto 0), '1', hex0);
 
 end architecture;

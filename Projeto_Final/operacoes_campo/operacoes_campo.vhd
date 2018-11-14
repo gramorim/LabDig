@@ -11,17 +11,17 @@ use IEEE.std_logic_arith.all;
 
 entity operacoes_campo is
     port (
-        clock, reset, iniciar: in std_logic;
-        operacao, dado: in std_logic_vector(1 downto 0);
-        endereco: in std_logic_vector(5 downto 0);
-        saida_serial, pronto : out std_logic;
+        clock, reset, iniciar                                                           : in std_logic;
+        operacao, dado                                                                  : in std_logic_vector(1 downto 0);
+        endereco                                                                        : in std_logic_vector(5 downto 0);
+        saida_serial, pronto                                                            : out std_logic;
         -- depuracao
-		  db_saida_serial : out std_logic;
-        db_reseta, db_partida, db_zera, db_conta, db_carrega, db_pronto, db_we, db_fim: out std_logic;
-        db_q: out std_logic_vector(5 downto 0);
-        db_sel: out std_logic_vector(1 downto 0);
-        db_dados: out std_logic_vector(6 downto 0);
-		  verifica: out std_logic_vector(1 downto 0)
+		db_saida_serial                                                                 : out std_logic;
+        db_reseta, db_partida, db_zera, db_conta, db_carrega, db_pronto, db_we, db_fim  : out std_logic;
+        db_q                                                                            : out std_logic_vector(5 downto 0);
+        db_sel                                                                          : out std_logic_vector(1 downto 0);
+        db_dados                                                                        : out std_logic_vector(6 downto 0);
+		verifica                                                                        : out std_logic_vector(1 downto 0)
     );
 end operacoes_campo;
 
