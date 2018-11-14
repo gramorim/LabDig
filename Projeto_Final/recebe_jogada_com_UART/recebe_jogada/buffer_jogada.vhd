@@ -27,8 +27,8 @@ begin
 							  port map (clock, reset, escreve AND NOT endereco, jogada_parcial, saida_0);
 	REG1: registrador_n generic map(N => 7)
 							  port map (clock, reset, escreve AND endereco, jogada_parcial, saida_1);
-	jogada(6 downto 0) <= saida_0;
-	jogada(13 downto 7) <= saida_1;
+	jogada(6 downto 0) <= saida_1;
+	jogada(13 downto 7) <= saida_0;
 	
 end buffer_jogada_arch;
 
