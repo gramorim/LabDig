@@ -5,8 +5,8 @@ use IEEE.std_logic_arith.all;
 use ieee.std_logic_unsigned.alL;
 
 entity decodificadorjogada is
-	port(	vez, passa_vez, venceu 	: in std_logic;
-			resultado_jogada 			: in std_logic_vector(2 downto 0);
+	port(	vez, passa_vez, venceu 	: in  std_logic;
+			resultado_jogada 			: in  std_logic_vector(2 downto 0);
 			mensagem 					: out std_logic_vector(3 downto 0);
 end decodificador_jogada;
 
@@ -27,6 +27,7 @@ begin
 	
 	with resultado_jogada select
 		s_resultado <=	"101" when "10",
+							"111" when "11",
 							"100" when others;
 						
 end decodificadorjogada_arc;
