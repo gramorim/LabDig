@@ -4,6 +4,8 @@ use IEEE.std_logic_arith.all;
 
 
 entity operacoes_campo_fd is
+	generic( constant ratio 		: integer := 434;
+				constant log2_ratio 	: integer := 9);
     port (
         clock, reset: in std_logic;
         partida : in std_logic;                    	-- tx_serial
@@ -25,7 +27,10 @@ architecture operacoes_campo_fd of operacoes_campo_fd is
     signal s_dados, s_mux, s_entrada: std_logic_vector (6 downto 0);
 	 signal s_verifica : std_logic_vector(1 downto 0);
 
-    component tx_serial port (
+    component tx_serial 
+		generic( constant ratio 		: integer;
+					constant log2_ratio 	: integer);
+		port (
         clock, reset, partida, paridade: in std_logic;
         dados_ascii: in std_logic_vector (6 downto 0);
         saida_serial, pronto : out std_logic
@@ -76,7 +81,9 @@ architecture operacoes_campo_fd of operacoes_campo_fd is
 begin
 
     -- sinais reset e partida mapeados em botoes ativos em alto
-    U1: tx_serial port map (clock=>clock, reset=>reset, partida=>partida, paridade=>'0',
+    U1: tx_serial 
+		generic map(ratio,log2_ratio)
+		port map (clock=>clock, reset=>reset, partida=>partida, paridade=>'0',
                             dados_ascii=>s_mux, saida_serial=>saida_serial, pronto=>pronto);
     U2: memoria_jogo_64x7 port map (linha=>s_contagem(5 downto 3), coluna=>s_contagem(2 downto 0), 
                             we=>we, dado_entrada=>s_entrada, dado_saida=>s_dados);

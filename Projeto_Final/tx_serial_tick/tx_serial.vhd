@@ -6,12 +6,13 @@ use IEEE.std_logic_arith.all;
 
 
 entity tx_serial is
-    port (
-        clock, reset, partida, paridade: in std_logic;
-        dados_ascii: in std_logic_vector (6 downto 0);
-        saida_serial, pronto : out std_logic;
-		  db_tick					: out std_logic
-    );
+	generic( constant ratio 		: integer := 434;
+				constant log2_ratio 	: integer := 9);
+				
+   port(	clock, reset, partida, paridade	: in  std_logic;
+			dados_ascii								: in  std_logic_vector (6 downto 0);
+			saida_serial, pronto 				: out std_logic;
+			db_tick									: out std_logic);
 end tx_serial;
 
 architecture tx_serial of tx_serial is
@@ -56,7 +57,7 @@ begin
     U2: tx_serial_fd port map (clock, reset, s_zera, s_conta, s_carrega, s_desloca, paridade, 
                                dados_ascii, saida_serial, s_fim);
     -- fator de divisao para 115.200 bauds (434=50M/115200)
-    U3: contador_m generic map (M => 434, N => 9) port map (clock, s_zera, '1', open, s_tick);
+    U3: contador_m generic map (M => ratio, N => log2_ratio) port map (clock, s_zera, '1', open, s_tick);
     -- fator de divisao para simulacao
     --U3: contador_m generic map (M => 10, N => 4) port map (clock, s_zera, '1', open, s_tick);
     U4: edge_detector port map (clock, '1', partida, s_partida);

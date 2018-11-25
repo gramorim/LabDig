@@ -82,10 +82,17 @@ begin
 	
 	R_JOG: recebe_jogada generic map(1,1) port map (clock, s_reset, enable, s_tem_dado_rec, s_jogada_parcial,
 									s_jogada, pronto, s_recebe_dado);
-	--BoudRate -> 115200
-	UART_RX: UART  generic map(434, 9)
-						port map ("0000000", '0', open, open, open, s_jogada_parcial, s_erro, s_tem_dado_rec, s_recebe_dado,
-						entrada_serial, open, open, clock, s_reset);
+	RX :  rx_serial
+		 generic map(Ratio,log2_Ratio)
+		 port map(clock, reset,
+					 entrada_serial, s_recebe_dado, '0',
+					 open, open, open, open, open,
+					 s_tem_dado_rec, s_erro, open,
+					 open, open,
+					 open,
+					 open,
+					 s_jogada_parcial);
+					 
 	erro <= not s_erro;
 	
 	s_hex5(3) <= '0';

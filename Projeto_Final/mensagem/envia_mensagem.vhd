@@ -4,8 +4,8 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 
 entity envia_mensagem is
-	generic(	constant M: integer := 434;
-				constant N: integer := 9);
+	generic(	constant ratio 		: integer := 434; --Baud rate
+				constant log2_ratio 	: integer := 9);
 	port(	clock, reset, start	: in  std_logic;
 			mensagem_sel			: in std_logic_vector (2 downto 0);
 			jogada					: in std_logic_vector (13 downto 0);
@@ -37,16 +37,18 @@ architecture teste_arc of envia_mensagem is
 	end component;
 	
 	component tx_serial is
-    port (	clock, reset, partida, paridade: in std_logic;
-				dados_ascii: in std_logic_vector (6 downto 0);
-				saida_serial, pronto : out std_logic;
-				db_tick					: out std_logic);
+		generic( constant ratio 		: integer;
+					constant log2_ratio 	: integer);
+		 port (	clock, reset, partida, paridade: in std_logic;
+					dados_ascii: in std_logic_vector (6 downto 0);
+					saida_serial, pronto : out std_logic;
+					db_tick					: out std_logic);
 	end component;
 	
 begin
 	
-	s_reset <= not reset;
-	s_start <= not start;
+	s_reset <= reset;
+	s_start <= start;
 
 	MEN : mensagem
 		port map(	clock, s_reset, s_start, s_pronto,
@@ -54,6 +56,7 @@ begin
 						s_transm, s_ascii, db_end);
 						
 	TX : tx_serial
+		generic map(ratio,log2_ratio)
 		 port map(	clock, s_reset, s_transm, '0',
 						s_ascii,
 						serial, s_pronto, db_tick);

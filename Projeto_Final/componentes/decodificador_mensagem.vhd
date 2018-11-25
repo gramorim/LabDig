@@ -6,12 +6,12 @@ use ieee.std_logic_unsigned.alL;
 
 entity decodificadorjogada is
 	port(	vez, passa_vez, venceu 	: in  std_logic;
-			resultado_jogada 			: in  std_logic_vector(2 downto 0);
-			mensagem 					: out std_logic_vector(3 downto 0);
-end decodificador_jogada;
+			resultado_jogada 			: in  std_logic_vector(1 downto 0);
+			mensagem 					: out std_logic_vector(2 downto 0));
+end decodificadorjogada;
 
 architecture decodificadorjogada_arc of decodificadorjogada is
-signal s_vez, s_passa_vez, s_resultado; std_logic_vector(2 downto 0);
+	signal s_vez, s_passa_vez, s_resultado : std_logic_vector(2 downto 0);
 begin
 	with venceu select
 		mensagem <=	"110" 			when '1',
