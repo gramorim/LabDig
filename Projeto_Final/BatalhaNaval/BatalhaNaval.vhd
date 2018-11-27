@@ -84,7 +84,7 @@ architecture batalha_naval_arc of BatalhaNaval is
 				db_tick					: out std_logic;
 				db_ascii					: out std_logic_vector(6 downto 0));
 	end component;
-
+	
 	signal s_entrada_serial, s_vez, s_enable_recjog, s_erro_recjog, s_pronto_recjog	: std_logic;
 	signal s_enable_jogador, s_saida_serial_jogador, s_pronto_jogador, s_passa_vez 	: std_logic;
 	signal s_venceu, s_enable_RecMen, s_pronto_men, s_erro_recmem1, s_erro_recmem 	: std_logic;
@@ -112,7 +112,7 @@ begin
 					s_pronto_recjog,
 					s_endereco_rec,
 					s_jogada);
-					
+			
 	JOGADOR : operacoes_campo
 		generic map(ratio,log2_ratio)
 		port map(clock, reset, s_enable_jogador,
