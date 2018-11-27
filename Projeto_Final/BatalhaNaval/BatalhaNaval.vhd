@@ -90,6 +90,7 @@ architecture batalha_naval_arc of BatalhaNaval is
 	signal s_venceu, s_enable_RecMen, s_pronto_men, s_erro_recmem1, s_erro_recmem 	: std_logic;
 	signal s_enable_adversario, s_saida_serial_adversario, s_pronto_adversario			: std_logic;
 	signal s_enable_envia_mensagem_adversario, s_pronto_envia_mensagem_adversario		: std_logic;
+	signal s_serial_envia_mensagem_adversario 													: std_logic;
 	
 	signal s_jogada									: std_logic_vector(13 downto 0);
 	signal s_MenRec			 						: std_logic_vector( 6 downto 0);
@@ -165,12 +166,12 @@ begin
 					open,
 					open);
 	
-	ENVIA_mem_adversario : envia_mensagem
+	envia_mensagem_adversario : envia_mensagem
 		generic map(ratio,log2_ratio)
 		port map(clock, reset, s_enable_envia_mensagem_adversario,
 					s_mensagem,
 					s_jogada,
-					s_saida_serial_adversario, s_pronto_envia_mensagem_adversario,
+					s_serial_envia_mensagem_adversario, s_pronto_envia_mensagem_adversario,
 					open, open,
 					open,
 					open,

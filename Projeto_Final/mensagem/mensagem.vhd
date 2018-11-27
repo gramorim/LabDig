@@ -5,16 +5,13 @@ use IEEE.std_logic_arith.all;
 use IEEE.numeric_std.all;
 
 entity mensagem is
-	generic(	constant M : integer := 8; --Tamanho da memoria
-				constant N : integer := 3; --Num bits do tamanho
-				constant filename: string := "conteudo_inicial.mif");
 	port(	clock, reset, enable	: in std_logic;
 			pronto_UART				: in std_logic;
-			mensagem				: in std_logic_vector (2 downto 0);
+			mensagem					: in std_logic_vector (2 downto 0);
 			jogada					: in std_logic_vector (13 downto 0);
 			fim						: out std_logic;
 			o_transmite				: out std_logic;
-			ascii					: out std_logic_vector(6 downto 0);
+			ascii						: out std_logic_vector(6 downto 0);
 			
 			--depuração
 			db_end : out std_logic_vector(N-1 downto 0));
@@ -26,10 +23,10 @@ architecture mensagem_arc of mensagem is
 	signal s_write  : std_logic;
 
 	component ram_MxN is
-		GENERIC(	constant M       : integer := 16;
-					constant N       : integer := 7;
-					constant ADR     : integer := 4;
-					constant filename: string := "conteudo_inicial.mif");
+		GENERIC(	constant M       : integer;
+					constant N       : integer;
+					constant ADR     : integer;
+					constant filename: string);
 		PORT(	dado_entrada : IN  STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 				dado_saida   : OUT STD_LOGIC_VECTOR(N-1 DOWNTO 0);
 				endereco     : IN  STD_LOGIC_VECTOR(ADR-1 DOWNTO 0);         
@@ -51,7 +48,7 @@ begin
 	s_zero <= std_logic_vector(to_unsigned(0, 7));	
 					
 	RAM: ram_MxN
-		GENERIC map(M,7,N,filename)
+		GENERIC map(M,14,N,"conteudo_inicial_mensagem.mif")
 		PORT map(	s_ascii,
 						ascii,
 						s_end,      
