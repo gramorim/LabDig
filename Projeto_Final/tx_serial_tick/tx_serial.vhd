@@ -7,10 +7,11 @@ use IEEE.std_logic_arith.all;
 
 entity tx_serial is
 	generic( constant ratio 		: integer := 434;
-				constant log2_ratio 	: integer := 9);
+				constant log2_ratio 	: integer := 9;
+				constant tam_ascii : integer := 8);
 				
    port(	clock, reset, partida, paridade	: in  std_logic;
-			dados_ascii								: in  std_logic_vector (6 downto 0);
+			dados_ascii								: in  std_logic_vector (tam_ascii-1 downto 0);
 			saida_serial, pronto 				: out std_logic;
 			db_tick									: out std_logic);
 end tx_serial;
@@ -24,10 +25,12 @@ architecture tx_serial of tx_serial is
             zera, conta, carrega, desloca, pronto: out STD_LOGIC );
     end component;
 
-    component tx_serial_fd port (
+    component tx_serial_fd 
+		generic(constant tam_ascii : integer);
+	 port (
         clock, reset: in std_logic;
         zera, conta, carrega, desloca, paridade: in std_logic;
-        dados_ascii: in std_logic_vector (6 downto 0);
+        dados_ascii: in std_logic_vector (tam_ascii-1 downto 0);
         saida_serial, fim : out std_logic);
     end component;
     
@@ -54,7 +57,9 @@ begin
     -- sinais reset e partida mapeados em botoes ativos em alto
     U1: tx_serial_uc port map (clock, reset, s_partida, s_tick, s_fim,
                                s_zera, s_conta, s_carrega, s_desloca, pronto);
-    U2: tx_serial_fd port map (clock, reset, s_zera, s_conta, s_carrega, s_desloca, paridade, 
+    U2: tx_serial_fd 
+		generic map(tam_ascii)
+		port map (clock, reset, s_zera, s_conta, s_carrega, s_desloca, paridade, 
                                dados_ascii, saida_serial, s_fim);
     -- fator de divisao para 115.200 bauds (434=50M/115200)
     U3: contador_m generic map (M => ratio, N => log2_ratio) port map (clock, s_zera, '1', open, s_tick);
