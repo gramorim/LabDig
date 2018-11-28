@@ -7,16 +7,20 @@ entity mensagem_fd is
 		generic( constant ratio 		: integer := 434;
 					constant log2_ratio 	: integer := 9);
 	port(	clock, reset						: in  std_logic;
-			mensagem 							: in  std_logic_vector( 2 downto 0);
+			i_mensagem 							: in  std_logic_vector( 2 downto 0);
 			jogada								: in  std_logic_vector(13 downto 0);
-			enable, partida					: in  std_logic;
-			saida_serial, zero, pronto, Q	: out std_logic);
+			enable, i_reset, partida					: in  std_logic;
+			saida_serial, zero, pronto, Q	: out std_logic;
+			
+			--depuração
+			db_tick								: out std_logic;
+			db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(6 downto 0));
 end mensagem_fd;
 
 architecture mensagem_fd_arc of mensagem_fd is
 
 	component MensagemDecodificador is
-		port(	mensagem : in  std_logic_vector(2 downto 0);
+		port(	i_mensagem : in  std_logic_vector(2 downto 0);
 				ascii		: out std_logic_vector(6 downto 0);
 				zero		: out std_logic);
 	end component;
@@ -44,7 +48,7 @@ architecture mensagem_fd_arc of mensagem_fd is
 	signal s_Q 		: std_logic_vector(0 downto 0);
 begin
 	DEC : MensagemDecodificador
-		port map(mensagem,
+		port map(i_mensagem,
 					s_ascii_dec,
 					s_zero);
 					
@@ -62,14 +66,17 @@ begin
 		port map(clock, reset, partida, '0',
 					s_ascii,
 					saida_serial, pronto,
-					open);
+					db_tick);
 					
 	cont : contador_m
-		generic map(1,1)
-		port map(clock, reset, enable,
+		generic map(2,1)
+		port map(clock, i_reset, enable,
 					s_Q,
 					open);
 	
-	zero <= s_zero;
-	Q <= s_Q(0);
+	zero 	<= s_zero;
+	Q 		<= s_Q(0);
+	db_ascii_dec <= s_ascii_dec;
+	db_ascii_jogada <= s_ascii_jogada;
+	db_ascii <= s_ascii;
 end mensagem_fd_arc;

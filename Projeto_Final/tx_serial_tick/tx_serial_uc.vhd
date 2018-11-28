@@ -30,19 +30,24 @@ begin
   process (partida, tick, fim, Sreg) 
   begin
     case Sreg is
-      when inicial =>          if partida='1' then Snext <= preparacao;
-                               else                Snext <= inicial;
-                               end if;
-      when preparacao =>       Snext <= espera;
-      when espera =>           if tick='1' then   Snext <= transmissao;
-                               elsif fim='0' then Snext <= espera;
-                               else               Snext <= final;
-                               end if;
-      when transmissao =>      if fim='0' then Snext <= espera;
-                               else            Snext <= final;
-                               end if;
-      when final =>            Snext <= inicial;
-      when others =>           Snext <= inicial;
+      when inicial =>    	if partida='1' then Snext <= preparacao;
+									else                Snext <= inicial;
+									end if;
+										 
+      when preparacao =>	Snext <= espera;
+		
+      when espera =>     	if tick='1' then   Snext <= transmissao;
+									elsif fim='0' then Snext <= espera;
+									else               Snext <= final;
+									end if;
+								 
+		when transmissao => 	if fim='0' then Snext <= espera;
+									else            Snext <= final;
+									end if;
+										 
+      when final => 		 	Snext <= inicial;
+		
+      when others =>     	Snext <= inicial;
     end case;
   end process;
 
