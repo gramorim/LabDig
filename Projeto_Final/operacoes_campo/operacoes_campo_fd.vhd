@@ -5,7 +5,8 @@ use IEEE.std_logic_arith.all;
 
 entity operacoes_campo_fd is
 	generic( constant ratio 		: integer := 434;
-				constant log2_ratio 	: integer := 9);
+				constant log2_ratio 	: integer := 9;
+				constant filename : string := "campo_inicial.mif");
     port (
         clock, reset: in std_logic;
         partida : in std_logic;                    	-- tx_serial
@@ -37,11 +38,12 @@ architecture operacoes_campo_fd of operacoes_campo_fd is
     );
     end component;
     
-    component memoria_jogo_64x7 port (
-        linha, coluna : in  std_logic_vector(2 downto 0);
-        we            : in  std_logic;
-        dado_entrada  : in  std_logic_vector(6 downto 0);
-        dado_saida    : out std_logic_vector(6 downto 0));
+    component memoria_jogo_64x7 
+	generic(constant filename : string);
+   PORT (dado_entrada : IN  STD_LOGIC_VECTOR(6 DOWNTO 0);
+         dado_saida   : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+         endereco     : IN  STD_LOGIC_VECTOR(5 DOWNTO 0);         
+         we, ce       : IN  STD_LOGIC);
     end component;
 
     component contador_m_load
@@ -85,8 +87,13 @@ begin
 		generic map(ratio,log2_ratio)
 		port map (clock=>clock, reset=>reset, partida=>partida, paridade=>'0',
                             dados_ascii=>s_mux, saida_serial=>saida_serial, pronto=>pronto);
-    U2: memoria_jogo_64x7 port map (linha=>s_contagem(5 downto 3), coluna=>s_contagem(2 downto 0), 
-                            we=>we, dado_entrada=>s_entrada, dado_saida=>s_dados);
+    U2: memoria_jogo_64x7 
+		generic map(filename)
+		PORT map(s_entrada,
+					s_dados,
+					s_contagem,        
+					we, '1');
+	
     U3: contador_m_load generic map (M => 64, N => 6) port map (CLK=>clock, zera=>zera, conta=>conta, carrega=>carrega,
                                                            D=>endereco, q=>s_contagem, fim=>fim);
     -- mux da saida memoria

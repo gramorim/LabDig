@@ -90,4 +90,6 @@ set_global_assignment -name VHDL_FILE BatalhaNaval.vhd
 set_global_assignment -name VHDL_FILE ../componentes/decodificador_endereco.vhd
 set_global_assignment -name VHDL_FILE ../mensagem/mensagem_fd.vhd
 set_global_assignment -name VHDL_FILE ../mensagem/MensagemDecodificador.vhd
+set_global_assignment -name MIF_FILE campo_inicial_adversario.mif
+set_global_assignment -name MIF_FILE campo_inicial_jogador.mif
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

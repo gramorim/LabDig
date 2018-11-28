@@ -7,30 +7,29 @@ USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
 ENTITY memoria_jogo_64x7 IS
-   PORT (linha 		  : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
-			coluna 		  : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
-         we            : IN  STD_LOGIC;
-         dado_entrada  : IN  STD_LOGIC_VECTOR(6 DOWNTO 0);
-         dado_saida    : OUT STD_LOGIC_VECTOR(6 DOWNTO 0));
+	generic(constant filename : string := "campo_inicial.mif");
+   PORT (dado_entrada : IN  STD_LOGIC_VECTOR(6 DOWNTO 0);
+         dado_saida   : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+         endereco     : IN  STD_LOGIC_VECTOR(5 DOWNTO 0);         
+         we, ce       : IN  STD_LOGIC);
 END memoria_jogo_64x7;
 
 ARCHITECTURE ram1 OF memoria_jogo_64x7 IS
   TYPE   arranjo_memoria IS ARRAY(0 TO 63) OF STD_LOGIC_VECTOR(6 DOWNTO 0);
   SIGNAL memoria : arranjo_memoria;
   attribute ram_init_file: string;
-  attribute ram_init_file of memoria: signal is "campo_inicial.mif";
-  signal endereco: STD_LOGIC_VECTOR(5 DOWNTO 0);
+  attribute ram_init_file of memoria: signal is filename;
 BEGIN
 
-  endereco <= linha & coluna;
-  
   PROCESS(we, endereco)
   BEGIN
-        IF rising_edge(we) THEN  
-            memoria(to_integer(unsigned(endereco))) <= dado_entrada;
-        END IF;
+    IF ce = '0' THEN -- dado armazenado na subida de "we" com "ce=0"
+      IF rising_edge(we) THEN  memoria(to_integer(unsigned(endereco))) <= dado_entrada;
+      END IF;
+    END IF;
+    dado_saida <= memoria(to_integer(unsigned(endereco)));
   END PROCESS;
 
-  dado_saida <= memoria(to_integer(unsigned(endereco)));
+  --dado_saida <= memoria(to_integer(unsigned(endereco)));
 
 END ram1;

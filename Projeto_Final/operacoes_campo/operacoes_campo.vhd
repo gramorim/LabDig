@@ -11,7 +11,8 @@ use IEEE.std_logic_arith.all;
 
 entity operacoes_campo is
 	generic( constant ratio 		: integer := 434;
-				constant log2_ratio 	: integer := 9);
+				constant log2_ratio 	: integer := 9;
+				constant filename : string := "campo_inicial.mif");
     port(clock, reset, iniciar	: in  std_logic;
 			operacao, dado         	: in  std_logic_vector(1 downto 0);
 			endereco                : in  std_logic_vector(5 downto 0);
@@ -47,7 +48,8 @@ architecture operacoes_campo of operacoes_campo is
 
     component operacoes_campo_fd 
 	generic( constant ratio 		: integer;
-				constant log2_ratio	: integer);
+				constant log2_ratio	: integer;
+				constant filename : string);
 	 port (
         clock, reset: in std_logic;
         partida : in std_logic;                    -- tx_serial
@@ -81,7 +83,7 @@ s_iniciar_0 <=  iniciar;
                                  fim=>s_fim, fim_linha=>s_fim_linha, zera=>s_zera, reseta=>s_reseta, conta=>s_conta,
                                  carrega=>s_carrega, we=>s_we, partida=>s_partida, pronto_out=>pronto, sel=>s_sel, o_verifica => s_verifica);
     U2: operacoes_campo_fd
-	generic map(ratio,log2_ratio)
+	generic map(ratio,log2_ratio,filename)
 	 port map (clock=>clock, reset=>s_reseta, partida=>s_partida , we=>s_we, 
                                  conta=>s_conta, zera=>s_zera, carrega=>s_carrega, endereco=>endereco, dado=>dado, sel=>s_sel, 
                                  fim=>s_fim, fim_linha=>s_fim_linha, 

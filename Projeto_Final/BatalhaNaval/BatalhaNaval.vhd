@@ -32,7 +32,8 @@ architecture batalha_naval_arc of BatalhaNaval is
 	
 	component operacoes_campo is
 		generic( constant ratio 		: integer;
-					constant log2_ratio 	: integer);
+					constant log2_ratio 	: integer;
+					constant filename 	: string);
 		 port(clock, reset, iniciar	: in  std_logic;
 				operacao, dado         	: in  std_logic_vector(1 downto 0);
 				endereco                : in  std_logic_vector(5 downto 0);
@@ -72,17 +73,19 @@ architecture batalha_naval_arc of BatalhaNaval is
 				output : out std_logic_vector(1 downto 0));
 	end component;
 	
-	component envia_mensagem is
-		generic(	constant ratio 		: integer;
-					constant log2_ratio 	: integer);
-		port(	clock, reset, start	: in  std_logic;
-				mensagem_sel			: in std_logic_vector (2 downto 0);
-				jogada					: in std_logic_vector (13 downto 0);
-				serial, o_pronto		: out std_logic;
-				db_pronto, db_transm	: out std_logic;
-				db_end 					: out std_logic_vector(2 downto 0);
-				db_tick					: out std_logic;
-				db_ascii					: out std_logic_vector(6 downto 0));
+	component mensagem is
+		generic( constant ratio 		: integer := 7;
+					constant log2_ratio 	: integer := 3);
+		PORT(	clock, reset 			: in  std_logic;
+				i_mensagem 				: in  std_logic_vector( 2 downto 0);
+				jogada					: in  std_logic_vector(13 downto 0);
+				enviar					: in  std_logic;
+				saida_serial, pronto : out std_logic;
+				
+				--Depuração
+				db_estado 	: out std_logic_vector(3 downto 0);
+				db_tick, db_enable, db_Q		: out std_logic;
+				db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(6 downto 0));
 	end component;
 	
 	signal s_entrada_serial, s_vez, s_enable_recjog, s_erro_recjog, s_pronto_recjog	: std_logic;
@@ -114,7 +117,7 @@ begin
 					s_jogada);
 			
 	JOGADOR : operacoes_campo
-		generic map(ratio,log2_ratio)
+		generic map(ratio,log2_ratio, "campo_inicial_jogador.mif")
 		port map(clock, reset, s_enable_jogador,
 					s_operacao_jogador, "00",
 					s_endereco_rec,
@@ -151,7 +154,7 @@ begin
 		port map(s_MenRec, s_dado_rec);
 		
 	ADVERSARIO : operacoes_campo
-		generic map(ratio,log2_ratio)
+		generic map(ratio,log2_ratio,"campo_inicial_adversario.mif")
 		port map(clock, reset, s_enable_adversario,
 					s_operacao_adversario, s_dado_rec,
 					s_endereco_rec,
@@ -166,15 +169,17 @@ begin
 					open,
 					open);
 	
-	envia_mensagem_adversario : envia_mensagem
+	mensagem_adversario : mensagem
 		generic map(ratio,log2_ratio)
-		port map(clock, reset, s_enable_envia_mensagem_adversario,
+		port map(clock, reset,
 					s_mensagem,
 					s_jogada,
-					s_serial_envia_mensagem_adversario, s_pronto_envia_mensagem_adversario,
-					open, open,
+					s_enable_envia_mensagem_adversario,
+					s_serial_envia_mensagem_adversario , s_pronto_envia_mensagem_adversario,
+					
+					--Depuração
 					open,
-					open,
-					open);
+					open, open, open,
+					open, open, open);
 					
 end batalha_naval_arc;
