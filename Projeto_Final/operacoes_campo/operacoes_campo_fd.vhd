@@ -96,7 +96,7 @@ begin
 		PORT map(s_entrada,
 					s_dados,
 					s_contagem,        
-					we, '1');
+					we, '0');
 	
     U3: contador_m_load generic map (M => 64, N => 6) port map (CLK=>clock, zera=>zera, conta=>conta, carrega=>carrega,
                                                            D=>endereco, q=>s_contagem, fim=>fim);
