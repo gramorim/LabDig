@@ -6,6 +6,7 @@ use IEEE.std_logic_arith.all;
 entity operacoes_campo_fd is
 	generic( constant ratio 		: integer := 434;
 				constant log2_ratio 	: integer := 9;
+				constant tam_ascii : integer := 8;
 				constant filename : string := "campo_inicial.mif");
     port (
         clock, reset: in std_logic;
@@ -17,7 +18,7 @@ entity operacoes_campo_fd is
         fim, fim_linha: out std_logic;             	-- contador_m_load
         saida_serial, pronto : out std_logic;      	-- tx_serial
         db_q: out std_logic_vector(5 downto 0);
-        db_dados: out std_logic_vector(6 downto 0);
+        db_dados: out std_logic_vector(tam_ascii-1 downto 0);
         verifica: out std_logic_vector(1 downto 0);
 		  i_verifica : in std_logic;
 			tamanho_campo : in std_logic
@@ -26,24 +27,26 @@ end operacoes_campo_fd;
 
 architecture operacoes_campo_fd of operacoes_campo_fd is
     signal s_contagem: std_logic_vector(5 downto 0);
-    signal s_dados, s_mux, s_entrada: std_logic_vector (6 downto 0);
+    signal s_dados, s_mux, s_entrada: std_logic_vector (tam_ascii-1 downto 0);
 	 signal s_verifica : std_logic_vector(1 downto 0);
 	 signal s_fim4, s_fim8 : STD_LOGIC;
 
     component tx_serial 
-		generic( constant ratio 		: integer;
-					constant log2_ratio 	: integer);
-		port (
-        clock, reset, partida, paridade: in std_logic;
-        dados_ascii: in std_logic_vector (6 downto 0);
-        saida_serial, pronto : out std_logic
-    );
+	generic( constant ratio 		: integer;
+				constant log2_ratio 	: integer;
+				constant tam_ascii : integer);
+				
+   port(	clock, reset, partida, paridade	: in  std_logic;
+			dados_ascii								: in  std_logic_vector (tam_ascii-1 downto 0);
+			saida_serial, pronto 				: out std_logic;
+			db_tick									: out std_logic);
     end component;
     
     component memoria_jogo_64x7 
-	generic(constant filename : string);
-   PORT (dado_entrada : IN  STD_LOGIC_VECTOR(6 DOWNTO 0);
-         dado_saida   : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	generic(	constant tam_ascii : integer;
+				constant filename : string);
+   PORT (dado_entrada : IN  STD_LOGIC_VECTOR(tam_ascii-1 DOWNTO 0);
+         dado_saida   : OUT STD_LOGIC_VECTOR(tam_ascii-1 DOWNTO 0);
          endereco     : IN  STD_LOGIC_VECTOR(5 DOWNTO 0);         
          we, ce       : IN  STD_LOGIC);
     end component;
@@ -62,15 +65,16 @@ architecture operacoes_campo_fd of operacoes_campo_fd is
     
     component mux3x1_n
       generic (
-           constant BITS: integer := 4);
+           constant BITS: integer);
       port(D2, D1, D0 : in std_logic_vector (BITS-1 downto 0);
            SEL: in std_logic_vector (1 downto 0);
            MX_OUT : out std_logic_vector (BITS-1 downto 0));
     end component;
 
     component decoder
+		generic(constant tam_ascii : integer);
     port(
-        input: in std_logic_vector (6 downto 0);
+        input: in std_logic_vector (tam_ascii-1 downto 0);
         output : out std_logic_vector(1 downto 0)
     );
   end component; 
@@ -87,29 +91,39 @@ begin
 
     -- sinais reset e partida mapeados em botoes ativos em alto
     U1: tx_serial 
-		generic map(ratio,log2_ratio)
+		generic map(ratio,log2_ratio,tam_ascii)
 		port map (clock=>clock, reset=>reset, partida=>partida, paridade=>'0',
                             dados_ascii=>s_mux, saida_serial=>saida_serial, pronto=>pronto);
     U2: memoria_jogo_64x7 
-		generic map(filename)
+		generic map(tam_ascii,filename)
 		PORT map(s_entrada,
 					s_dados,
 					s_contagem,        
-					we, '1');
+					we, '0');
 	
-  
-	c1: contador_m_load generic map(8,3) port map(clock, zera, s_fim_linha, carrega, endereco(5 downto 3), s_contagem(5 downto 3), open);  
-	c2 : contador_m_load generic map(8,3) port map(clock, s_fim_linha or zera, conta, carrega, endereco(2 downto 0), s_contagem(2 downto 0), open);  
-	
-    -- mux da saida memoria
-    U4: mux3x1_n generic map (BITS => 7) port map (D2 => "0001101", D1=> "0001010", D0=>s_dados, 
+    U3: contador_m_load generic map (M => 64, N => 6) port map (CLK=>clock, zera=>zera, conta=>conta, carrega=>carrega,
+                                                           D=>endereco, q=>s_contagem, fim=>fim);
+    
+	 --versao 7 bits
+	 -- mux da saida memoria
+    --U4: mux3x1_n generic map (BITS => 7) port map (D2 => "0001101", D1=> "0001010", D0=>s_dados, 
+    --                                               SEL=>sel, MX_OUT=>s_mux);
+
+    -- mux da entrada da memoria
+    --U5: mux3x1_n generic map (BITS => 7) port map (D2 => "1011000", D1=> "1000001", D0=>"1011111", 
+     --                                              SEL=>dado, MX_OUT=>s_entrada);
+    
+	-- versão 8 bits
+	 U4: mux3x1_n generic map (BITS => 8) port map (D2 => "10001101", D1=> "10001010", D0=>s_dados, 
                                                    SEL=>sel, MX_OUT=>s_mux);
 
     -- mux da entrada da memoria
-    U5: mux3x1_n generic map (BITS => 7) port map (D2 => "1011000", D1=> "1000001", D0=>"1011111", 
+    U5: mux3x1_n generic map (BITS => 8) port map (D2 => "11011000", D1=> "11000001", D0=>"11011111", 
                                                    SEL=>dado, MX_OUT=>s_entrada);
-                                                                    
-    U6: decoder port map (input => s_dados, output => s_verifica);
+   		 
+    U6: decoder 
+		generic map(tam_ascii)
+		port map (input => s_dados, output => s_verifica);
 	 
 	 
 	REG : registrador_n

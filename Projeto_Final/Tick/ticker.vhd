@@ -27,10 +27,10 @@ ArchiteCture Tick_Ark of ticker is
 	end component;
 	
 	Component Tick_FD
-		generic(Constant Ratio_m : integer := 166;
-				  Constant Ratio_n : integer := 8;
-				  Constant Total_m : integer := 11;
-				  Constant Total_n : integer := 4);
+		generic(Constant Ratio_m : integer;
+				  Constant Ratio_n : integer;
+				  Constant Total_m : integer;
+				  Constant Total_n : integer);
 				  
 		port(CLK, enable, reset: in  std_logic;
 			  o_Tick, o_fim     : out std_logic;

@@ -12,6 +12,7 @@ use IEEE.std_logic_arith.all;
 entity operacoes_campo is
 	generic( constant ratio 		: integer := 434;
 				constant log2_ratio 	: integer := 9;
+				constant tam_ascii : integer := 8;
 				constant filename : string := "campo_inicial.mif");
     port(clock, reset, iniciar	: in  std_logic;
 			operacao, dado         	: in  std_logic_vector(1 downto 0);
@@ -26,7 +27,7 @@ entity operacoes_campo is
 			db_carrega, db_pronto, db_we, db_fim  		: out std_logic;
 			db_q                                      : out std_logic_vector(5 downto 0);
 			db_sel                                    : out std_logic_vector(1 downto 0);
-			db_dados                                  : out std_logic_vector(6 downto 0));
+			db_dados                                  : out std_logic_vector(tam_ascii-1 downto 0));
 end operacoes_campo;
 
 architecture operacoes_campo of operacoes_campo is
@@ -48,23 +49,24 @@ architecture operacoes_campo of operacoes_campo is
     end component;
 
     component operacoes_campo_fd 
-	generic( constant ratio 		: integer;
-				constant log2_ratio	: integer;
-				constant filename : string);
-	 port (
+	generic( constant ratio 		: integer := 434;
+				constant log2_ratio 	: integer := 9;
+				constant tam_ascii : integer := 8;
+				constant filename : string := "campo_inicial.mif");
+    port (
         clock, reset: in std_logic;
-        partida : in std_logic;                    -- tx_serial
-        we: in std_logic;                          -- memoria_jogo_16x7
-        conta, zera, carrega: in std_logic;        -- contador_m_load
-        endereco: in std_logic_vector(5 downto 0); -- contador_m_load
-        dado, sel: in std_logic_vector(1 downto 0);      -- mux3x1_n
-        fim, fim_linha: out std_logic;             -- contador_m_load
-        saida_serial, pronto : out std_logic;      -- tx_serial
+        partida : in std_logic;                    	-- tx_serial
+        we: in std_logic;                          	-- memoria_jogo_16x7
+        conta, zera, carrega: in std_logic;        	-- contador_m_load
+        endereco: in std_logic_vector(5 downto 0); 	-- contador_m_load
+        dado, sel: in std_logic_vector(1 downto 0);   -- mux3x1_n
+        fim, fim_linha: out std_logic;             	-- contador_m_load
+        saida_serial, pronto : out std_logic;      	-- tx_serial
         db_q: out std_logic_vector(5 downto 0);
-        db_dados: out std_logic_vector(6 downto 0);
-		  verifica: out std_logic_vector(1 downto 0);
-		  i_verifica : in std_logic;
-			tamanho_campo : in std_logic
+        db_dados: out std_logic_vector(tam_ascii-1 downto 0);
+        verifica: out std_logic_vector(1 downto 0);
+		  i_verifica : in std_logic
+
     );
     end component;
     
@@ -85,7 +87,7 @@ s_iniciar_0 <= NOT iniciar;
                                  fim=>s_fim, fim_linha=>s_fim_linha, zera=>s_zera, reseta=>s_reseta, conta=>s_conta,
                                  carrega=>s_carrega, we=>s_we, partida=>s_partida, pronto_out=>pronto, sel=>s_sel, o_verifica => s_verifica);
     U2: operacoes_campo_fd
-	generic map(ratio,log2_ratio,filename)
+	generic map(ratio,log2_ratio,tam_ascii,filename)
 	 port map (clock=>clock, reset=>s_reseta, partida=>s_partida , we=>s_we, 
                                  conta=>s_conta, zera=>s_zera, carrega=>s_carrega, endereco=>endereco, dado=>dado, sel=>s_sel, 
                                  fim=>s_fim, fim_linha=>s_fim_linha, 

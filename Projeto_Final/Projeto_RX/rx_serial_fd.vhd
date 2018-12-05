@@ -6,23 +6,24 @@ use IEEE.std_logic_arith.all;
 
 entity rx_serial_fd is
 	 generic(constant Ratio_m : integer := 100;
-				constant Ratio_n : integer := 7);
+				constant Ratio_n : integer := 7;
+				constant tam_ascii : integer := 8);
     port (clock, reset                                : in  std_logic;
           zerar, contar, carregar, deslocar, paridade : in  std_logic;
           entrada_serial, registra                    : in  std_logic;
 			 estado                                      : in  std_logic_vector(3 downto 0);
 			 fim, paridade_ok, tick                      : out std_logic;
 		    hex1, hex0, hex_est, hex_cont, hex_ticker   : out std_logic_vector(6 downto 0);
-			 o_dados                                     : out std_logic_vector(9 downto 0);
-			 o_reg1                                      : out std_logic_vector(7 downto 0));
+			 o_dados                                     : out std_logic_vector(tam_ascii+2 downto 0);
+			 o_reg1                                      : out std_logic_vector(tam_ascii downto 0));
 end rx_serial_fd;
 
 architecture rx_serial_fd of rx_serial_fd is
-   signal D, S                   : std_logic_vector(9 downto 0);
+   signal D, S                   : std_logic_vector(tam_ascii+2 downto 0);
 	signal s_hex1, s_hex0, s_cont : std_logic_vector(3 downto 0);
-	signal s_reg0, s_reg1, s_reg2 : std_logic_vector(7 downto 0);
+	signal s_reg0, s_reg1, s_reg2 : std_logic_vector(tam_ascii downto 0);
 	signal s_paridade_ok          : std_logic;
-	signal s_entrada_paridade     : std_logic_vector(8 downto 0);
+	signal s_entrada_paridade     : std_logic_vector(tam_ascii+1 downto 0);
      
 	component deslocador_n
 	generic (constant N: integer); -- numero de bits
@@ -47,24 +48,23 @@ architecture rx_serial_fd of rx_serial_fd is
 	end component;
 	
    component gerador_paridade_n
-   generic (constant N: integer := 7);
+   generic (constant N: integer);
    port (dado      : in STD_LOGIC_VECTOR (N-1 downto 0);
          par, impar: out STD_LOGIC);
    end component; 
 	
 	component ticker
-	generic(Constant Ratio_m : integer := 7;
-			  Constant Ratio_n : integer := 3;
-			  Constant Total_m : integer := 11;
-			  Constant Total_n : integer := 4);
+	generic(Constant Ratio_m : integer;
+			  Constant Ratio_n : integer;
+			  Constant Total_m : integer;
+			  Constant Total_n : integer);
 	port(serial, CLK, Reset    : in  std_logic;
 	     tick, o_CLK, o_Serial : out std_logic;
 		  hex_estado            : out std_logic_vector(6 downto 0));
 	end component;
 	
 	component registrador_n
-
-   generic (constant N : integer := 8);
+   generic (constant N : integer);
    port (clock, clear, enable : in  STD_LOGIC;
          D                    : in  STD_LOGIC_VECTOR(N-1 downto 0);
          Q                    : out STD_LOGIC_VECTOR (N-1 downto 0));
@@ -75,7 +75,7 @@ begin
 	D <= (others=>'1');
 	
    U1: deslocador_n 
-	generic map (N => 10)  
+	generic map (N => tam_ascii+3)  
 	port map (clock, 
 	          reset, 
 				 carregar, 
@@ -83,7 +83,7 @@ begin
 				 entrada_serial,D,S);
 				 
    U2: contador_m 
-	generic map (M => 11, 
+	generic map (M => tam_ascii+3, 
 	             N => 4) 
 	port map (clock, 
 	          zerar, 
@@ -96,11 +96,11 @@ begin
 	s_entrada_paridade(8) <= paridade;
 				 
 	U3: gerador_paridade_n
-	generic map(9)
+	generic map(tam_ascii+2)
 	port map (s_entrada_paridade, open, s_paridade_ok);
 	
 	U4: ticker
-	generic map (Ratio_m,Ratio_n,11,4)
+	generic map (Ratio_m,Ratio_n,tam_ascii+4,4)
 	port map (entrada_serial, clock, reset, tick, OPEN, OPEN, hex_ticker);
 	
 	s_hex0 <= s_reg1(3 downto 0);
@@ -120,16 +120,16 @@ begin
 	Hcont: hex7seg
 	port map(s_cont,'1',hex_cont);
 	
-	s_reg0(7)          <= s_paridade_ok;
-	s_reg0(6 downto 0) <= S(6 downto 0);
+	s_reg0(tam_ascii)          <= s_paridade_ok;
+	s_reg0(tam_ascii-1 downto 0) <= S(tam_ascii-1 downto 0);
 	
 	Reg1: registrador_n
-   generic map(8)
+   generic map(tam_ascii+1)
    port map(clock, reset, registra,
             s_reg0, s_reg1);
 	
 	o_dados <= S;
 	o_reg1 <= s_reg1;
-	paridade_ok <= s_reg1(7);
+	paridade_ok <= s_reg1(tam_ascii);
 end rx_serial_fd;
 

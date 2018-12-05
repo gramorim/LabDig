@@ -6,33 +6,35 @@ use IEEE.numeric_std.all;
 
 entity mensagem is
 	generic( constant ratio 		: integer := 7;
-				constant log2_ratio 	: integer := 3);
+				constant log2_ratio 	: integer := 3;
+				constant tam_ascii : integer := 8);
 	PORT(	clock, reset 			: in  std_logic;
 			i_mensagem 				: in  std_logic_vector( 2 downto 0);
-			jogada					: in  std_logic_vector(13 downto 0);
+			jogada					: in  std_logic_vector(2*tam_ascii-1 downto 0);
 			enviar					: in  std_logic;
 			saida_serial, pronto : out std_logic;
 			
 			--Depuração
 			db_estado 	: out std_logic_vector(3 downto 0);
 			db_tick, db_enable, db_Q		: out std_logic;
-			db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(6 downto 0));
+			db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(tam_ascii-1 downto 0));
 end mensagem;
 
 architecture mensagem_arc of mensagem is
 	
 	component mensagem_fd is
 		generic( constant ratio 			: integer;
-					constant log2_ratio 		: integer);
+					constant log2_ratio 		: integer;
+					constant tam_ascii : integer := 8);
 		port(	clock, reset						: in  std_logic;
 				i_mensagem 							: in  std_logic_vector( 2 downto 0);
-				jogada								: in  std_logic_vector(13 downto 0);
+				jogada								: in  std_logic_vector(2*tam_ascii-1 downto 0);
 				enable, i_reset, partida					: in  std_logic;
 				saida_serial, zero, pronto, Q : out std_logic;
 			
 				--depuração
 				db_tick	: out std_logic;
-			db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(6 downto 0));
+			db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(tam_ascii-1 downto 0));
 	end component;
 	
 	component mensagem_uc is
