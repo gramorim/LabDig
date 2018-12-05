@@ -19,7 +19,8 @@ entity operacoes_campo is
 			endereco                : in  std_logic_vector(5 downto 0);
 			editavel						: in  std_logic;
 			saida_serial, pronto    : out std_logic;
-			o_dado						: out std_logic_vector(1 downto 0);									
+			o_dado						: out std_logic_vector(1 downto 0);
+			tamanho_campo : in std_logic;									
 			
 			-- depuracao
 			db_saida_serial                           : out std_logic;
@@ -83,7 +84,7 @@ s_reset <= not reset;
 s_iniciar_0 <= not iniciar;
 
     -- sinais reset e partida mapeados em botoes ativos em alto
-    U1: operacoes_campo_uc port map (clock=>clock, reset=>s_reset, iniciar=>s_iniciar, operacao=>operacao, pronto=>s_pronto, 
+    U1: operacoes_campo_uc port map (clock=>clock, reset=>s_reset, iniciar=> s_iniciar, operacao=>operacao, pronto=>s_pronto, 
                                  fim=>s_fim, fim_linha=>s_fim_linha, zera=>s_zera, reseta=>s_reseta, conta=>s_conta,
                                  carrega=>s_carrega, we=>s_we, partida=>s_partida, pronto_out=>pronto, sel=>s_sel, o_verifica => s_verifica);
     U2: operacoes_campo_fd

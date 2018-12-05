@@ -62,32 +62,9 @@ set_location_assignment PIN_AB15 -to endereco[3]
 set_location_assignment PIN_AA15 -to endereco[2]
 set_location_assignment PIN_T13 -to endereco[0]
 set_location_assignment PIN_T12 -to endereco[1]
-set_location_assignment PIN_K16 -to db_carrega
-set_location_assignment PIN_G12 -to db_conta
-set_location_assignment PIN_E16 -to db_dados[6]
-set_location_assignment PIN_E14 -to db_dados[5]
-set_location_assignment PIN_B15 -to db_dados[4]
-set_location_assignment PIN_L8 -to db_dados[3]
-set_location_assignment PIN_A15 -to db_dados[2]
-set_location_assignment PIN_J11 -to db_dados[1]
-set_location_assignment PIN_G11 -to db_dados[0]
-set_location_assignment PIN_J17 -to db_fim
-set_location_assignment PIN_G13 -to db_partida
-set_location_assignment PIN_G16 -to db_pronto
-set_location_assignment PIN_E15 -to db_q[3]
-set_location_assignment PIN_C15 -to db_q[2]
-set_location_assignment PIN_A14 -to db_q[1]
-set_location_assignment PIN_J13 -to db_q[0]
-set_location_assignment PIN_F13 -to db_reseta
-set_location_assignment PIN_H14 -to db_sel[1]
-set_location_assignment PIN_H10 -to db_sel[0]
-set_location_assignment PIN_G15 -to db_we
-set_location_assignment PIN_F12 -to db_zera
-set_location_assignment PIN_F15 -to pronto
-set_location_assignment PIN_H16 -to saida_serial
-set_location_assignment PIN_AA2 -to db_saida_serial
+set_location_assignment PIN_AA2 -to pronto
+set_location_assignment PIN_K16 -to saida_serial
 set_location_assignment PIN_AA14 -to endereco[4]
-set_location_assignment PIN_AA13 -to endereco[5]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
