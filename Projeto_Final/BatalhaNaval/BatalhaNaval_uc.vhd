@@ -2,16 +2,18 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity BatalhaNaval_uc is port ( 
-	clock, reset, vez, jogar: in std_logic;
-	vitoria_adversario, erro in std_logic; 
-	prontoC, prontoJ, pronto: in std_logic;
-	ganhei: in std_logic;
-	operacoes: out std_logic_vector(2 downto 0);
-	hex_estado	: out std_logic_vector(6 downto 0);
-	troca_vez : out std_logic, enviar_adv : out std_logic );
-end operacoes_campo_uc;
+	clock, reset, vez, jogar	: in std_logic;
+	vitoria_adversario, erro	: in std_logic; 
+	prontoC, prontoJ, pronto	: in std_logic;
+	ganhei						: in std_logic;
+	operacoes					: out std_logic_vector(2 downto 0);
+	hex_estado					: out std_logic_vector(6 downto 0);
+	troca_vez 					: out std_logic;
+	enviar_adv 					: out std_logic
+	 );
+end BatalhaNaval_uc;
 
-architecture BatalhaNaval_uc of BatalhaNaval_uc is
+architecture BatalhaNaval_uc_arch of BatalhaNaval_uc is
 	type State_type is (inicial, envia, espera, incrementa, final, selecionaCR, enviaCR, esperaCR, selecionaNL, enviaNL, esperaNL,
 						carrega_endereco, escreve_memoria, verifica_memoria);
 	signal Sreg, Snext: State_type;
@@ -81,4 +83,4 @@ begin
 	with Sreg select
 		reseta <= '1' when inicial, '0' when others;
 	
-end BatalhaNaval_uc;
+end BatalhaNaval_uc_arch;

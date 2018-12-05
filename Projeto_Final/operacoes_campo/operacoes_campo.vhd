@@ -80,8 +80,8 @@ architecture operacoes_campo of operacoes_campo is
 
 begin
 
-s_reset <= not reset;
-s_iniciar_0 <= not iniciar;
+s_reset <= reset;
+s_iniciar_0 <= iniciar;
 
     -- sinais reset e partida mapeados em botoes ativos em alto
     U1: operacoes_campo_uc port map (clock=>clock, reset=>s_reset, iniciar=> s_iniciar, operacao=>operacao, pronto=>s_pronto, 
