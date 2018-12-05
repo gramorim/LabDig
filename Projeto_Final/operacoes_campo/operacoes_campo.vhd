@@ -17,7 +17,8 @@ entity operacoes_campo is
 			operacao, dado         	: in  std_logic_vector(1 downto 0);
 			endereco                : in  std_logic_vector(5 downto 0);
 			saida_serial, pronto    : out std_logic;
-			o_dado						: out std_logic_vector(1 downto 0);									
+			o_dado						: out std_logic_vector(1 downto 0);
+			tamanho_campo : in std_logic;									
 			
 			-- depuracao
 			db_saida_serial                           : out std_logic;
@@ -62,7 +63,8 @@ architecture operacoes_campo of operacoes_campo is
         db_q: out std_logic_vector(5 downto 0);
         db_dados: out std_logic_vector(6 downto 0);
 		  verifica: out std_logic_vector(1 downto 0);
-		  i_verifica : in std_logic
+		  i_verifica : in std_logic;
+			tamanho_campo : in std_logic
     );
     end component;
     
@@ -75,11 +77,11 @@ architecture operacoes_campo of operacoes_campo is
 
 begin
 
-s_reset <= reset;
-s_iniciar_0 <=  iniciar;
+s_reset <= not reset;
+s_iniciar_0 <= NOT iniciar;
 
     -- sinais reset e partida mapeados em botoes ativos em alto
-    U1: operacoes_campo_uc port map (clock=>clock, reset=>s_reset, iniciar=>s_iniciar, operacao=>operacao, pronto=>s_pronto, 
+    U1: operacoes_campo_uc port map (clock=>clock, reset=>s_reset, iniciar=> s_iniciar, operacao=>operacao, pronto=>s_pronto, 
                                  fim=>s_fim, fim_linha=>s_fim_linha, zera=>s_zera, reseta=>s_reseta, conta=>s_conta,
                                  carrega=>s_carrega, we=>s_we, partida=>s_partida, pronto_out=>pronto, sel=>s_sel, o_verifica => s_verifica);
     U2: operacoes_campo_fd
@@ -88,7 +90,7 @@ s_iniciar_0 <=  iniciar;
                                  conta=>s_conta, zera=>s_zera, carrega=>s_carrega, endereco=>endereco, dado=>dado, sel=>s_sel, 
                                  fim=>s_fim, fim_linha=>s_fim_linha, 
                                  saida_serial=>s_saida_serial, pronto=>s_pronto, 
-                                 db_q=>s_q, db_dados=>db_dados, verifica=> o_dado, i_verifica => S_verifica);
+                                 db_q=>s_q, db_dados=>db_dados, verifica=> o_dado, i_verifica => S_verifica, tamanho_campo => tamanho_campo);
     U3: edge_detector port map (clock, '1', s_iniciar_0, s_iniciar);
 
 

@@ -19,7 +19,8 @@ entity operacoes_campo_fd is
         db_q: out std_logic_vector(5 downto 0);
         db_dados: out std_logic_vector(6 downto 0);
         verifica: out std_logic_vector(1 downto 0);
-		  i_verifica : in std_logic
+		  i_verifica : in std_logic;
+			tamanho_campo : in std_logic
     );
 end operacoes_campo_fd;
 
@@ -27,6 +28,7 @@ architecture operacoes_campo_fd of operacoes_campo_fd is
     signal s_contagem: std_logic_vector(5 downto 0);
     signal s_dados, s_mux, s_entrada: std_logic_vector (6 downto 0);
 	 signal s_verifica : std_logic_vector(1 downto 0);
+	 signal s_fim4, s_fim8 : STD_LOGIC;
 
     component tx_serial 
 		generic( constant ratio 		: integer;
@@ -80,6 +82,7 @@ architecture operacoes_campo_fd of operacoes_campo_fd is
 			  Q: out STD_LOGIC_VECTOR (N-1 downto 0));
 	end component;
 
+	signal s_fim_linha, s_fim_coluna4, s_fim_coluna8, s_fim_coluna : std_logic;
 begin
 
     -- sinais reset e partida mapeados em botoes ativos em alto
@@ -94,8 +97,10 @@ begin
 					s_contagem,        
 					we, '1');
 	
-    U3: contador_m_load generic map (M => 64, N => 6) port map (CLK=>clock, zera=>zera, conta=>conta, carrega=>carrega,
-                                                           D=>endereco, q=>s_contagem, fim=>fim);
+  
+	c1: contador_m_load generic map(8,3) port map(clock, zera, s_fim_linha, carrega, endereco(5 downto 3), s_contagem(5 downto 3), open);  
+	c2 : contador_m_load generic map(8,3) port map(clock, s_fim_linha or zera, conta, carrega, endereco(2 downto 0), s_contagem(2 downto 0), open);  
+	
     -- mux da saida memoria
     U4: mux3x1_n generic map (BITS => 7) port map (D2 => "0001101", D1=> "0001010", D0=>s_dados, 
                                                    SEL=>sel, MX_OUT=>s_mux);
@@ -114,8 +119,28 @@ begin
 			  verifica);
 
     with s_contagem(2 downto 0) select
-        fim_linha <= '1' when "111", '0' when others;
+        s_fim8 <= '1' when "111", '0' when others;
+	with s_contagem(1 downto 0) select
+			s_fim4 <= '1' when "11", '0' when others;
+	with tamanho_campo select
+			s_FIM_LINHA <= s_fim4 when '0', s_fim8 when '1';
+			
+			fim_linha <= s_fim_linha;
 
+	with s_contagem(5 downto 3) select
+		s_fim_coluna8 <= '1' when "111", '0' when others;
+
+	with s_contagem(4 downto 3) select
+		s_fim_coluna4 <= '1' when "11", '0' when others;
+		
+	
+
+	with tamanho_campo select
+		s_fim_coluna <= s_fim_coluna4 when '0', s_fim_coluna8 when '1';
+	
+	fim <= s_fim_coluna and s_fim_linha;
+		
+		
 -- depuracao
 db_q <= s_contagem;
 db_dados <= s_mux;
