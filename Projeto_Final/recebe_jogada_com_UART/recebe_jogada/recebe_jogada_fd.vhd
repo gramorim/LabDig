@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity recebe_jogada_fd is
 	generic(	constant N_ascii  : integer := 2;     -- Numero de characteres desejados
 				constant log2N		: integer := 2;
-				constant tam_ascii 	: integer := 8);
+				constant tam_ascii 	: integer := 7);
 	port(
 		clock, escreve:       in std_logic;
 		enable_c:  			  in std_logic;
@@ -35,7 +35,7 @@ architecture recebe_jogada_fd_arch of recebe_jogada_fd is
 	end component;
 	
 	component buffer_jogada is
-	generic(constant tam_ascii 	: integer := 8);
+	generic(constant tam_ascii 	: integer := 7);
 		port(
 			clock, reset:   in  std_logic;
 			endereco:       in  std_logic;
@@ -47,7 +47,7 @@ architecture recebe_jogada_fd_arch of recebe_jogada_fd is
 	end component;
 	
 	component decodificador_endereco is
-		generic(constant tam_ascii 	: integer := 8);
+		generic(constant tam_ascii 	: integer := 7);
 		port(	ascii		: in  std_logic_vector(tam_ascii-1 downto 0);
 				endereco	: out std_logic_vector(2 downto 0);
 				erro		: out std_logic);

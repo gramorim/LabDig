@@ -6,7 +6,7 @@ use IEEE.std_logic_arith.all;
 entity operacoes_campo_fd is
 	generic( constant ratio 		: integer := 434;
 				constant log2_ratio 	: integer := 9;
-				constant tam_ascii : integer := 8;
+				constant tam_ascii : integer := 7;
 				constant filename : string := "campo_inicial.mif");
     port (
         clock, reset: in std_logic;
@@ -20,7 +20,8 @@ entity operacoes_campo_fd is
         db_q: out std_logic_vector(5 downto 0);
         db_dados: out std_logic_vector(tam_ascii-1 downto 0);
         verifica: out std_logic_vector(1 downto 0);
-		  i_verifica : in std_logic
+		  i_verifica : in std_logic;
+		  editavel : in std_logic
     );
 end operacoes_campo_fd;
 
@@ -78,7 +79,7 @@ architecture operacoes_campo_fd of operacoes_campo_fd is
   end component; 
   
 	component registrador_n is
-	  generic (constant N: integer := 8);
+	  generic (constant N: integer := 7);
 	  port (clock, clear, enable: in STD_LOGIC;
 			  D: in STD_LOGIC_VECTOR(N-1 downto 0);
 			  Q: out STD_LOGIC_VECTOR (N-1 downto 0));
@@ -96,27 +97,27 @@ begin
 		PORT map(s_entrada,
 					s_dados,
 					s_contagem,        
-					we, '0');
+					we, not editavel);
 	
     U3: contador_m_load generic map (M => 64, N => 6) port map (CLK=>clock, zera=>zera, conta=>conta, carrega=>carrega,
                                                            D=>endereco, q=>s_contagem, fim=>fim);
     
 	 --versao 7 bits
 	 -- mux da saida memoria
-    --U4: mux3x1_n generic map (BITS => 7) port map (D2 => "0001101", D1=> "0001010", D0=>s_dados, 
-    --                                               SEL=>sel, MX_OUT=>s_mux);
-
-    -- mux da entrada da memoria
-    --U5: mux3x1_n generic map (BITS => 7) port map (D2 => "1011000", D1=> "1000001", D0=>"1011111", 
-     --                                              SEL=>dado, MX_OUT=>s_entrada);
-    
-	-- versão 8 bits
-	 U4: mux3x1_n generic map (BITS => 8) port map (D2 => "10001101", D1=> "10001010", D0=>s_dados, 
+    U4: mux3x1_n generic map (BITS => 7) port map (D2 => "0001101", D1=> "0001010", D0=>s_dados, 
                                                    SEL=>sel, MX_OUT=>s_mux);
 
     -- mux da entrada da memoria
-    U5: mux3x1_n generic map (BITS => 8) port map (D2 => "11011000", D1=> "11000001", D0=>"11011111", 
+    U5: mux3x1_n generic map (BITS => 7) port map (D2 => "1011000", D1=> "1000001", D0=>"1011111", 
                                                    SEL=>dado, MX_OUT=>s_entrada);
+    
+	-- versão 8 bits
+	-- U4: mux3x1_n generic map (BITS => 8) port map (D2 => "10001101", D1=> "10001010", D0=>s_dados, 
+   --                                                SEL=>sel, MX_OUT=>s_mux);
+
+    -- mux da entrada da memoria
+    --U5: mux3x1_n generic map (BITS => 8) port map (D2 => "11011000", D1=> "11000001", D0=>"11011111", 
+    --                                               SEL=>dado, MX_OUT=>s_entrada);
    		 
     U6: decoder 
 		generic map(tam_ascii)

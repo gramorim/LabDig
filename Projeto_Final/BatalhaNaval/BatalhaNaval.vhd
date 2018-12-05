@@ -6,14 +6,14 @@ use ieee.std_logic_unsigned.alL;
 entity BatalhaNaval is
 	generic(	constant ratio 		: integer := 434; --Baud rate
 				constant log2_ratio 	: integer := 9;
-				constant tam_ascii 	: integer := 8;   -- tamanho do ascii 7 ou 8
+				constant tam_ascii 	: integer := 7;   -- tamanho do ascii 7 ou 8
 				constant paridade 	: std_logic := '0'; -- paridade 0 par, 1 impar
 				constant end_bit 		: integer := 2);  -- tamanho end bit 1 ou 2
 	port(	clock, reset, jogar, vez														: in  std_logic;
 			entrada_serial_terminal, entrada_serial_adversario 					: in  std_logic;
 			saida_serial_terminal, saida_serial_adversario							: out std_logic;
 			jogada_1, jogada_0, resultado, placar_jogador, placar_adversario 	: out std_logic_vector(tam_ascii-1 downto 0);
-			fazer_jogada, pronto		 														: out std_logic);
+			fazer_jogada, pronto, ganhei													: out std_logic);
 end BatalhaNaval;
 
 architecture batalha_naval_arc of BatalhaNaval is 
@@ -38,11 +38,12 @@ architecture batalha_naval_arc of BatalhaNaval is
 		
 	generic( constant ratio 		: integer := 434;
 				constant log2_ratio 	: integer := 9;
-				constant tam_ascii : integer := 8;
+				constant tam_ascii : integer := 7;
 				constant filename : string := "campo_inicial.mif");
     port(clock, reset, iniciar	: in  std_logic;
 			operacao, dado         	: in  std_logic_vector(1 downto 0);
 			endereco                : in  std_logic_vector(5 downto 0);
+			editavel 					: in std_logic;
 			saida_serial, pronto    : out std_logic;
 			o_dado						: out std_logic_vector(1 downto 0);									
 			
@@ -76,9 +77,10 @@ architecture batalha_naval_arc of BatalhaNaval is
 	end component;
 	
 	component decoder is
-		generic(constant tam_ascii : integer);
+		generic(constant tam_ascii : integer := 7);
 		 port(   input  : in  std_logic_vector(tam_ascii-1 downto 0);
-					output : out std_logic_vector(1 downto 0));
+					output : out std_logic_vector(1 downto 0);
+					ganhei : out std_logic);
 	end component;
 	
 	component mensagem is
@@ -86,7 +88,7 @@ architecture batalha_naval_arc of BatalhaNaval is
 					constant log2_ratio 	: integer;
 					constant tam_ascii 	: integer);
 		PORT(	clock, reset 			: in  std_logic;
-				i_mensagem 				: in  std_logic_vector( 2 downto 0);
+				i_mensagem 				: in  std_logic_vector(2 downto 0);
 				jogada					: in  std_logic_vector(2*tam_ascii-1 downto 0);
 				enviar					: in  std_logic;
 				saida_serial, pronto : out std_logic;
@@ -126,10 +128,11 @@ begin
 					s_jogada);
 			
 	JOGADOR : operacoes_campo
-		generic map(ratio,log2_ratio,tam_ascii, "campo_inicial_jogador_8.mif")
+		generic map(ratio,log2_ratio,tam_ascii, "campo_inicial_jogador.mif")
 		port map(clock, reset, s_enable_jogador,
 					s_operacao_jogador, "00",
 					s_endereco_rec,
+					'0',
 					s_saida_serial_jogador, s_pronto_jogador,
 					s_dado_jogador,
 					
@@ -161,13 +164,14 @@ begin
 	
 	MenDec : decoder
 		generic map(tam_ascii)
-		port map(s_MenRec, s_dado_rec);
+		port map(s_MenRec, s_dado_rec, ganhei);
 		
 	ADVERSARIO : operacoes_campo
-		generic map(ratio,log2_ratio,tam_ascii,"campo_inicial_adversario_8.mif")
+		generic map(ratio,log2_ratio,tam_ascii,"campo_inicial_adversario.mif")
 		port map(clock, reset, s_enable_adversario,
 					s_operacao_adversario, s_dado_rec,
 					s_endereco_rec,
+					'1',
 					s_saida_serial_adversario, s_pronto_adversario,
 					open,									
 					
