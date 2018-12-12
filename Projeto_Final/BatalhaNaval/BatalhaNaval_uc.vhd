@@ -5,20 +5,40 @@ use ieee.std_logic_unsigned.alL;
 
 
 entity BatalhaNaval_uc is port ( 
-	clock, reset, vez, jogar	: in std_logic;
-	vitoria_adversario, erro	: in std_logic; 
-	prontoC, prontoJ, pronto	: in std_logic;
-	ganhei						: in std_logic;
-	operacoes					: out std_logic_vector(2 downto 0);
-	hex_estado					: out std_logic_vector(6 downto 0);
-	troca_vez 					: out std_logic;
-	enviar_adv 					: out std_logic
-	 );
+							clock, reset, vez, jogar	: in std_logic;
+							vitoria_adversario, erro	: in std_logic; 
+							prontoC, prontoJ, pronto	: in std_logic;
+							ganhei						: in std_logic;
+							operacoes					: out std_logic_vector(2 downto 0);
+							hex_estado					: out std_logic_vector(6 downto 0);
+							troca_vez 					: out std_logic;
+							enviar_adv 					: out std_logic
+							 );
 end BatalhaNaval_uc;
 
 architecture BatalhaNaval_uc_arch of BatalhaNaval_uc is
-	type State_type is (inicial, envia, espera, incrementa, final, selecionaCR, enviaCR, esperaCR, selecionaNL, enviaNL, esperaNL,
-						carrega_endereco, escreve_memoria, verifica_memoria);
+	type State_type is (	inicia,
+								prepara
+								
+								-- Estados do jogador										
+								espera_jogada,
+								envia_jogada,
+								espera_confirmacao,
+								verifica_resposta,
+								atualiza_tabuleiro,
+								
+								-- Estados do adversário									
+								espera_jogada_adv,
+								consulta_mapa,
+								envia_resultado,
+								espera_pronto,
+								imprime_tabuleiro,
+								comunica_vez,
+								comunica_vitoria
+								
+								-- Estados finais
+								venceu,
+								perdeu);
 	signal Sreg, Snext: State_type;
 
 -- constantes
@@ -56,24 +76,29 @@ begin
 												else Snext <= espera_confirmacao;
 												end if;
 			when verifica_resposta =>	if ganhei='1' then Snext <= venceu;
-												else Snext <= espera_jogada_adv;
+												else Snext <= atualiza_tabuleiro;
 												end if;
+			
+			when atualiza_tabuleiro => Snext <= espera_jogada_adv;
 												
 			-- Estados do adversário									
-			when espera_jogada_adv => 	if prontoJ='1' then Snext <= atualiza_mapa;
+			when espera_jogada_adv => 	if prontoJ='1' then Snext <= consulta_mapa;
 												else Snext <= espera_jogada_adv;
 												end if;
-			when atualiza_mapa => 		Snext <= envia_resposta;
+			when consulta_mapa => 		Snext <= envia_resposta;
 			when envia_resultado => 	Snext <= espera_pronto;
-			when espera_pronto => 		if prontoJ='1' then 
-													if vitoria_adversario='1' then Snext <= comunica_derrota;
-													else Snext <= comunica_vez;
-													end if;
-												else Snext <= espera_pronto;
+			
+			when espera_pronto => 		if prontoJ='1' then 	Snext <= imprime_tabuleiro;
+												else 						Snext <= espera_pronto;
 												end if;
+											
+			when imprime_tabuleiro =>	if vitoria_adversario='1' then 	Snext <= comunica_derrota;
+												else 										Snext <= comunica_vez;
+												end if;
+			
 			when comunica_vez =>  		Snext <= espera_jogada; 
 			when comunica_vitoria => 	Snext <= perdeu;
-			
+		
 			-- Estados finais
 			when venceu => 				Snext <= inicia;
 			when perdeu => 				Snext <= inicia;
@@ -85,5 +110,13 @@ begin
 		zera <= '1' when inicial, '0' when others;
 	with Sreg select
 		reseta <= '1' when inicial, '0' when others;
+	
+		with sreg select
+			operacoes	<= VERIFICA when consulta_mapa,
+								IMPRIME	when imprime_tabuleiro,
+								ESCREVE	when others;
+
+	troca_vez 					: out std_logic;
+	enviar_adv 					: out std_logic
 	
 end BatalhaNaval_uc_arch;
