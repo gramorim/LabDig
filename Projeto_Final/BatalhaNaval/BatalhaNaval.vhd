@@ -43,7 +43,9 @@ architecture BatalhaNavalArch of BatalhaNaval is
 	signal s_prontos : std_logic;
 
 begin
-	FD : BatalhaNaval_fd
+  s_prontos <= s_prontoRecJog or s_prontoEnvMen or s_prontoRecMen;
+  
+  FD : BatalhaNaval_fd
 		port map(clock, reset,
 					entrada_serial,
 					
@@ -53,7 +55,9 @@ begin
 					menRec,
 					saida_serial,
 					
-					s_prontoRecJog, s_prontoEnvMen, s_prontoRecMen, s_prontoOpCam);
+          s_prontoRecJog, s_prontoEnvMen, s_prontoRecMen, s_prontoOpCam
+    );
+          
 	UC : BatalhaNaval_uc
 		port map(clock reset, s_prontos, inicia, s_enableRecMen, s_enableRecJog, s_enableEnvMen, open, open);
 				
