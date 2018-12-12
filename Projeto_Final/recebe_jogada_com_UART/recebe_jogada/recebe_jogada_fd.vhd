@@ -57,8 +57,12 @@ architecture recebe_jogada_fd_arch of recebe_jogada_fd is
 	signal s_erro1, s_erro2 : std_logic;
 begin
 	
-	U1: contador_m  generic map (N_ascii+1, log2N)
-					port map (clock, reset_c, enable_c, s_endereco, fim_c);
+	U1: contador_m  generic map (N_ascii+1,log2N)
+					port map(clock, 
+								reset_c, 
+								enable_c, 
+								s_endereco, 
+								fim_c);
 	U2: buffer_jogada 
 		generic map(tam_ascii)
 		port map (clock, reset_r, s_endereco(0), jogada_parcial, escreve, s_jogada, db_teste);
