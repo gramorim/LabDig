@@ -27,9 +27,21 @@ architecture BatalhaNavalArch of BatalhaNaval is
 				
 				prontoRecJog, prontoEnvMen, prontoRecMen, prontoOpCam : out std_logic);
 	end component;
-	
+
+	component BatalhaNaval_uc is
+		port(	
+			clock, reset, pronto 					: in  std_logic;
+			iniciou 										: in  std_logic;
+			enable_r_m, enable_r_j, enable_e_m	: out std_logic;
+			mensagem_sel										: out std_logic_vector(2 downto 0)
+	);
+				
+	end component;
+
 	signal s_enableRecJog, s_enableRecMen, s_enableEnvMen, s_enableOpCam : std_logic;
 	signal s_prontoRecJog, s_prontoEnvMen, s_prontoRecMen, s_prontoOpCam : std_logic;
+	signal s_prontos : std_logic;
+
 begin
 	FD : BatalhaNaval_fd
 		port map(clock, reset,
@@ -42,4 +54,7 @@ begin
 					saida_serial,
 					
 					s_prontoRecJog, s_prontoEnvMen, s_prontoRecMen, s_prontoOpCam);
+	UC : BatalhaNaval_uc
+		port map(clock reset, s_prontos, inicia, s_enableRecMen, s_enableRecJog, s_enableEnvMen, open, open);
+				
 end BatalhaNavalArch ; -- BatalhaNavalArch

@@ -130,9 +130,6 @@ begin
 			  s_verifica,
 			  verifica);
 
-    with s_contagem(2 downto 0) select
-        s_fim8 <= '1' when "111", '0' when others;
-
 -- depuracao
 db_q <= s_contagem;
 db_dados <= s_mux;
