@@ -12,7 +12,9 @@ entity BatalhaNaval is
 		inicia : in std_logic;
 		HEX5_Jogada                 : out std_logic_vector (6 downto 0);
 		HEX4_Jogada                 : out std_logic_vector (6 downto 0);
-		HEX3_Resultado              : out std_logic_vector (6 downto 0)
+		HEX3_Resultado              : out std_logic_vector (6 downto 0);
+			
+			o_estado : out std_logic_vector(3 downto 0)
   );
 end BatalhaNaval;
 
@@ -39,7 +41,9 @@ architecture BatalhaNavalArch of BatalhaNaval is
 			clock, reset, pronto 					: in  std_logic;
 			iniciou 										: in  std_logic;
 			enable_r_m, enable_r_j, enable_e_m	: out std_logic;
-			mensagem_sel										: out std_logic_vector(2 downto 0)
+			mensagem_sel										: out std_logic_vector(2 downto 0);
+			
+			o_estado : out std_logic_vector(3 downto 0)
 	);
 				
 	end component;
@@ -80,7 +84,8 @@ begin
 		port map(clock, NOT reset, 
 					s_prontos, 
 					NOT inicia, 
-					s_enableRecMen, s_enableRecJog, s_enableEnvMen, s_mensagem_sel);
+					s_enableRecMen, s_enableRecJog, s_enableEnvMen, s_mensagem_sel,
+					o_estado);
 	
 	U1: ascii_to_7seg
 		port map(s_jogada_linha, s_jogada_coluna, HEX5_Jogada, HEX4_Jogada);

@@ -7,7 +7,9 @@ entity BatalhaNaval_uc is
 			clock, reset, pronto 					: in  std_logic;
 			iniciou 										: in  std_logic;
 			enable_r_m, enable_r_j, enable_e_m	: out std_logic;
-			mensagem_sel										: out std_logic_vector(2 downto 0)
+			mensagem_sel								: out std_logic_vector(2 downto 0);
+			
+			o_estado : out std_logic_vector(3 downto 0)
 	);
 			
 end BatalhaNaval_uc;
@@ -62,5 +64,15 @@ begin
 		mensagem_sel <= 	"000" when envia_jogada,
 								"010" when passa_vez,
 								"100" when others;
+	
+	with sreg select
+		o_estado <= 	"0000" when inicio,
+							"0001" when espera_jogada, 
+							"0010" when envia_jogada, 
+							"0011" when espera, 
+							"0100" when recebeu_resposta, 
+							"0101" when passa_Vez,
+							"1110" when others;
+	
 	
 end BatalhaNaval_uc_arch;
