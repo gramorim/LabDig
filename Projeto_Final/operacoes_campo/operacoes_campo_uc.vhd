@@ -37,9 +37,9 @@ begin
 		case Sreg is
 			when inicial => 			if iniciar='1' then 
 										if operacao=IMPRIME then Snext <= envia;
-											elsif operacao(0) = '1' or operacao(1) = '1' then Snext <= carrega_endereco;
-											else Snext <= inicial;
-											end if;
+										elsif operacao(0) = '1' or operacao(1) = '1' then Snext <= carrega_endereco;
+										else Snext <= inicial;
+										end if;
 										else Snext <= inicial;
 										end if;
 			when envia =>				Snext <= espera;
@@ -86,7 +86,7 @@ begin
 				"01" when selecionaNL | enviaNL | esperaNL,
 				"00" when others;
 	with Sreg select
-		we <= '1' when escreve_memoria, '0' when others;
+		we <= '0' when escreve_memoria, '1' when others;
 	with Sreg select
 		carrega <= '1' when carrega_endereco, '0' when others;
 	with sreg select
