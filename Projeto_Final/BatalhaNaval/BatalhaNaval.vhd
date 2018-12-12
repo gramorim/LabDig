@@ -3,6 +3,8 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 
 entity BatalhaNaval is
+	generic( constant ratio 		: integer := 7;
+				constant log2_ratio 	: integer := 3);
   port (clock, reset : in std_logic;
 		entrada_serial : in std_logic;
 		saida_serial : out std_logic;
@@ -17,6 +19,8 @@ end BatalhaNaval;
 architecture BatalhaNavalArch of BatalhaNaval is
 
 	component BatalhaNaval_fd is
+	generic( constant ratio 		: integer;
+				constant log2_ratio 	: integer);
 		port(	clock, reset : in std_logic;
 				entrada_serial : in std_logic;
 				
@@ -54,8 +58,8 @@ architecture BatalhaNavalArch of BatalhaNaval is
 	signal s_jogada_linha, s_jogada_coluna : std_logic_vector(6 downto 0);
 begin
   s_prontos <= s_prontoRecJog or s_prontoEnvMen or s_prontoRecMen;
-  
-  FD : BatalhaNaval_fd
+	FD : BatalhaNaval_fd
+		generic map(ratio,log2_ratio)
 		port map(clock, reset,
 					entrada_serial,
 					
