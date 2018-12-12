@@ -42,9 +42,9 @@ begin
 			when espera	=> if pronto = '1' then snext <= recebeu_resposta;
 								else 						Snext <= espera;
 								end if;
-			when recebeu_resposta => Snext <= passa_vez
+			when recebeu_resposta => Snext <= passa_vez;
 			
-			when passa_vez => Snext <= inicio
+			when passa_vez => Snext <= inicio;
 		end case;
 	end process;
 	
@@ -52,10 +52,15 @@ begin
 		enable_r_j <= '1' when espera_jogada, '0' when others;
 		
 	with sreg select
-		enable_e_m <= '1' when envia_jogada, passa_vez, '0' when others;
+		enable_e_m <= '1' when envia_jogada|passa_vez, '0' when others;
 		
 	with sreg select
 		enable_r_m <= '1' when espera, '0' when others;
 		
+	
+	with sreg select
+		mensagem_sel <= 	"000" when envia_jogada,
+								"010" when passa_vez,
+								"100" when others;
 	
 end BatalhaNaval_uc_arch;

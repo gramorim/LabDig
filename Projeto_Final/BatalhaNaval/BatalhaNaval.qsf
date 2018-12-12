@@ -76,7 +76,7 @@
 
 
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name DEVICE 5CGXFC7C7F23C8
+set_global_assignment -name DEVICE 5CEBA4F23C7
 set_global_assignment -name TOP_LEVEL_ENTITY BatalhaNaval
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:42:58  DECEMBER 12, 2018"
@@ -88,6 +88,8 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_FILE ../mensagem/Mensagem_to_Ascii.vhd
+set_global_assignment -name VHDL_FILE BatalhaNaval_uc.vhd
 set_global_assignment -name VHDL_FILE ../Tick/ticker.vhd
 set_global_assignment -name VHDL_FILE ../Tick/Tick_UC.vhd
 set_global_assignment -name VHDL_FILE ../Tick/Tick_FD.vhd
@@ -124,4 +126,32 @@ set_global_assignment -name VHDL_FILE ../mensagem/mensagem_fd.vhd
 set_global_assignment -name VHDL_FILE ../mensagem/mensagem.vhd
 set_global_assignment -name VHDL_FILE BatalhaNaval_fd.vhd
 set_global_assignment -name VHDL_FILE BatalhaNaval.vhd
+set_location_assignment PIN_Y16 -to HEX3_Resultado[0]
+set_location_assignment PIN_W16 -to HEX3_Resultado[1]
+set_location_assignment PIN_Y17 -to HEX3_Resultado[2]
+set_location_assignment PIN_V16 -to HEX3_Resultado[3]
+set_location_assignment PIN_U17 -to HEX3_Resultado[4]
+set_location_assignment PIN_V18 -to HEX3_Resultado[5]
+set_location_assignment PIN_V19 -to HEX3_Resultado[6]
+set_location_assignment PIN_U20 -to HEX4_Jogada[0]
+set_location_assignment PIN_Y20 -to HEX4_Jogada[1]
+set_location_assignment PIN_V20 -to HEX4_Jogada[2]
+set_location_assignment PIN_U16 -to HEX4_Jogada[3]
+set_location_assignment PIN_U15 -to HEX4_Jogada[4]
+set_location_assignment PIN_Y15 -to HEX4_Jogada[5]
+set_location_assignment PIN_P9 -to HEX4_Jogada[6]
+set_location_assignment PIN_N9 -to HEX5_Jogada[0]
+set_location_assignment PIN_M8 -to HEX5_Jogada[1]
+set_location_assignment PIN_T14 -to HEX5_Jogada[2]
+set_location_assignment PIN_P14 -to HEX5_Jogada[3]
+set_location_assignment PIN_W19 -to HEX5_Jogada[6]
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
+set_location_assignment PIN_C1 -to HEX5_Jogada[4]
+set_location_assignment PIN_C2 -to HEX5_Jogada[5]
+set_location_assignment PIN_M9 -to clock
+set_location_assignment PIN_K16 -to saida_serial
+set_location_assignment PIN_J17 -to entrada_serial
+set_location_assignment PIN_U7 -to inicia
+set_location_assignment PIN_W9 -to reset
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

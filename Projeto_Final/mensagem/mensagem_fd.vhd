@@ -20,7 +20,7 @@ end mensagem_fd;
 
 architecture mensagem_fd_arc of mensagem_fd is
 
-	component MensagemDecodificador is
+	component Mensagem_2_ascii is
 		generic(constant tam_ascii : integer);
 		port(	i_mensagem : in  std_logic_vector(2 downto 0);
 				ascii		: out std_logic_vector(tam_ascii-1 downto 0);
@@ -50,7 +50,7 @@ architecture mensagem_fd_arc of mensagem_fd is
 	signal s_zero	: std_logic;
 	signal s_Q 		: std_logic_vector(0 downto 0);
 begin
-	DEC : MensagemDecodificador
+	DEC : Mensagem_2_ascii
 		generic map(tam_ascii)
 		port map(i_mensagem,
 					s_ascii_dec,

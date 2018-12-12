@@ -13,7 +13,7 @@ entity BatalhaNaval_fd is
 			enableRecJog, enableEnvMen, enableRecMen, enableOpCam : in std_logic;
 			i_mensagem : in std_logic_vector(2 downto 0);
 			
-			end1, end0 : out std_logic_vector(2 DOWNTO 0);
+			end1, end0 : out std_logic_vector(6 DOWNTO 0);
 			menRec : out std_logic_vector(6 downto 0);
 			saida_serial : out std_logic;
 			
@@ -102,17 +102,9 @@ begin
 				s_jogada
 		);
 		
-	Dec1 : decodificador_endereco
-		generic map(7)
-		port map(s_jogada(13 downto 7),
-				end1,
-				open);
+	end1 <= s_jogada(13 downto 7);
 		
-	Dec0 : decodificador_endereco
-		generic map(7)
-		port map(s_jogada(6 downto 0),
-				end0,
-				open);
+	end0 <= s_jogada(6 downto 0);
 
 	RecMen : rx_serial
 		 generic map(ratio,log2_ratio,7)
