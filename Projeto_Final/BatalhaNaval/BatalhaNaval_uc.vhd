@@ -1,5 +1,8 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use ieee.std_logic_unsigned.alL;
+
 
 entity BatalhaNaval_uc is port ( 
 	clock, reset, vez, jogar	: in std_logic;
