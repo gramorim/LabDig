@@ -29,7 +29,6 @@ architecture operacoes_campo_fd of operacoes_campo_fd is
     signal s_contagem: std_logic_vector(5 downto 0);
     signal s_dados, s_mux, s_entrada: std_logic_vector (tam_ascii-1 downto 0);
 	 signal s_verifica : std_logic_vector(1 downto 0);
-	 signal s_fim4, s_fim8 : STD_LOGIC;
 
     component tx_serial 
 	generic( constant ratio 		: integer;
@@ -86,7 +85,6 @@ architecture operacoes_campo_fd of operacoes_campo_fd is
 			  Q: out STD_LOGIC_VECTOR (N-1 downto 0));
 	end component;
 
-	signal s_fim_linha, s_fim_coluna4, s_fim_coluna8, s_fim_coluna : std_logic;
 begin
 
     -- sinais reset e partida mapeados em botoes ativos em alto
@@ -134,30 +132,9 @@ begin
 
     with s_contagem(2 downto 0) select
         s_fim8 <= '1' when "111", '0' when others;
-	with s_contagem(1 downto 0) select
-			s_fim4 <= '1' when "11", '0' when others;
-	with tamanho_campo select
-			s_FIM_LINHA <= s_fim4 when '0', s_fim8 when '1';
-			
-			fim_linha <= s_fim_linha;
 
-	with s_contagem(5 downto 3) select
-		s_fim_coluna8 <= '1' when "111", '0' when others;
-
-	with s_contagem(4 downto 3) select
-		s_fim_coluna4 <= '1' when "11", '0' when others;
-		
-	
-
-	with tamanho_campo select
-		s_fim_coluna <= s_fim_coluna4 when '0', s_fim_coluna8 when '1';
-	
-	fim <= s_fim_coluna and s_fim_linha;
-		
-		
 -- depuracao
 db_q <= s_contagem;
 db_dados <= s_mux;
     
 end operacoes_campo_fd;
-

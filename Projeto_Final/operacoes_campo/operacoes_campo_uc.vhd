@@ -37,9 +37,9 @@ begin
 		case Sreg is
 			when inicial => 			if iniciar='1' then 
 										if operacao=IMPRIME then Snext <= envia;
-											elsif operacao(0) = '1' or operacao(1) = '1' then Snext <= carrega_endereco;
-											else Snext <= inicial;
-											end if;
+										elsif operacao(0) = '1' or operacao(1) = '1' then Snext <= carrega_endereco;
+										else Snext <= inicial;
+										end if;
 										else Snext <= inicial;
 										end if;
 			when envia =>				Snext <= espera;

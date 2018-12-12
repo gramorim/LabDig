@@ -19,8 +19,7 @@ entity operacoes_campo is
 			endereco                : in  std_logic_vector(5 downto 0);
 			editavel						: in  std_logic;
 			saida_serial, pronto    : out std_logic;
-			o_dado						: out std_logic_vector(1 downto 0);
-			tamanho_campo : in std_logic;									
+			o_dado						: out std_logic_vector(1 downto 0);									
 			
 			-- depuracao
 			db_saida_serial                           : out std_logic;
