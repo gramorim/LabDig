@@ -18,20 +18,15 @@ end BatalhaNaval;
 
 architecture BatalhaNavalArch of BatalhaNaval is
 
-    signal 
-
-    component BatalhaNaval_fd is
-        generic(	constant ratio 		: integer := 434; --Baud rate
-                    constant log2_ratio 	: integer := 9;
-                    constant tam_ascii 	: integer := 7;   -- tamanho do ascii 7 ou 8
-                    constant paridade 	: std_logic := '0'; -- paridade 0 par, 1 impar
-                    constant end_bit 		: integer := 2);  -- tamanho end bit 1 ou 2
-        port(	clock, reset, jogar, vez														: in  std_logic;
-                entrada_serial_terminal, entrada_serial_adversario 					: in  std_logic;
-                saida_serial_terminal, saida_serial_adversario							: out std_logic;
-                jogada_1, jogada_0, resultado, placar_jogador, placar_adversario 	: out std_logic_vector(tam_ascii-1 downto 0);
-                fazer_jogada, pronto, ganhei													: out std_logic);
-    end component;
+	component batalha_naval_fd is
+		 port ( 	clock, reset : in std_logic;
+					entrada_serial : in std_logic;
+					enableRecJog, enableRecMen, enableEnvMen : in std_logic;
+					
+					end1, end0 : out std_logic_vector(3 downto 0);
+					mensagem : out std_logic_vector(6 downto 0);
+					saida_serial : OUT STD_LOGIC);
+	end component;
 
 begin
 
