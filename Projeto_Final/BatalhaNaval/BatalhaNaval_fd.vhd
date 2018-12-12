@@ -9,12 +9,14 @@ entity BatalhaNaval_fd is
 				constant log2_ratio 	: integer := 9;
 				constant tam_ascii 	: integer := 7;   -- tamanho do ascii 7 ou 8
 				constant paridade 	: std_logic := '0'; -- paridade 0 par, 1 impar
-				constant end_bit 		: integer := 2
-				constant numJogadas : integer := 13
+				constant end_bit 		: integer := 2;
+				constant numJogadas : integer := 13;
 				constant log2_numJogadas : integer := 4);  -- tamanho end bit 1 ou 2
 
 	port(	clock, reset, jogar, vez														: in  std_logic;
 			entrada_serial_terminal, entrada_serial_adversario 					: in  std_logic;
+			conta_adv, conta_jog																: in std_logic;
+			placar_adv, placar_jog															: out std_logic_vector(3 downto 0);
 			saida_serial_terminal, saida_serial_adversario							: out std_logic;
 			jogada_1, jogada_0, resultado, placar_jogador, placar_adversario 	: out std_logic_vector(tam_ascii-1 downto 0);
 			fazer_jogada, pronto, ganhei, ganhou													: out std_logic);
@@ -23,7 +25,7 @@ end BatalhaNaval_fd;
 architecture batalha_naval_fd_arc of BatalhaNaval_fd is 
 
 	component recebe_jogada_UART is
-	generic(	constant N_ascii  : integer;     -- Numero de characteres desejados
+		generic(	constant N_ascii  : integer;     -- Numero de characteres desejados
 				constant log2_N	: integer;
 				constant Ratio	: integer;
 				constant log2_Ratio : integer;
@@ -34,8 +36,8 @@ architecture batalha_naval_fd_arc of BatalhaNaval_fd is
 			erro:             		  out std_logic;
 			pronto:					  out std_logic;
 			endereco:					  out std_logic_vector(5 downto 0);
-			jogada:         out std_logic_vector (2*tam_ascii-1 downto 0)
-	);
+			jogada:         		out std_logic_vector (2*tam_ascii-1 downto 0)
+		);
 	end component;
 	
 	component operacoes_campo is
@@ -60,7 +62,7 @@ architecture batalha_naval_fd_arc of BatalhaNaval_fd is
 			db_dados                                  	: out std_logic_vector(tam_ascii-1 downto 0));
 	end component;
 	
-	component decodificadorjogada is
+	component Resultado_Jogada_2_Msg is
 	port(	vez, passa_vez, venceu 			: in  std_logic;
 				resultado_jogada 			: in  std_logic_vector(1 downto 0);
 				mensagem 					: out std_logic_vector(2 downto 0));
@@ -81,11 +83,12 @@ architecture batalha_naval_fd_arc of BatalhaNaval_fd is
 			);
 	end component;
 	
-	component decoder is
+	component Ascii_2_Resultado_Jogada is
 		generic(constant tam_ascii : integer := 7);
 		 port(   input  : in  std_logic_vector(tam_ascii-1 downto 0);
 					output : out std_logic_vector(1 downto 0);
-					ganhei : out std_logic);
+					ganhei : out std_logic;
+					acertei : out std_logic);
 	end component;
 	
 	component mensagem is
@@ -126,7 +129,7 @@ architecture batalha_naval_fd_arc of BatalhaNaval_fd is
 	signal s_venceu, s_enable_RecMen, s_pronto_men, s_erro_recmem1, s_erro_recmem 	: std_logic;
 	signal s_enable_adversario, s_saida_serial_adversario, s_pronto_adversario			: std_logic;
 	signal s_enable_envia_mensagem_adversario, s_pronto_envia_mensagem_adversario		: std_logic;
-	signal s_serial_envia_mensagem_adversario 													: std_logic;
+	signal s_serial_envia_mensagem_adversario, s_prontos 										: std_logic;
 	
 	signal s_jogada									: std_logic_vector(2*tam_ascii-1 downto 0);
 	signal s_MenRec			 						: std_logic_vector(tam_ascii-1 downto 0);
@@ -166,12 +169,12 @@ begin
 					open,
 					open);
 	
-	ResultadoJog_2_Msg : decodificador_mensagem
+	ResultadoJog_2_Msg : Resultado_Jogada_2_Msg
 		port map(s_vez, s_passa_vez, s_venceu,
 					s_dado_jogador,
 					s_mensagem);
 					
-	RecMensage : rx_serial
+	RecMensagem : rx_serial
 		generic map(Ratio,log2_Ratio,tam_ascii)
 		port map(clock, reset,
 					s_entrada_serial, s_enable_RecMen, '0',
@@ -184,7 +187,7 @@ begin
 					
 	s_erro_recmem <= s_erro_recmem1;
 	
-	MenDec : decoder
+	MenDec : Ascii_2_Resultado_Jogada
 		generic map(tam_ascii)
 		port map(s_MenRec, s_dado_rec, ganhei);
 		
@@ -218,18 +221,23 @@ begin
 					open, open, open,
 					open, open, open);
 	
-	Contador_Acertos: contador_m
+	Contador_Acertos_Adv: contador_m
 		generic map (numJogadas, log2_numJogadas)
-		port map(clock, reset, conta, 
-					placar, ganhou);
+		port map(clock, reset, conta_adv, 
+					placar_adv, ganhou);
+	
+	Contador_Acertos_Jog: contador_m
+		generic map (numJogadas, log2_numJogadas)
+		port map(clock, reset, conta_jog, 
+					placar_jog, open);
 	
 	Gerenciador: gerenciador_saida
 		port map(clock, s_prontos, s_saida_serial_jogador,
 				s_saida_serial_adversario, s_serial_envia_mensagem_adversario,
 				s_enable_jogador, s_enable_adversario, s_enable_envia_mensagem_adversario,
-				saida_serial_terminal, saida_terminal_adversario);
+				saida_serial_terminal, saida_serial_adversario);
 	
-
+	s_prontos <= s_pronto_envia_mensagem_adversario or s_pronto_adversario or s_pronto_jogador;
 	
 					
 end batalha_naval_fd_arc;

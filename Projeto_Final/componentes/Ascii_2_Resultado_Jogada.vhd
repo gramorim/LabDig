@@ -2,14 +2,14 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity decoder is
+entity Ascii_2_Resultado_Jogada is
 	generic(constant tam_ascii : integer := 7);
     port(   input  : in  std_logic_vector(tam_ascii-1 downto 0);
             output : out std_logic_vector(1 downto 0);
-				ganhei : out std_logic);
-end decoder;
+			ganhei : out std_logic);
+end Ascii_2_Resultado_Jogada;
 
-architecture decoder_arc of decoder is
+architecture Ascii_2_Resultado_Jogada_arc of Ascii_2_Resultado_Jogada is
 begin
 	--versão 7 bits
 	with input select
@@ -28,4 +28,4 @@ begin
  --       output <=	"01" when "11000001",
 	--					"10" when "11011000",
      --             "11" when others;
-end decoder_arc;
+end Ascii_2_Resultado_Jogada_arc;

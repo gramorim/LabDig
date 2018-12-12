@@ -4,13 +4,13 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 use ieee.std_logic_unsigned.alL;
 
-entity decodificadorjogada is
+entity Resultado_Jogada_2_Msg is
 	port(	vez, passa_vez, venceu 	: in  std_logic;
 			resultado_jogada 			: in  std_logic_vector(1 downto 0);
 			mensagem 					: out std_logic_vector(2 downto 0));
-end decodificadorjogada;
+end Resultado_Jogada_2_Msg;
 
-architecture decodificadorjogada_arc of decodificadorjogada is
+architecture Resultado_Jogada_2_Msg_arc of Resultado_Jogada_2_Msg is
 	signal s_vez, s_passa_vez, s_resultado : std_logic_vector(2 downto 0);
 begin
 	with venceu select
@@ -30,4 +30,4 @@ begin
 							"111" when "11",
 							"100" when others;
 						
-end decodificadorjogada_arc;
+end Resultado_Jogada_2_Msg_arc;

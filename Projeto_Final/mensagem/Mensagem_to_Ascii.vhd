@@ -2,14 +2,14 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 
-entity MensagemDecodificador is
+entity Mensagem_2_Ascii is
 	generic(constant tam_ascii : integer := 7);
 	port(	i_mensagem : in  std_logic_vector(2 downto 0);
 			ascii		: out std_logic_vector(tam_ascii-1 downto 0);
 			zero		: out std_logic);
-end MensagemDecodificador;
+end Mensagem_2_Ascii;
 
-architecture MensagemDecodificador_arc of MensagemDecodificador is
+architecture Mensagem_2_Ascii_arc of Mensagem_2_Ascii is
 begin
 -- versão com 7 bits	
 	with i_mensagem select
@@ -31,4 +31,4 @@ begin
 	with i_mensagem select
 		zero <=	'1' when "000",
 					'0' when others;
-end MensagemDecodificador_arc;
+end Mensagem_2_Ascii_arc;

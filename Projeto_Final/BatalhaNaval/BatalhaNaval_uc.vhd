@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
-use ieee.std_logic_unsigned.alL;
+use ieee.std_logic_unsigned.all;
 
 
 entity BatalhaNaval_uc is port ( 
@@ -21,7 +21,7 @@ end BatalhaNaval_uc;
 
 architecture BatalhaNaval_uc_arch of BatalhaNaval_uc is
 	type State_type is (	inicia,
-								prepara
+								prepara,
 								
 								-- Estados do jogador										
 								espera_jogada,
@@ -59,7 +59,7 @@ begin
 	process (reset, clock)
 	begin
 		if reset = '1' then
-			Sreg <= inicial;
+			Sreg <= inicia;
 		elsif clock'event and clock = '1' then
 			Sreg <= Snext; 
 		end if;

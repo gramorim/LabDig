@@ -11,7 +11,7 @@ entity gerenciador_saida is
 end gerenciador_saida;
 
 architecture gerenciador_s_arch of gerenciador_saida is
-  signal en_cp, en_ca, en_msg : std_logic;
+  signal en_cp, en_ca, en_m : std_logic;
   
   component registrador_jk is
     port( J,K: in  std_logic;
@@ -25,11 +25,11 @@ architecture gerenciador_s_arch of gerenciador_saida is
 
 begin
 
-  EN_CP: registrador_jk port map (en_campo_local, reset, reset, '1', clock, en_cp);
-  EN_CA: registrador_jk port map (en_campo_adversario, reset, reset, '1', clock, en_ca);
-  EN_MSG: registrador_jk port map (en_msg, reset, reset, '1', clock, en_msg);
+  REG_EN_CP: registrador_jk port map (en_campo_local, reset, reset, '1', clock, en_cp);
+  REG_EN_CA: registrador_jk port map (en_campo_adv, reset, reset, '1', clock, en_ca);
+  REG_EN_MSG: registrador_jk port map (en_msg, reset, reset, '1', clock, en_m);
 
   saida_serial_terminal <= (campo_local and en_cp) or (campo_adv and en_ca);
-  saida_serial_adversario <= en_msg and msg;
+  saida_serial_adversario <= en_m and msg;
 
 end gerenciador_s_arch ; -- gerenciador_s_arch
