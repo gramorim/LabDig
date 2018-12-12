@@ -4,13 +4,14 @@ use IEEE.std_logic_arith.all;
 
 entity BatalhaNaval is
   port (clock, reset : in std_logic;
-			entrada_serial : in std_logic;
-			saida_serial : out std_logic;
-			
-			inicia : in std_logic;
-    HEX5_Jogada                 : out std_logic_vector (6 downto 0);
-    HEX4_Jogada                 : out std_logic_vector (6 downto 0);
-    HEX3_Resultado              : out std_logic_vector (6 downto 0);
+		entrada_serial : in std_logic;
+		saida_serial : out std_logic;
+		
+		inicia : in std_logic;
+		HEX5_Jogada                 : out std_logic_vector (6 downto 0);
+		HEX4_Jogada                 : out std_logic_vector (6 downto 0);
+		HEX3_Resultado              : out std_logic_vector (6 downto 0)
+  );
 end BatalhaNaval;
 
 architecture BatalhaNavalArch of BatalhaNaval is
@@ -38,10 +39,19 @@ architecture BatalhaNavalArch of BatalhaNaval is
 				
 	end component;
 
+	component ascii_to_7seg is
+
+		port ( jogada_linha, jogada_coluna: in std_logic_vector(6 downto 0);
+			linha, coluna: out std_logic_vector (6 downto 0) 
+	 	);
+	  
+	  
+	end component;
+
 	signal s_enableRecJog, s_enableRecMen, s_enableEnvMen, s_enableOpCam : std_logic;
 	signal s_prontoRecJog, s_prontoEnvMen, s_prontoRecMen, s_prontoOpCam : std_logic;
 	signal s_prontos : std_logic;
-
+	signal s_jogada_linha, s_jogada_coluna : std_logic_vector(6 downto 0);
 begin
   s_prontos <= s_prontoRecJog or s_prontoEnvMen or s_prontoRecMen;
   
@@ -51,7 +61,7 @@ begin
 					
 					s_enableRecJog, s_enableRecMen, s_enableEnvMen, s_enableOpCam,
 					
-					end1, end0,
+					s_jogada_linha, s_jogada_coluna,
 					menRec,
 					saida_serial,
 					
@@ -60,5 +70,7 @@ begin
           
 	UC : BatalhaNaval_uc
 		port map(clock reset, s_prontos, inicia, s_enableRecMen, s_enableRecJog, s_enableEnvMen, open, open);
-				
+	U1: ascii_to_7seg
+		port map(s_jogada_linha, s_jogada_coluna, HEX5_Jogada, HEX4_Jogada);
+	
 end BatalhaNavalArch ; -- BatalhaNavalArch
