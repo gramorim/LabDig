@@ -52,16 +52,16 @@ architecture batalha_naval_fd_arc of BatalhaNaval_fd is
 			o_dado						: out std_logic_vector(1 downto 0);									
 			
 			-- depuracao
-			db_saida_serial                           : out std_logic;
+			db_saida_serial                           	: out std_logic;
 			db_reseta, db_partida, db_zera, db_conta	: out std_logic;
 			db_carrega, db_pronto, db_we, db_fim  		: out std_logic;
-			db_q                                      : out std_logic_vector(5 downto 0);
-			db_sel                                    : out std_logic_vector(1 downto 0);
-			db_dados                                  : out std_logic_vector(tam_ascii-1 downto 0));
+			db_q                                     	: out std_logic_vector(5 downto 0);
+			db_sel                                    	: out std_logic_vector(1 downto 0);
+			db_dados                                  	: out std_logic_vector(tam_ascii-1 downto 0));
 	end component;
 	
 	component decodificadorjogada is
-		port(	vez, passa_vez, venceu 	: in  std_logic;
+	port(	vez, passa_vez, venceu 			: in  std_logic;
 				resultado_jogada 			: in  std_logic_vector(1 downto 0);
 				mensagem 					: out std_logic_vector(2 downto 0));
 	end component;
@@ -224,7 +224,10 @@ begin
 					placar, ganhou);
 	
 	Gerenciador: gerenciador_saida
-		port map(clock, s_prontos, )
+		port map(clock, s_prontos, s_saida_serial_jogador,
+				s_saida_serial_adversario, s_serial_envia_mensagem_adversario,
+				s_enable_jogador, s_enable_adversario, s_enable_envia_mensagem_adversario,
+				saida_serial_terminal, saida_terminal_adversario);
 	
 
 	
