@@ -14,7 +14,8 @@ entity BatalhaNaval is
 		HEX4_Jogada                 : out std_logic_vector (6 downto 0);
 		HEX3_Resultado              : out std_logic_vector (6 downto 0);
 			
-			o_estado : out std_logic_vector(3 downto 0)
+			o_estado : out std_logic_vector(3 downto 0);
+			o_prontoRecMen : out std_logic
   );
 end BatalhaNaval;
 
@@ -38,7 +39,8 @@ architecture BatalhaNavalArch of BatalhaNaval is
 
 	component BatalhaNaval_uc is
 		port(	
-			clock, reset, pronto 					: in  std_logic;
+			clock, reset					: in  std_logic;
+			prontoRecJog, prontoEnvMen, prontoRecMen : in std_logic;
 			iniciou 										: in  std_logic;
 			enable_r_m, enable_r_j, enable_e_m	: out std_logic;
 			mensagem_sel										: out std_logic_vector(2 downto 0);
@@ -59,11 +61,9 @@ architecture BatalhaNavalArch of BatalhaNaval is
 
 	signal s_enableRecJog, s_enableRecMen, s_enableEnvMen, s_enableOpCam : std_logic;
 	signal s_prontoRecJog, s_prontoEnvMen, s_prontoRecMen, s_prontoOpCam : std_logic;
-	signal s_prontos : std_logic;
 	signal s_mensagem_sel : std_logic_vector(2 downto 0);
 	signal s_jogada_linha, s_jogada_coluna, s_menRec : std_logic_vector(6 downto 0);
 begin
-  s_prontos <= s_prontoRecJog or s_prontoEnvMen or s_prontoRecMen;
 	FD : BatalhaNaval_fd
 		generic map(ratio,log2_ratio)
 		port map(clock, NOT reset,
@@ -82,7 +82,7 @@ begin
           
 	UC : BatalhaNaval_uc
 		port map(clock, NOT reset, 
-					s_prontos, 
+					s_prontoRecJog, s_prontoEnvMen, s_prontoRecMen,
 					NOT inicia, 
 					s_enableRecMen, s_enableRecJog, s_enableEnvMen, s_mensagem_sel,
 					o_estado);
@@ -92,5 +92,7 @@ begin
 	
 	Umen: ascii_to_7seg
 		port map(s_menRec, s_menRec, open, HEX3_Resultado);
+		
+	o_prontoRecMen <= s_prontoRecMen;
 	
 end BatalhaNavalArch ; -- BatalhaNavalArch

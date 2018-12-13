@@ -10,7 +10,7 @@ entity mensagem_fd is
 	port(	clock, reset						: in  std_logic;
 			i_mensagem 							: in  std_logic_vector( 2 downto 0);
 			jogada								: in  std_logic_vector(2*tam_ascii-1 downto 0);
-			enable, i_reset, partida					: in  std_logic;
+			enable, i_reset, partida, i_prepara					: in  std_logic;
 			saida_serial, zero, pronto, Q	: out std_logic;
 			
 			--depuração
@@ -61,7 +61,7 @@ begin
 
 	REG : registrador_n
 	  generic map(3)
-	  port map(clock, reset, partida,
+	  port map(clock, reset, i_prepara,
 				  i_mensagem,
 				  s_mensagem);
 			  

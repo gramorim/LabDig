@@ -29,7 +29,7 @@ architecture mensagem_arc of mensagem is
 		port(	clock, reset						: in  std_logic;
 				i_mensagem 							: in  std_logic_vector( 2 downto 0);
 				jogada								: in  std_logic_vector(2*tam_ascii-1 downto 0);
-				enable, i_reset, partida					: in  std_logic;
+				enable, i_reset, partida, i_prepara					: in  std_logic;
 				saida_serial, zero, pronto, Q : out std_logic;
 			
 				--depuração
@@ -40,13 +40,13 @@ architecture mensagem_arc of mensagem is
 	component mensagem_uc is
 		port(	clock, reset, enviar 		: in  std_logic;
 				zero, i_pronto, Q 			: in  std_logic;
-				enable, o_reset, partida, o_pronto 	: out std_logic;
+				enable, o_reset, partida, o_prepara, o_pronto 	: out std_logic;
 			
 				--Depuração
 				db_estado 	: out std_logic_vector(3 downto 0));
 	end component;
 	
-	signal s_enable, s_reset, s_partida, s_zero, s_pronto, s_Q : std_logic;
+	signal s_enable, s_reset, s_partida, s_prepara, s_zero, s_pronto, s_Q : std_logic;
 begin
 	
 	FD : mensagem_fd
@@ -54,7 +54,7 @@ begin
 		port map(clock, reset,
 					i_mensagem,
 					jogada,
-					s_enable, s_reset, s_partida,
+					s_enable, s_reset, s_partida, s_prepara,
 					saida_serial, s_zero, s_pronto, s_Q,
 					db_tick, 
 					db_ascii_dec, db_ascii_jogada, db_ascii);
@@ -62,7 +62,7 @@ begin
 	UC : mensagem_uc
 		port map(clock, reset, enviar,
 					s_zero, s_pronto, s_Q,
-					s_enable, s_reset, s_partida, pronto,
+					s_enable, s_reset, s_partida, s_prepara, pronto,
 					db_estado);
 					
 	db_enable <= s_enable;

@@ -5,14 +5,14 @@ use IEEE.std_logic_arith.all;
 entity mensagem_uc is
 	port(	clock, reset, enviar 		: in  std_logic;
 			zero, i_pronto, Q 			: in  std_logic;
-			enable, o_reset, partida, o_pronto 	: out std_logic;
+			enable, o_reset, partida, o_prepara, o_pronto 	: out std_logic;
 			
 			--Depuração
 			db_estado : out std_logic_vector(3 downto 0));
 end mensagem_uc;
 
 architecture mensagem_uc_arc of mensagem_uc is
-	type estado is (inicio, ativa, espera, conta, pronto);
+	type estado is (inicio, prepara, ativa, espera, conta, pronto);
 	signal sreg, snext : estado;
 	
 begin
@@ -29,8 +29,10 @@ begin
 	begin
 		case sreg is
 			when inicio =>	if enviar = '0' then 	snext <= inicio;
-								else						snext <= ativa;
+								else						snext <= prepara;
 								end if;
+								
+			when prepara => snext <= ativa;
 								
 			when ativa	=> snext <= espera;
 			

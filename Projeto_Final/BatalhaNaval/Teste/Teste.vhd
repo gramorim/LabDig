@@ -5,8 +5,9 @@ use IEEE.std_logic_arith.all;
 entity Teste is
 	generic( constant ratio 		: integer := 7;
 				constant log2_ratio 	: integer := 3);
-	port(	clock, reset, inicia	: in std_logic;
+	port(	clock, reset, inicia, envia	: in std_logic;
 			jogada : in std_logic_vector(13 downto 0);
+			i_mensagem : in std_logic_vector(2 downto 0);
 			
 			HEX5_Jogada                 : out std_logic_vector (6 downto 0);
 			HEX4_Jogada                 : out std_logic_vector (6 downto 0);
@@ -14,7 +15,10 @@ entity Teste is
 			
 			ascii_impresso : out std_logic_vector(6 downto 0);
 			
-			o_estado : out std_logic_vector(3 downto 0));
+			o_estado : out std_logic_vector(3 downto 0);
+			o_serial_entrada, o_serial_saida : out std_logic;
+			o_prontoRecMen : out std_logic;
+			db_ascii_entrada : out std_logic_vector(6 downto 0));
 end Teste;
 
 architecture Teste_arc of Teste is
@@ -33,7 +37,8 @@ architecture Teste_arc of Teste is
 				HEX4_Jogada                 : out std_logic_vector (6 downto 0);
 				HEX3_Resultado              : out std_logic_vector (6 downto 0);
 				
-				o_estado : out std_logic_vector(3 downto 0));
+				o_estado : out std_logic_vector(3 downto 0);
+			o_prontoRecMen : out std_logic);
 	end component;
 	
 	component rx_serial is
@@ -72,16 +77,16 @@ begin
 
 	MEN : mensagem
 		generic map(ratio,log2_ratio,7)
-		PORT map(clock, not reset,
-					"000",
+		PORT map(clock, reset,
+					i_mensagem,
 					jogada,
-					not inicia,
-					s_entrada_serial,
+					envia,
+					s_entrada_serial, open,
 				
 				--Depuração
 				open,
 				open, open, open,
-				open, open, open);
+				open, open, db_ascii_entrada);
 				
 	BatNav : BatalhaNaval
 		generic map(ratio,log2_ratio)
@@ -94,11 +99,12 @@ begin
 					HEX4_Jogada,
 					HEX3_Resultado,
 					
-					o_estado);
+					o_estado,
+					o_prontoRecMen);
 					
 	RX : rx_serial
 		 generic map(ratio,log2_ratio,7)
-		 port map(clock, not reset,
+		 port map(clock, reset,
 					 s_saida_serial, '1', '0',
 					 open, open, open, open, open,
 					 open, open, open,
@@ -106,4 +112,7 @@ begin
 					 open,
 					 open,
 					 ascii_impresso);
+					 
+	o_serial_entrada 	<= s_entrada_serial;
+	o_serial_saida	 	<= s_saida_serial;
 end Teste_arc;
