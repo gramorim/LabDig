@@ -18,7 +18,10 @@ entity Teste is
 			o_estado : out std_logic_vector(3 downto 0);
 			o_serial_entrada, o_serial_saida : out std_logic;
 			o_prontoRecMen : out std_logic;
-			db_ascii_entrada : out std_logic_vector(6 downto 0));
+			db_ascii_entrada : out std_logic_vector(6 downto 0);
+			o_mensagem : out std_logic_vector(2 downto 0);
+			db_mensagem : out std_logic_vector(2 downto 0);
+			o_end1, o_end0 : out std_logic_vector(6 downto 0));
 end Teste;
 
 architecture Teste_arc of Teste is
@@ -38,7 +41,10 @@ architecture Teste_arc of Teste is
 				HEX3_Resultado              : out std_logic_vector (6 downto 0);
 				
 				o_estado : out std_logic_vector(3 downto 0);
-			o_prontoRecMen : out std_logic);
+			o_prontoRecMen : out std_logic;
+			o_mensagem : out std_logic_vector(2 downto 0);
+			db_mensagem : out std_logic_vector(2 downto 0);
+			o_end1, o_end0 : out std_logic_vector(6 downto 0));
 	end component;
 	
 	component rx_serial is
@@ -100,7 +106,10 @@ begin
 					HEX3_Resultado,
 					
 					o_estado,
-					o_prontoRecMen);
+					o_prontoRecMen,
+					o_mensagem,
+					db_mensagem,
+					o_end1, o_end0);
 					
 	RX : rx_serial
 		 generic map(ratio,log2_ratio,7)

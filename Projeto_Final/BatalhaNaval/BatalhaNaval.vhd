@@ -15,7 +15,10 @@ entity BatalhaNaval is
 		HEX3_Resultado              : out std_logic_vector (6 downto 0);
 			
 			o_estado : out std_logic_vector(3 downto 0);
-			o_prontoRecMen : out std_logic
+			o_prontoRecMen : out std_logic;
+			o_mensagem : out std_logic_vector(2 downto 0);
+			db_mensagem : out std_logic_vector(2 downto 0);
+			o_end1, o_end0 : out std_logic_vector(6 downto 0)
   );
 end BatalhaNaval;
 
@@ -34,7 +37,8 @@ architecture BatalhaNavalArch of BatalhaNaval is
 				menRec : out std_logic_vector(6 downto 0);
 				saida_serial : out std_logic;
 				
-				prontoRecJog, prontoEnvMen, prontoRecMen, prontoOpCam : out std_logic);
+				prontoRecJog, prontoEnvMen, prontoRecMen, prontoOpCam : out std_logic;
+			db_mensagem : out std_logic_vector(2 downto 0));
 	end component;
 
 	component BatalhaNaval_uc is
@@ -77,7 +81,8 @@ begin
 					s_menRec,
 					saida_serial,
 					
-          s_prontoRecJog, s_prontoEnvMen, s_prontoRecMen, s_prontoOpCam
+          s_prontoRecJog, s_prontoEnvMen, s_prontoRecMen, s_prontoOpCam,
+			 db_mensagem
     );
           
 	UC : BatalhaNaval_uc
@@ -94,5 +99,9 @@ begin
 		port map(s_menRec, s_menRec, open, HEX3_Resultado);
 		
 	o_prontoRecMen <= s_prontoRecMen;
+	o_mensagem <= s_mensagem_sel;
+	
+	o_end1 <= s_jogada_linha;
+	o_end0 <= s_jogada_coluna;
 	
 end BatalhaNavalArch ; -- BatalhaNavalArch

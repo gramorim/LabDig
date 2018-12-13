@@ -15,7 +15,8 @@ entity mensagem_fd is
 			
 			--depuração
 			db_tick								: out std_logic;
-			db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(tam_ascii-1 downto 0));
+			db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(tam_ascii-1 downto 0);
+			db_mensagem : out std_logic_vector(2 downto 0));
 end mensagem_fd;
 
 architecture mensagem_fd_arc of mensagem_fd is
@@ -98,4 +99,5 @@ begin
 	db_ascii_dec <= s_ascii_dec;
 	db_ascii_jogada <= s_ascii_jogada;
 	db_ascii <= s_ascii;
+	db_mensagem <= s_mensagem;
 end mensagem_fd_arc;

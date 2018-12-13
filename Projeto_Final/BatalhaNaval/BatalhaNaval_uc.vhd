@@ -69,8 +69,8 @@ begin
 		
 	
 	with sreg select
-		mensagem_sel <= 	"000" when envia_jogada,
-								"010" when passa_vez,
+		mensagem_sel <= 	"000" when envia_jogada|espera,
+								"010" when passa_vez|espera_vez,
 								"100" when others;
 	
 	with sreg select

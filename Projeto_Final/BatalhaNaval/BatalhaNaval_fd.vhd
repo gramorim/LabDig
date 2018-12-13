@@ -17,7 +17,8 @@ entity BatalhaNaval_fd is
 			menRec : out std_logic_vector(6 downto 0);
 			saida_serial : out std_logic;
 			
-			prontoRecJog, prontoEnvMen, prontoRecMen, prontoOpCam : out std_logic);
+			prontoRecJog, prontoEnvMen, prontoRecMen, prontoOpCam : out std_logic;
+			db_mensagem : out std_logic_vector(2 downto 0));
 end BatalhaNaval_fd;
 
 architecture batalha_naval_fd_arc of BatalhaNaval_fd is 
@@ -35,7 +36,8 @@ architecture batalha_naval_fd_arc of BatalhaNaval_fd is
 				--Depuração
 				db_estado 	: out std_logic_vector(3 downto 0);
 				db_tick, db_enable, db_Q		: out std_logic;
-				db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(tam_ascii-1 downto 0));
+				db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(tam_ascii-1 downto 0);
+			db_mensagem : out std_logic_vector(2 downto 0));
 	end component;
 	
 	component recebe_jogada_UART is
@@ -89,7 +91,8 @@ begin
 					--Depuração
 					open,
 					open, open, open,
-					open, open, open);
+					open, open, open,
+					db_mensagem);
 	
 	RecJog : recebe_jogada_UART
 			generic map(2,2,Ratio,log2_Ratio,7)

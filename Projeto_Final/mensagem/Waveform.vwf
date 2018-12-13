@@ -1,7 +1,7 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mensagem -c mensagem --vector_source="C:/Users/renan/Documents/GitHub/LabDig/Projeto_Final/mensagem/Waveform.vwf" --testbench_file="C:/Users/renan/Documents/GitHub/LabDig/Projeto_Final/mensagem/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mensagem -c mensagem --vector_source="C:/Users/renan/Documents/FPGA/LabDig/Projeto_Final/mensagem/Waveform.vwf" --testbench_file="C:/Users/renan/Documents/FPGA/LabDig/Projeto_Final/mensagem/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
 <ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off mensagem -c mensagem --vector_source="C:/Users/renan/Documents/GitHub/LabDig/Projeto_Final/mensagem/Waveform.vwf" --testbench_file="C:/Users/renan/Documents/GitHub/LabDig/Projeto_Final/mensagem/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/renan/Documents/GitHub/LabDig/Projeto_Final/mensagem/simulation/qsim/" mensagem -c mensagem</fnetlist_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/renan/Documents/FPGA/LabDig/Projeto_Final/mensagem/simulation/qsim/" mensagem -c mensagem</fnetlist_cmd>
 <tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/renan/Documents/GitHub/LabDig/Projeto_Final/mensagem/simulation/qsim/" mensagem -c mensagem</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
@@ -24,6 +24,7 @@ quit -f
 
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -42,6 +43,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 
@@ -643,6 +645,46 @@ SIGNAL("db_Q")
 	PARENT = "";
 }
 
+SIGNAL("db_mensagem")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 3;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("db_mensagem[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "db_mensagem";
+}
+
+SIGNAL("db_mensagem[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "db_mensagem";
+}
+
+SIGNAL("db_mensagem[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "db_mensagem";
+}
+
 TRANSITION_LIST("clock")
 {
 	NODE
@@ -1097,6 +1139,33 @@ TRANSITION_LIST("db_enable")
 }
 
 TRANSITION_LIST("db_Q")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 4000.0;
+	}
+}
+
+TRANSITION_LIST("db_mensagem[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 4000.0;
+	}
+}
+
+TRANSITION_LIST("db_mensagem[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 4000.0;
+	}
+}
+
+TRANSITION_LIST("db_mensagem[0]")
 {
 	NODE
 	{
@@ -1655,6 +1724,46 @@ DISPLAY_LINE
 	RADIX = Binary;
 	TREE_INDEX = 55;
 	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "db_mensagem";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 56;
+	TREE_LEVEL = 0;
+	CHILDREN = 57, 58, 59;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "db_mensagem[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 57;
+	TREE_LEVEL = 1;
+	PARENT = 56;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "db_mensagem[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 58;
+	TREE_LEVEL = 1;
+	PARENT = 56;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "db_mensagem[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 59;
+	TREE_LEVEL = 1;
+	PARENT = 56;
 }
 
 TIME_BAR

@@ -17,7 +17,8 @@ entity mensagem is
 			--Depuração
 			db_estado 	: out std_logic_vector(3 downto 0);
 			db_tick, db_enable, db_Q		: out std_logic;
-			db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(tam_ascii-1 downto 0));
+			db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(tam_ascii-1 downto 0);
+			db_mensagem : out std_logic_vector(2 downto 0));
 end mensagem;
 
 architecture mensagem_arc of mensagem is
@@ -34,7 +35,8 @@ architecture mensagem_arc of mensagem is
 			
 				--depuração
 				db_tick	: out std_logic;
-			db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(tam_ascii-1 downto 0));
+				db_ascii_dec, db_ascii_jogada, db_ascii : out std_logic_vector(tam_ascii-1 downto 0);
+				db_mensagem : out std_logic_vector(2 downto 0));
 	end component;
 	
 	component mensagem_uc is
@@ -57,7 +59,8 @@ begin
 					s_enable, s_reset, s_partida, s_prepara,
 					saida_serial, s_zero, s_pronto, s_Q,
 					db_tick, 
-					db_ascii_dec, db_ascii_jogada, db_ascii);
+					db_ascii_dec, db_ascii_jogada, db_ascii,
+					db_mensagem);
 	
 	UC : mensagem_uc
 		port map(clock, reset, enviar,
