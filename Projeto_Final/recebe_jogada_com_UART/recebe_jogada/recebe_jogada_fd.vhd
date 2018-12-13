@@ -46,13 +46,6 @@ architecture recebe_jogada_fd_arch of recebe_jogada_fd is
 		);
 	end component;
 	
-	component decodificador_endereco is
-		generic(constant tam_ascii 	: integer := 7);
-		port(	ascii		: in  std_logic_vector(tam_ascii-1 downto 0);
-				endereco	: out std_logic_vector(2 downto 0);
-				erro		: out std_logic);
-	end component;
-	
 	signal s_jogada : std_logic_vector(2*tam_ascii-1 downto 0);
 	signal s_erro1, s_erro2 : std_logic;
 begin
@@ -67,18 +60,6 @@ begin
 		generic map(tam_ascii)
 		port map (clock, reset_r, s_endereco(0), jogada_parcial, escreve, s_jogada, db_teste);
 	db_c <= s_endereco;
-	
-	enddec1 : decodificador_endereco
-		generic map(tam_ascii)
-		port map(s_jogada(2*tam_ascii-1 downto tam_ascii),
-					endereco(5 downto 3),
-					s_erro1);
-				
-	enddec2 : decodificador_endereco
-		generic map(tam_ascii)
-		port map(s_jogada(tam_ascii-1 downto 0),
-					endereco(2 downto 0),
-					s_erro2);
 				
 	erro <= s_erro1 or s_erro2;
 	

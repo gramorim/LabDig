@@ -39,9 +39,7 @@ begin
 										 
 		when recepcao   => Snext <= espera;
 										 
-		when final      => if recebe_dado = '1' then Snext <= leitura;
-								 else                      Snext <= final;
-								 end if;
+		when final      => Snext <= leitura;
 								 
 		when leitura    => Snext <= inicial;
 										 

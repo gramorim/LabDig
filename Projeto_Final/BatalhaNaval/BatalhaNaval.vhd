@@ -3,8 +3,8 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 
 entity BatalhaNaval is
-	generic( constant ratio 		: integer := 434;
-				constant log2_ratio 	: integer := 9);
+	generic( constant ratio 		: integer := 7;
+				constant log2_ratio 	: integer := 3);
   port (clock, reset : in std_logic;
 		entrada_serial : in std_logic;
 		saida_serial : out std_logic;

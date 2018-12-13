@@ -45,14 +45,29 @@ architecture mensagem_fd_arc of mensagem_fd is
 				Q: out STD_LOGIC_VECTOR (N-1 downto 0);
 				fim: out STD_LOGIC);
 	end component;
-	
+		
+	component registrador_n is
+	  generic (constant N: integer);
+	  port (clock, clear, enable: in STD_LOGIC;
+			  D: in STD_LOGIC_VECTOR(N-1 downto 0);
+			  Q: out STD_LOGIC_VECTOR (N-1 downto 0));
+	end component;
+
 	signal s_ascii_dec, s_ascii_jogada, s_ascii : std_logic_vector(tam_ascii-1 downto 0);
 	signal s_zero	: std_logic;
 	signal s_Q 		: std_logic_vector(0 downto 0);
+	signal s_mensagem : std_logic_vector(2 downto 0);
 begin
+
+	REG : registrador_n
+	  generic map(3)
+	  port map(clock, reset, partida,
+				  i_mensagem,
+				  s_mensagem);
+			  
 	DEC : Mensagem_2_ascii
 		generic map(tam_ascii)
-		port map(i_mensagem,
+		port map(s_mensagem,
 					s_ascii_dec,
 					s_zero);
 					

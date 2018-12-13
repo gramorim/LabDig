@@ -22,6 +22,8 @@ run -all
 quit -f
 
 
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -40,6 +42,8 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
 
 
 </modelsim_script_timing>
@@ -72,7 +76,7 @@ HEADER
 	VERSION = 1;
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 2500.0;
+	DATA_DURATION = 4000.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
@@ -646,7 +650,7 @@ TRANSITION_LIST("clock")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 250;
+			REPEAT = 400;
 			LEVEL 0 FOR 5.0;
 			LEVEL 1 FOR 5.0;
 		}
@@ -660,7 +664,9 @@ TRANSITION_LIST("enviar")
 		REPEAT = 1;
 		LEVEL 0 FOR 50.0;
 		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 2430.0;
+		LEVEL 0 FOR 2050.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 1840.0;
 	}
 }
 
@@ -669,7 +675,7 @@ TRANSITION_LIST("jogada[13]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2500.0;
+		LEVEL 1 FOR 4000.0;
 	}
 }
 
@@ -678,7 +684,7 @@ TRANSITION_LIST("jogada[12]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2500.0;
+		LEVEL 1 FOR 4000.0;
 	}
 }
 
@@ -687,7 +693,7 @@ TRANSITION_LIST("jogada[11]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2500.0;
+		LEVEL 1 FOR 4000.0;
 	}
 }
 
@@ -696,7 +702,7 @@ TRANSITION_LIST("jogada[10]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2500.0;
+		LEVEL 1 FOR 4000.0;
 	}
 }
 
@@ -705,7 +711,7 @@ TRANSITION_LIST("jogada[9]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 2500.0;
+		LEVEL 0 FOR 4000.0;
 	}
 }
 
@@ -714,7 +720,7 @@ TRANSITION_LIST("jogada[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 2500.0;
+		LEVEL 0 FOR 4000.0;
 	}
 }
 
@@ -723,7 +729,7 @@ TRANSITION_LIST("jogada[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 2500.0;
+		LEVEL 0 FOR 4000.0;
 	}
 }
 
@@ -732,7 +738,7 @@ TRANSITION_LIST("jogada[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 2500.0;
+		LEVEL 0 FOR 4000.0;
 	}
 }
 
@@ -741,7 +747,7 @@ TRANSITION_LIST("jogada[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 2500.0;
+		LEVEL 0 FOR 4000.0;
 	}
 }
 
@@ -750,7 +756,7 @@ TRANSITION_LIST("jogada[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 2500.0;
+		LEVEL 0 FOR 4000.0;
 	}
 }
 
@@ -759,7 +765,7 @@ TRANSITION_LIST("jogada[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2500.0;
+		LEVEL 1 FOR 4000.0;
 	}
 }
 
@@ -768,7 +774,7 @@ TRANSITION_LIST("jogada[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2500.0;
+		LEVEL 1 FOR 4000.0;
 	}
 }
 
@@ -777,7 +783,7 @@ TRANSITION_LIST("jogada[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2500.0;
+		LEVEL 1 FOR 4000.0;
 	}
 }
 
@@ -786,7 +792,7 @@ TRANSITION_LIST("jogada[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2500.0;
+		LEVEL 1 FOR 4000.0;
 	}
 }
 
@@ -795,8 +801,7 @@ TRANSITION_LIST("pronto")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -805,8 +810,7 @@ TRANSITION_LIST("saida_serial")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -815,8 +819,7 @@ TRANSITION_LIST("db_estado[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -825,8 +828,7 @@ TRANSITION_LIST("db_estado[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -835,8 +837,7 @@ TRANSITION_LIST("db_estado[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -845,8 +846,7 @@ TRANSITION_LIST("db_estado[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -855,8 +855,7 @@ TRANSITION_LIST("db_tick")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -865,8 +864,7 @@ TRANSITION_LIST("db_ascii[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -875,8 +873,7 @@ TRANSITION_LIST("db_ascii[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -885,8 +882,7 @@ TRANSITION_LIST("db_ascii[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -895,8 +891,7 @@ TRANSITION_LIST("db_ascii[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -905,8 +900,7 @@ TRANSITION_LIST("db_ascii[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -915,8 +909,7 @@ TRANSITION_LIST("db_ascii[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -925,8 +918,7 @@ TRANSITION_LIST("db_ascii[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -936,7 +928,7 @@ TRANSITION_LIST("reset")
 	{
 		REPEAT = 1;
 		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 2470.0;
+		LEVEL 0 FOR 3970.0;
 	}
 }
 
@@ -945,8 +937,7 @@ TRANSITION_LIST("db_ascii_dec[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -955,8 +946,7 @@ TRANSITION_LIST("db_ascii_dec[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -965,8 +955,7 @@ TRANSITION_LIST("db_ascii_dec[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -975,8 +964,7 @@ TRANSITION_LIST("db_ascii_dec[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -985,8 +973,7 @@ TRANSITION_LIST("db_ascii_dec[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -995,8 +982,7 @@ TRANSITION_LIST("db_ascii_dec[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -1005,8 +991,7 @@ TRANSITION_LIST("db_ascii_dec[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -1015,8 +1000,7 @@ TRANSITION_LIST("db_ascii_jogada[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -1025,8 +1009,7 @@ TRANSITION_LIST("db_ascii_jogada[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -1035,8 +1018,7 @@ TRANSITION_LIST("db_ascii_jogada[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -1045,8 +1027,7 @@ TRANSITION_LIST("db_ascii_jogada[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -1055,8 +1036,7 @@ TRANSITION_LIST("db_ascii_jogada[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -1065,8 +1045,7 @@ TRANSITION_LIST("db_ascii_jogada[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -1075,8 +1054,7 @@ TRANSITION_LIST("db_ascii_jogada[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 1501.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -1085,7 +1063,7 @@ TRANSITION_LIST("i_mensagem[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 2500.0;
+		LEVEL 0 FOR 4000.0;
 	}
 }
 
@@ -1094,7 +1072,9 @@ TRANSITION_LIST("i_mensagem[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2500.0;
+		LEVEL 0 FOR 2080.0;
+		LEVEL 1 FOR 120.0;
+		LEVEL 0 FOR 1800.0;
 	}
 }
 
@@ -1103,7 +1083,7 @@ TRANSITION_LIST("i_mensagem[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 2500.0;
+		LEVEL 0 FOR 4000.0;
 	}
 }
 
@@ -1112,7 +1092,7 @@ TRANSITION_LIST("db_enable")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 2500.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 
@@ -1121,7 +1101,7 @@ TRANSITION_LIST("db_Q")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 2500.0;
+		LEVEL X FOR 4000.0;
 	}
 }
 

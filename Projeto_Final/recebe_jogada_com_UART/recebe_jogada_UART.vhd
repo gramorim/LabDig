@@ -15,8 +15,7 @@ entity recebe_jogada_UART is
 		erro:             		  out std_logic;
 		pronto:					  out std_logic;
 		endereco:					  out std_logic_vector(5 downto 0);
-		jogada:         out std_logic_vector (2*tam_ascii-1 downto 0)
-	);
+		jogada:         out std_logic_vector (2*tam_ascii-1 downto 0));
 end entity;
 
 architecture recebe_jogada_UART_arch of recebe_jogada_UART is
